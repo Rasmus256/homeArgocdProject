@@ -1,0 +1,78 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kompose.cmd: C:\Users\rasmu\cluster\kompose-windows-amd64.exe convert
+    kompose.version: 1.23.0 (bc7d9f4f)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: valheim
+  name: valheim
+spec:
+  ports:
+    - name: "2456"
+      port: 2456
+      targetPort: 2456
+      nodePort: 30456
+      protocol: UDP
+    - name: "2457"
+      port: 2457
+      targetPort: 2457
+      nodePort: 30457
+      protocol: UDP
+    - name: "2458"
+      port: 2458
+      targetPort: 2458
+      nodePort: 30458
+      protocol: UDP
+  type: LoadBalancer
+  selector:
+    io.kompose.service: valheim
+    
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kompose.cmd: C:\Users\rasmu\cluster\kompose-windows-amd64.exe convert
+    kompose.version: 1.23.0 (bc7d9f4f)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: valheimhttp
+  name: valheimhttp
+spec:
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 30080
+    - name: https
+      protocol: TCP
+      port: 444
+      targetPort: 30081
+  type: LoadBalancer
+  selector:
+    io.kompose.service: valheim
+    
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kompose.cmd: C:\Users\rasmu\cluster\kompose-windows-amd64.exe convert
+    kompose.version: 1.23.0 (bc7d9f4f)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: valheimsuperhttp
+  name: valheimsuperhttp
+spec:
+  ports:
+    - name: "9001"
+      port: 32001
+      targetPort: 9001
+      nodePort: 32001
+  type: LoadBalancer
+  selector:
+    io.kompose.service: valheim
