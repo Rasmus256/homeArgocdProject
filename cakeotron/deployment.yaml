@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cakeotron
+  namespace: cake
+  labels:
+    io.kompose.service: cakeotron
+spec:
+  replicas: 2
+  minReadySeconds: 2
+  selector:
+    matchLabels:
+      io.kompose.service: cakeotron
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        io.kompose.service: cakeotron
+    spec:
+      containers:
+        - env:
+          - name: DOTNET_HOSTBUILDER__RELOADCONFIGONCHANGE
+            value: "false"
+          image: rasmus256docker/cakeotron:20220910123341
+          name: cakeotron
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              memory: "32Mi"
+              cpu: "25m"
+            limits:
+              memory: "64Mi"
+              cpu: "50m"
+      restartPolicy: Always
+status: {}

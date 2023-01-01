@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: cake
+  annotations:
+    kompose.cmd: C:\Users\rasmu\cluster\kompose-windows-amd64.exe convert
+    kompose.version: 1.23.0 (bc7d9f4f)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: cakeotron
+  name: cakeotron
+spec:
+  type: LoadBalancer
+  ports:
+    - name: "80"
+      port: 4000
+      targetPort: 80
+  selector:
+    io.kompose.service: cakeotron
+status:
+  loadBalancer: {}
+---
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: cake-ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /cake
+        pathType: Prefix
+        backend:
+          service:
+            name: cakeotron
+            port: 
+              number: 4000
