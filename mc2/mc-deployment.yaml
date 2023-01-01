@@ -1,0 +1,64 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: C:\Users\rasmu\cluster\kompose-windows-amd64.exe convert
+    kompose.version: 1.23.0 (bc7d9f4f)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: mcbedrock
+  name: mcbedrock
+spec:
+  replicas: 0
+
+  selector:
+    matchLabels:
+      io.kompose.service: mcbedrock
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        io.kompose.service: mcbedrock
+    spec:
+      nodeSelector:
+        pi: "false"
+      containers:
+        - env:
+            - name: EULA
+              value: "true"
+            - name: OPS
+              value: "2535420898507728,2535445156419995"
+            - name: TYPE
+              value: "PAPER"
+            - name: MEMORY
+              value: "1G"
+            - name: SERVER_PORT
+              value: "19132"
+            - name: "GAMEMODE"
+              value: "creative" 
+            - name: "ALLOW_LIST_USERS"
+              value: "ShellyTuna8375,FavouredBell851"
+            - name: "ALLOW_CHEATS"
+              value: "true"
+          image: itzg/minecraft-bedrock-server:latest
+          name: mcbedrock
+          ports:
+            - containerPort: 19132
+              protocol: UDP
+          resources:
+            requests:
+              memory: "600Mi"
+              cpu: "700m"
+            limits:
+              memory: "600Mi"
+              cpu: "700m"
+          volumeMounts:
+            - mountPath: /data
+              name: mcbedrock-storage1
+      restartPolicy: Always
+      volumes:
+        - name: mcbedrock-storage1
+          persistentVolumeClaim:
+            claimName: mcbedrock-storage1
+status: {}
