@@ -6,7 +6,7 @@ metadata:
   labels:
     io.kompose.service: cakeotron
 spec:
-  replicas: 50
+  replicas: 1
   minReadySeconds: 2
   selector:
     matchLabels:
