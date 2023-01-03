@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: day1-part1
-        image: rasmus256docker/advent_of_code_day1_event_reader:latest
+        image: rasmus256docker/advent_of_code_day1_event_reader:1672777341
       restartPolicy: Never
 ---
 apiVersion: batch/v1
@@ -32,7 +32,7 @@ spec:
     spec:
       containers:
       - name: day1-part1
-        image: rasmus256docker/advent_of_code_day1_part1_event:latest
+        image: rasmus256docker/advent_of_code_day1_part1_event:1672777341
       restartPolicy: Never
 ---
 apiVersion: batch/v1
@@ -44,7 +44,7 @@ spec:
     spec:
       containers:
       - name: day1-part1
-        image: rasmus256docker/advent_of_code_day1_part2_event:1672774036
+        image: rasmus256docker/advent_of_code_day1_part2_event:1672777341
       restartPolicy: Never
 
 ---
@@ -251,7 +251,7 @@ spec:
     spec:
       containers:
       - name: solution
-        image: rasmus256docker/advent_of_code_day9_part1:1672772558
+        image: rasmus256docker/advent_of_code_day9_part1:1672777341
       restartPolicy: Never
   backoffLimit: 0
 
@@ -265,6 +265,20 @@ spec:
     spec:
       containers:
       - name: solution
-        image: rasmus256docker/advent_of_code_day9_part2:1672772558
+        image: rasmus256docker/advent_of_code_day9_part2:1672777341
+      restartPolicy: Never
+  backoffLimit: 0
+
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: adventofcode-d9reader
+spec:
+  template:
+    spec:
+      containers:
+      - name: solution
+        image: rasmus256docker/advent_of_code_day9_reader:1672777341
       restartPolicy: Never
   backoffLimit: 0
