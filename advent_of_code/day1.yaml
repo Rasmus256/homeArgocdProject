@@ -1,10 +1,8 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: adventofcoded1p1
+  name: adventofcoded1p1-145312
 spec:
-  completions: 100
-  parallelism: 50
   template:
     spec:
       containers:
