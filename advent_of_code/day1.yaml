@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: adventofcoded1p1-fhjhjksfdhjlksfd
+  name: adventofcoded1p1
 spec:
   template:
     spec:
