@@ -19,7 +19,7 @@ spec:
         io.kompose.service: amq
     spec:
       containers:
-          image: rmohr/activemq
+        - image: rmohr/activemq
           name: amq
           ports:
             - containerPort: 61613
