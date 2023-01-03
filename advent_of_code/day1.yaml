@@ -5,6 +5,8 @@ metadata:
 spec:
   template:
     spec:
+      completions: 100
+      parallelism: 5
       containers:
       - name: day1-part1
         image: rasmus256docker/advent_of_code_day1_part1:1672736389
