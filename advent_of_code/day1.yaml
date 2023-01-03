@@ -1,12 +1,12 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: adventofcoded1p1
+  name: adventofcoded1p1-fdfdsa
 spec:
+  completions: 100
+  parallelism: 5
   template:
     spec:
-      completions: 100
-      parallelism: 5
       containers:
       - name: day1-part1
         image: rasmus256docker/advent_of_code_day1_part1:1672736389
