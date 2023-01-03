@@ -1,0 +1,67 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: amq
+  namespace: adventofcode
+  labels:
+    io.kompose.service: amq
+spec:
+  replicas: 1
+  minReadySeconds: 2
+  selector:
+    matchLabels:
+      io.kompose.service: amq
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        io.kompose.service: amq
+    spec:
+      containers:
+          image: rmohr/activemq
+          name: amq
+          ports:
+            - containerPort: 61613
+            - containerPort: 8161
+            - containerPort: 5672
+          resources:
+            requests:
+              memory: "500Mi"
+              cpu: "200m"
+            limits:
+              memory: "1Gi"
+              cpu: "500m"
+      restartPolicy: Always
+status: {}
+
+---
+
+
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: adventofcode
+  annotations:
+    kompose.cmd: C:\Users\rasmu\cluster\kompose-windows-amd64.exe convert
+    kompose.version: 1.23.0 (bc7d9f4f)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: amq
+  name: amq
+spec:
+  type: LoadBalancer
+  ports:
+    - name: "61613"
+      port: 61613
+      targetPort: 61613
+    - name: "8161"
+      port: 8161
+      targetPort: 8161
+    - name: "5672"
+      port: 5672
+      targetPort: 5672
+  selector:
+    io.kompose.service: amq
+status:
+  loadBalancer: {}
