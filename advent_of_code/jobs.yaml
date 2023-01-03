@@ -33,6 +33,7 @@ spec:
   template:
     spec:
       containers:
-      - image: rasmus256docker/advent_of_code_day5_part1:latest
+      - name: solution
+        image: rasmus256docker/advent_of_code_day5_part1:latest
       restartPolicy: Never
   backoffLimit: 4
