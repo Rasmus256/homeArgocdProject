@@ -14,6 +14,31 @@ spec:
 apiVersion: batch/v1
 kind: Job
 metadata:
+  name: adventofcode-d1reader
+spec:
+  template:
+    spec:
+      containers:
+      - name: day1-part1
+        image: rasmus256docker/advent_of_code_day1_event_reader:1672773406
+      restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: adventofcode-d1p1_event
+spec:
+  template:
+    spec:
+      containers:
+      - name: day1-part1
+        image: rasmus256docker/advent_of_code_day1_part1_event:1672773406
+      restartPolicy: Never
+
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
   name: adventofcode-d1p2
 spec:
   template:
