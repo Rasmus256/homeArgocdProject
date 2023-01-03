@@ -1,168 +1,168 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: adventofcoded1p1-145312
+  name: adventofcode-d1p1
 spec:
   template:
     spec:
       containers:
       - name: day1-part1
-        image: rasmus256docker/advent_of_code_day1_part1:1672736389
+        image: rasmus256docker/advent_of_code_day1_part1:1672772558
       restartPolicy: Never
 
 ---
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: adventofcoded1p2
+  name: adventofcode-d1p2
 spec:
   template:
     spec:
       containers:
       - name: day1-part2
-        image: rasmus256docker/advent_of_code_day1_part2:1672735090
+        image: rasmus256docker/advent_of_code_day1_part2:1672772558
       restartPolicy: Never
 ---
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: adventofcoded2p1
+  name: adventofcode-d2p1
 spec:
   template:
     spec:
       containers:
       - name: solution
-        image: rasmus256docker/advent_of_code_day2_part1:latest
-      restartPolicy: Never
-  backoffLimit: 0
----
-apiVersion: batch/v1
-kind: Job
-metadata:
-  name: adventofcoded2p2
-spec:
-  template:
-    spec:
-      containers:
-      - name: solution
-        image: rasmus256docker/advent_of_code_day2_part2:latest
+        image: rasmus256docker/advent_of_code_day2_part1:1672772558
       restartPolicy: Never
   backoffLimit: 0
 ---
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: adventofcoded3p1
+  name: adventofcode-d2p2
 spec:
   template:
     spec:
       containers:
       - name: solution
-        image: rasmus256docker/advent_of_code_day3_part1:latest
+        image: rasmus256docker/advent_of_code_day2_part2:1672772558
       restartPolicy: Never
   backoffLimit: 0
 ---
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: adventofcoded3p2
+  name: adventofcode-d3p1
 spec:
   template:
     spec:
       containers:
       - name: solution
-        image: rasmus256docker/advent_of_code_day3_part2:latest
+        image: rasmus256docker/advent_of_code_day3_part1:1672772558
       restartPolicy: Never
   backoffLimit: 0
 ---
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: adventofcoded4p1
+  name: adventofcode-d3p2
 spec:
   template:
     spec:
       containers:
       - name: solution
-        image: rasmus256docker/advent_of_code_day4_part1:latest
+        image: rasmus256docker/advent_of_code_day3_part2:1672772558
       restartPolicy: Never
   backoffLimit: 0
 ---
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: adventofcoded4p2
+  name: adventofcode-d4p1
 spec:
   template:
     spec:
       containers:
       - name: solution
-        image: rasmus256docker/advent_of_code_day4_part2:latest
+        image: rasmus256docker/advent_of_code_day4_part1:1672772558
       restartPolicy: Never
   backoffLimit: 0
 ---
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: adventofcoded5p1
+  name: adventofcode-d4p2
 spec:
   template:
     spec:
       containers:
       - name: solution
-        image: rasmus256docker/advent_of_code_day5_part1:latest
+        image: rasmus256docker/advent_of_code_day4_part2:1672772558
       restartPolicy: Never
   backoffLimit: 0
 ---
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: adventofcoded5p2
+  name: adventofcode-d5p1
 spec:
   template:
     spec:
       containers:
       - name: solution
-        image: rasmus256docker/advent_of_code_day5_part2:latest
+        image: rasmus256docker/advent_of_code_day5_part1:1672772558
       restartPolicy: Never
   backoffLimit: 0
 ---
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: adventofcoded6p1
+  name: adventofcode-d5p2
 spec:
   template:
     spec:
       containers:
       - name: solution
-        image: rasmus256docker/advent_of_code_day6_part1:latest
+        image: rasmus256docker/advent_of_code_day5_part2:1672772558
       restartPolicy: Never
   backoffLimit: 0
 ---
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: adventofcoded6p2
+  name: adventofcode-d6p1
 spec:
   template:
     spec:
       containers:
       - name: solution
-        image: rasmus256docker/advent_of_code_day6_part2:latest
+        image: rasmus256docker/advent_of_code_day6_part1:1672772558
       restartPolicy: Never
   backoffLimit: 0
 ---
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: adventofcoded9p1
+  name: adventofcode-d6p2
 spec:
   template:
     spec:
       containers:
       - name: solution
-        image: rasmus256docker/advent_of_code_day9_part1:latest
+        image: rasmus256docker/advent_of_code_day6_part2:1672772558
+      restartPolicy: Never
+  backoffLimit: 0
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: adventofcode-d9p1
+spec:
+  template:
+    spec:
+      containers:
+      - name: solution
+        image: rasmus256docker/advent_of_code_day9_part1:1672772558
       restartPolicy: Never
   backoffLimit: 0
 
@@ -170,12 +170,12 @@ spec:
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: adventofcoded9p2
+  name: adventofcode-d9p2
 spec:
   template:
     spec:
       containers:
       - name: solution
-        image: rasmus256docker/advent_of_code_day9_part2:latest
+        image: rasmus256docker/advent_of_code_day9_part2:1672772558
       restartPolicy: Never
   backoffLimit: 0
