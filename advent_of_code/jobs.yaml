@@ -38,13 +38,13 @@ spec:
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: adventofcode-d1p2-event2
+  name: adventofcode-d1p2-event
 spec:
   template:
     spec:
       containers:
       - name: day1-part1
-        image: rasmus256docker/advent_of_code_day1_part2_event:1672773730
+        image: rasmus256docker/advent_of_code_day1_part2_event:1672773926
       restartPolicy: Never
 
 ---
