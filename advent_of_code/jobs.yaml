@@ -156,6 +156,58 @@ spec:
 apiVersion: batch/v1
 kind: Job
 metadata:
+  name: adventofcode-d7p1
+spec:
+  template:
+    spec:
+      containers:
+      - name: solution
+        image: rasmus256docker/advent_of_code_day7_part1:1672772558
+      restartPolicy: Never
+  backoffLimit: 0
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: adventofcode-d7p2
+spec:
+  template:
+    spec:
+      containers:
+      - name: solution
+        image: rasmus256docker/advent_of_code_day7_part2:1672772558
+      restartPolicy: Never
+  backoffLimit: 0
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: adventofcode-d8p1
+spec:
+  template:
+    spec:
+      containers:
+      - name: solution
+        image: rasmus256docker/advent_of_code_day8_part1:1672772558
+      restartPolicy: Never
+  backoffLimit: 0
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: adventofcode-d8p2
+spec:
+  template:
+    spec:
+      containers:
+      - name: solution
+        image: rasmus256docker/advent_of_code_day8_part2:1672772558
+      restartPolicy: Never
+  backoffLimit: 0
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
   name: adventofcode-d9p1
 spec:
   template:
