@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: day1-part1
-        image: rasmus256docker/advent_of_code_day1_event_reader:1672773406
+        image: rasmus256docker/advent_of_code_day1_event_reader:latest
       restartPolicy: Never
 ---
 apiVersion: batch/v1
@@ -32,7 +32,7 @@ spec:
     spec:
       containers:
       - name: day1-part1
-        image: rasmus256docker/advent_of_code_day1_part1_event:1672773406
+        image: rasmus256docker/advent_of_code_day1_part1_event:latest
       restartPolicy: Never
 
 ---
