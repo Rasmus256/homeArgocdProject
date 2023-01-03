@@ -7,6 +7,8 @@ spec:
     spec:
       containers:
       - name: day1-part1
-        image: rasmus256docker/advent_of_code_day1_part1:1672692715
+        image: rasmus256docker/advent_of_code_day1_part1:1672735087
+      - name: day1-part2
+        image: rasmus256docker/advent_of_code_day1_part2:1672735090
       restartPolicy: Never
   backoffLimit: 4
