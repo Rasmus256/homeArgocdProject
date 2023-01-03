@@ -1,14 +1,26 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: adventofcode-v2
+  name: adventofcoded1p1
 spec:
   template:
     spec:
       containers:
       - name: day1-part1
         image: rasmus256docker/advent_of_code_day1_part1:1672735087
+      restartPolicy: Never
+  backoffLimit: 4
+
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: adventofcoded1p2
+spec:
+  template:
+    spec:
+      containers:
       - name: day1-part2
         image: rasmus256docker/advent_of_code_day1_part2:1672735090
-      restartPolicy: Never
+        restartPolicy: Never
   backoffLimit: 4
