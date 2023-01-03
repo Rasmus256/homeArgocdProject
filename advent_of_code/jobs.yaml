@@ -14,7 +14,7 @@ spec:
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: adventofcode-d1reader2
+  name: adventofcode-d1reader
 spec:
   template:
     spec:
@@ -26,7 +26,7 @@ spec:
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: adventofcode-d1p1-event2
+  name: adventofcode-d1p1-event
 spec:
   template:
     spec:
@@ -38,7 +38,7 @@ spec:
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: adventofcode-d1p2-event2
+  name: adventofcode-d1p2-event
 spec:
   template:
     spec:
@@ -245,7 +245,7 @@ spec:
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: adventofcode-d9p1
+  name: adventofcode-d9p12
 spec:
   template:
     spec:
@@ -259,7 +259,7 @@ spec:
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: adventofcode-d9p2
+  name: adventofcode-d9p22
 spec:
   template:
     spec:
@@ -273,7 +273,7 @@ spec:
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: adventofcode-d9reader
+  name: adventofcode-d9reader2
 spec:
   template:
     spec:
