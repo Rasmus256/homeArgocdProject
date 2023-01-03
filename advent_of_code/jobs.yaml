@@ -9,7 +9,6 @@ spec:
       - name: day1-part1
         image: rasmus256docker/advent_of_code_day1_part1:1672736389
       restartPolicy: Never
-  backoffLimit: 4
 
 ---
 apiVersion: batch/v1
@@ -23,7 +22,6 @@ spec:
       - name: day1-part2
         image: rasmus256docker/advent_of_code_day1_part2:1672735090
       restartPolicy: Never
-  backoffLimit: 4
 ---
 apiVersion: batch/v1
 kind: Job
@@ -36,4 +34,3 @@ spec:
       - name: solution
         image: rasmus256docker/advent_of_code_day5_part1:latest
       restartPolicy: Never
-  backoffLimit: 4
