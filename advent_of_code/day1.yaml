@@ -22,5 +22,5 @@ spec:
       containers:
       - name: day1-part2
         image: rasmus256docker/advent_of_code_day1_part2:1672735090
-        restartPolicy: Never
+      restartPolicy: Never
   backoffLimit: 4
