@@ -11,7 +11,7 @@ items:
       release: {{ .Release.Name | quote }}
       heritage: {{ .Release.Service | quote }}
       version: {{ .Chart.Version }}
-    name: helloworld
+    name: {{ template "fullname" . }}
   spec:
     template:
       spec:
