@@ -11,6 +11,6 @@ day1p2:
   namespace: default
   image:
     repository: rasmus256docker/advent_of_code_day1_part2
-    tag: 1.1672914404
+    tag: 1.1672998858
     pullPolicy: IfNotPresent
   
