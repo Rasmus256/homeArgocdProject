@@ -7,19 +7,19 @@ items:
   kind: Job
   metadata:
     labels:
-      app: helloworld
-      chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
-      release: {{ .Release.Name | quote }}
-      heritage: {{ .Release.Service | quote }}
-      version: {{ .Chart.Version }}
-    name: testday1p1-{{ .Values.day1p1.image.tag }}
+      app: {{ template "fullname" $. }}
+      chart: "{{ $.Chart.Name }}-{{ $.Chart.Version }}"
+      release: {{ $.Release.Name | quote }}
+      heritage: {{ $.Release.Service | quote }}
+      version: {{ $.Chart.Version }}
+    name: testday1p1-{{ $.Values.day1p1.image.tag }}
   spec:
     template:
       spec:
       spec:
         containers:
-        - image: {{ .Values.day1p1.image.repository }}:{{ .Values.day1p1.image.tag }}
-          imagePullPolicy: {{ .Values.pullPolicy }}
+        - image: {{ $.Values.day1p1.image.repository }}:{{ $.Values.day1p1.image.tag }}
+          imagePullPolicy: {{ $.Values.pullPolicy }}
           name: helloworld
         restartPolicy: Never
 
