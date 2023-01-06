@@ -7,7 +7,7 @@ items:
   kind: Job
   metadata:
     labels:
-      app: {{ template "fullname" . }}
+      app: helloworld
       chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
       release: {{ .Release.Name | quote }}
       heritage: {{ .Release.Service | quote }}
