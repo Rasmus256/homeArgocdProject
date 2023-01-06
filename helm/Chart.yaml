@@ -1,0 +1,11 @@
+apiVersion: v1
+name: helloworld
+description: helloworld chart that runs on kubernetes
+version: 1.0.0
+keywords:
+  - helloworld
+  - kubernetes
+home: https://github.com/stakater-charts/helloworld
+maintainers:
+- name: Stakater
+  email: stakater@aurorasolutions.io
