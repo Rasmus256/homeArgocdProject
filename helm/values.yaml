@@ -1,16 +1,16 @@
 kubernetes:
   host: https://kubernetes.default
+namespace: default
+pullPolicy: IfNotPresent
+
+images:
+- day1_part1
 
 day1p1:
-  namespace: default
   image:
     repository: rasmus256docker/advent_of_code_day1_part1
     tag: 1.1672997956
-    pullPolicy: IfNotPresent
 day1p2:
-  namespace: default
   image:
     repository: rasmus256docker/advent_of_code_day1_part2
     tag: 1.1672998858
-    pullPolicy: IfNotPresent
-  

@@ -2,6 +2,7 @@
 apiVersion: v1
 kind: List
 items:
+{{- range .Values.images }}
 - apiVersion: batch/v1
   kind: Job
   metadata:
@@ -11,13 +12,15 @@ items:
       release: {{ .Release.Name | quote }}
       heritage: {{ .Release.Service | quote }}
       version: {{ .Chart.Version }}
-    name: "day1p1-{{ .Values.images[day1p1].image.tag }}"
+    name: "testday1p1-{{ .Values.{{ . | title }}.image.tag }}"
   spec:
     template:
       spec:
       spec:
         containers:
-        - image: "{{ .Values.day1p1.image.repository }}:{{ .Values.day1p1.image.tag }}"
+        - image: "{{ .Values.{{ . | title }}.image.repository }}:{{ .Values.{{ . | title }}.image.tag }}"
           imagePullPolicy: {{ .Values.pullPolicy }}
           name: helloworld
         restartPolicy: Never
+
+{{- end }}    
