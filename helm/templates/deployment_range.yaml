@@ -18,7 +18,7 @@ items:
       spec:
       spec:
         containers:
-        - image: {{ $.Values.day1p1.image.repository }}:{{ $.Values.day1p1.image.tag }}
+        - image: {{ $.Values.{{. | title}}.image.repository }}:{{ $.Values.day1p1.image.tag }}
           imagePullPolicy: {{ $.Values.pullPolicy }}
           name: helloworld
         restartPolicy: Never
