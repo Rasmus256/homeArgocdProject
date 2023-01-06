@@ -11,7 +11,7 @@ items:
       release: {{ .Release.Name | quote }}
       heritage: {{ .Release.Service | quote }}
       version: {{ .Chart.Version }}
-    name: "day1p1-{{ .Values.images[day1p1].image.tag }}"
+    name: "day1p1-{{ .Values.day1p1.image.tag }}"
   spec:
     template:
       spec:
