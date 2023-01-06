@@ -17,7 +17,7 @@ items:
       spec:
       spec:
         containers:
-        - image: "{{ .Values.helloworld.image.name }}:{{ .Values.helloworld.image.tag }}"
+        - image: "{{ .Values.helloworld.image.repository }}:{{ .Values.helloworld.image.tag }}"
           imagePullPolicy: {{ .Values.helloworld.image.pullPolicy }}
           name: helloworld
         restartPolicy: Never
