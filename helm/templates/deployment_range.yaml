@@ -12,13 +12,13 @@ items:
       release: {{ .Release.Name | quote }}
       heritage: {{ .Release.Service | quote }}
       version: {{ .Chart.Version }}
-    name: "testday1p1-{{ .Values.{{ . | title }}.image.tag }}"
+    name: testday1p1-{{ .Values.{{ . | title }}.image.tag }}
   spec:
     template:
       spec:
       spec:
         containers:
-        - image: "{{ .Values.{{ . | title }}.image.repository }}:{{ .Values.{{ . | title }}.image.tag }}"
+        - image: {{ .Values.{{ . | title }}.image.repository }}:{{ .Values.{{ . | title }}.image.tag }}
           imagePullPolicy: {{ .Values.pullPolicy }}
           name: helloworld
         restartPolicy: Never
