@@ -11,7 +11,7 @@ items:
       release: {{ .Release.Name | quote }}
       heritage: {{ .Release.Service | quote }}
       version: {{ .Chart.Version }}
-    name: {{ template "fullname" . }}
+    name: "{{ template "fullname" . }}-{{ .Values.helloworld.image.tag }}"
   spec:
     template:
       spec:
