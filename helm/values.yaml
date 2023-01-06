@@ -4,7 +4,7 @@ namespace: default
 pullPolicy: IfNotPresent
 
 images:
-- day1_part1
+- day1p1
 
 day1p1:
   image:
