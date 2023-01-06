@@ -4,7 +4,7 @@ kubernetes:
 helloworld:
   namespace: default
   image:
-    name: tutum/hello-world
+    name: rasmus256docker/advent_of_code_day1_part1
     tag: latest
     pullPolicy: IfNotPresent
   service:
