@@ -5,7 +5,7 @@ helloworld:
   namespace: default
   image:
     name: rasmus256docker/advent_of_code_day1_part1
-    tag: "1672771797"
+    tag: 1.1672993098
     pullPolicy: IfNotPresent
   service:
     ingressClass: internal-ingress
