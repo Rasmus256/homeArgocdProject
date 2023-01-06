@@ -19,5 +19,5 @@ items:
         containers:
         - image: "{{ .Values.helloworld.image.name }}:{{ .Values.helloworld.image.tag }}"
           imagePullPolicy: {{ .Values.helloworld.image.pullPolicy }}
+          name: helloworld
         restartPolicy: Never
-        name: helloworld
