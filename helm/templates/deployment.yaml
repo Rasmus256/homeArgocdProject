@@ -21,3 +21,26 @@ items:
           imagePullPolicy: {{ .Values.day1p1.image.pullPolicy }}
           name: helloworld
         restartPolicy: Never
+---
+apiVersion: v1
+kind: List
+items:
+- apiVersion: batch/v1
+  kind: Job
+  metadata:
+    labels:
+      app: {{ template "fullname" . }}
+      chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+      release: {{ .Release.Name | quote }}
+      heritage: {{ .Release.Service | quote }}
+      version: {{ .Chart.Version }}
+    name: "{{ .Values.day1p2.image.repository }}-{{ .Values.day1p2.image.tag }}"
+  spec:
+    template:
+      spec:
+      spec:
+        containers:
+        - image: "{{ .Values.day1p2.image.repository }}:{{ .Values.day1p2.image.tag }}"
+          imagePullPolicy: {{ .Values.day1p2.image.pullPolicy }}
+          name: helloworld
+        restartPolicy: Never
