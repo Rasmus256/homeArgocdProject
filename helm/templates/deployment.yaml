@@ -11,13 +11,13 @@ items:
       release: {{ .Release.Name | quote }}
       heritage: {{ .Release.Service | quote }}
       version: {{ .Chart.Version }}
-    name: "{{ template "fullname" . }}-{{ .Values.helloworld.image.tag }}"
+    name: "{{ .Values.day1p1.image.repository }}-{{ .Values.day1p1.image.tag }}"
   spec:
     template:
       spec:
       spec:
         containers:
-        - image: "{{ .Values.helloworld.image.repository }}:{{ .Values.helloworld.image.tag }}"
-          imagePullPolicy: {{ .Values.helloworld.image.pullPolicy }}
+        - image: "{{ .Values.day1p1.image.repository }}:{{ .Values.day1p1.image.tag }}"
+          imagePullPolicy: {{ .Values.day1p1.image.pullPolicy }}
           name: helloworld
         restartPolicy: Never
