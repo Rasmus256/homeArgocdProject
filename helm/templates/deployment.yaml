@@ -11,7 +11,7 @@ items:
       release: {{ .Release.Name | quote }}
       heritage: {{ .Release.Service | quote }}
       version: {{ .Chart.Version }}
-    name: "{{ .Values.day1p1.image.repository }}-{{ .Values.day1p1.image.tag }}"
+    name: "day1p1-{{ .Values.day1p1.image.tag }}"
   spec:
     template:
       spec:
@@ -34,7 +34,7 @@ items:
       release: {{ .Release.Name | quote }}
       heritage: {{ .Release.Service | quote }}
       version: {{ .Chart.Version }}
-    name: "{{ .Values.day1p2.image.repository }}-{{ .Values.day1p2.image.tag }}"
+    name: "day1p2-{{ .Values.day1p2.image.tag }}"
   spec:
     template:
       spec:
