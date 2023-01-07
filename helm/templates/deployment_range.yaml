@@ -19,7 +19,7 @@ items:
     {{- end }}
     {{- $str = print $str $e.tag }}
     {{- end }}
-    name: {{- $str | nindent 4 }}
+    name: {{- $str }}
   spec:
     template:
       spec:
