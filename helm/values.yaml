@@ -4,9 +4,11 @@ namespace: default
 pullPolicy: IfNotPresent
 
 images:
-- image:
-    repository: rasmus256docker/advent_of_code_day1_part1
+- parts:
+  - repository: rasmus256docker/advent_of_code_day1_part1
     tag: 1.1672997956
+  - repository: rasmus256docker/advent_of_code_day1_part2
+    tag: 1.1672998858
 
 day1p1:
   image:

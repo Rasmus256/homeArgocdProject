@@ -12,15 +12,17 @@ items:
       release: {{ $.Release.Name | quote }}
       heritage: {{ $.Release.Service | quote }}
       version: {{ $.Chart.Version }}
-    name: range-testday1p1-{{ .image.tag }}
+    name: range-testday1p1-1
   spec:
     template:
       spec:
       spec:
         containers:
-        - image: "{{.image.repository }}:{{.image.tag }}"
+        {{- range .parts }}
+        - image: "{{.repository }}:{{.tag }}"
           imagePullPolicy: {{ $.Values.pullPolicy }}
           name: helloworld
+        {{- end }}
         restartPolicy: Never
 
 {{- end }}    
