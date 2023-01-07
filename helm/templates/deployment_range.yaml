@@ -21,7 +21,7 @@ items:
         {{- range .parts }}
         - image: "{{.repository }}:{{.tag }}"
           imagePullPolicy: {{ $.Values.pullPolicy }}
-          name: helloworld-{{ .tag | replace "." "-" }}
+          name: helloworld-{{ '.tag' | replace "." "-" }}
         {{- end }}
         restartPolicy: Never
 
