@@ -25,10 +25,10 @@ items:
       spec:
       spec:
         containers:
-        {{- range .parts }}
-        - image: "{{.image.repository }}:{{.image.tag | toString }}"
+        {{- range $i, $e := .parts }}
+        - image: "{{$e.image.repository }}:{{$e.image.tag | toString }}"
           imagePullPolicy: {{ $.Values.pullPolicy }}
-          name: helloworld-{{ .image.tag | toString | replace "." "-" }}
+          name: helloworld-{{$i}}-{{ $e.image.tag | toString | replace "." "-" }}
         {{- end }}
         restartPolicy: Never
 
