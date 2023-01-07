@@ -19,9 +19,9 @@ items:
       spec:
         containers:
         {{- range .parts }}
-        - image: "{{.repository }}:{{.tag }}"
+        - image: "{{.image.repository }}:{{.image.tag }}"
           imagePullPolicy: {{ $.Values.pullPolicy }}
-          name: helloworld-{{ .tag | toString | replace "." "-" }}
+          name: helloworld-{{ .image.tag | toString | replace "." "-" }}
         {{- end }}
         restartPolicy: Never
 
