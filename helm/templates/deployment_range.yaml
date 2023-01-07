@@ -12,7 +12,14 @@ items:
       release: {{ $.Release.Name | quote }}
       heritage: {{ $.Release.Service | quote }}
       version: {{ $.Chart.Version }}
-    name: range-testday1p1-1
+    {{- $str := "" }}
+    {{- range $i, $e := .parts }}
+    {{- if $i }}
+    {{- $str = print $str "," }}
+    {{- end }}
+    {{- $str = print $str $e.tag }}
+    {{- end }}
+    name: {{- $str | nindent 4 }}
   spec:
     template:
       spec:
