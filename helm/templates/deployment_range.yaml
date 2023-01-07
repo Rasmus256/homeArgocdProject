@@ -17,7 +17,7 @@ items:
     {{- if $i }}
     {{- $str = print $str "," }}
     {{- end }}
-    {{- $str = print $str $e.tag }}
+    {{- $str = print $str $e.image.tag }}
     {{- end }}
     name: {{ $str }}
   spec:
