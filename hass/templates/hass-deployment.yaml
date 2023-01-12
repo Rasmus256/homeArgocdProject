@@ -31,7 +31,7 @@ spec:
         - env:
             - name: TZ 
               value: Europe/Copenhagen
-          image: homeassistant/home-assistant:2022.11.4
+          image: {{.Values.image.repository}}:{{.Values.image.tag}}
           name: hass
           ports:
             - containerPort: 8123
@@ -49,18 +49,18 @@ spec:
               name: configurationconfigmap
             - name: hass-storagev
               mountPath: /config
-        - image: postgres:14
-          name: pgsql
-          ports:
-          - containerPort: 5432
-          env:
-            - name: POSTGRES_PASSWORD
-              value: mypassword
-            - name: PGDATA
-              value: /var/lib/postgresql/data/pgdata
-          volumeMounts:
-            - mountPath: /var/lib/postgresql/data
-              name: postgres-pv-storage
+        # - image: postgres:14
+        #   name: pgsql
+        #   ports:
+        #   - containerPort: 5432
+        #   env:
+        #     - name: POSTGRES_PASSWORD
+        #       value: mypassword
+        #     - name: PGDATA
+        #       value: /var/lib/postgresql/data/pgdata
+        #   volumeMounts:
+        #     - mountPath: /var/lib/postgresql/data
+        #       name: postgres-pv-storage
       restartPolicy: Always
       volumes:
         - name: hass-storagev
