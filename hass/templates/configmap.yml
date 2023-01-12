@@ -13,13 +13,6 @@ data:
     # Text to speech
     tts:
       - platform: google_translate
-      
-    rest:
-      - scan_interval: 10
-        resource: http://valheimhttp.default.svc.cluster.local:30080/status.json
-        sensor:
-          - name: "Valheim Server"
-            value_template: "{{ value_json.player_count | default(0) }}"
 
     sensor:
       - platform: systemmonitor
