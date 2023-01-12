@@ -16,10 +16,10 @@ images:
   parts:
   - image:
       repository: rasmus256docker/advent_of_code_day9_part1
-      tag: 1-1673549968
+      tag: 1-1673551284
   - image:
       repository: rasmus256docker/advent_of_code_day9_part2
-      tag: 1-1673549968
+      tag: 1-1673551284
   - image:
       repository: rasmus256docker/advent_of_code_day9_reader
       tag: 1-1673549968
