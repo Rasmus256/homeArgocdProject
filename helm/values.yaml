@@ -27,7 +27,7 @@ images:
   parts:
   - image:
       repository: rasmus256docker/advent_of_code_day6_part1
-      tag: "1672772558"
+      tag: 1-1673553054
   - image:
       repository: rasmus256docker/advent_of_code_day6_part2
-      tag: "1672772558"
+      tag: 1-1673553054
