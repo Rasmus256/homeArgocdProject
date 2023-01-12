@@ -1,26 +1,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: amq
+  name: amq2
   namespace: adventofcode
   labels:
-    io.kompose.service: amq
+    io.kompose.service: amq2
 spec:
   replicas: 1
   minReadySeconds: 2
   selector:
     matchLabels:
-      io.kompose.service: amq
+      io.kompose.service: amq2
   strategy:
     type: Recreate
   template:
     metadata:
       labels:
-        io.kompose.service: amq
+        io.kompose.service: amq2
     spec:
       containers:
         - image: rmohr/activemq
-          name: amq
+          name: amq2
           ports:
             - containerPort: 61613
             - containerPort: 8161
@@ -47,8 +47,8 @@ metadata:
     kompose.version: 1.23.0 (bc7d9f4f)
   creationTimestamp: null
   labels:
-    io.kompose.service: amq
-  name: amq
+    io.kompose.service: amq2
+  name: amq2
 spec:
   type: LoadBalancer
   ports:
@@ -62,6 +62,6 @@ spec:
       port: 5672
       targetPort: 5672
   selector:
-    io.kompose.service: amq
+    io.kompose.service: amq2
 status:
   loadBalancer: {}
