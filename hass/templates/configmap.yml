@@ -4,7 +4,7 @@ metadata:
   namespace: default
   name: hassconfigmap
 data:
-  configuration.yaml: <|
+  configuration.yaml: |
     #Configure a default setup of Home Assistant (frontend, api, etc)
     default_config:
     # recorder:
