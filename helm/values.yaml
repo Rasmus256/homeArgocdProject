@@ -8,23 +8,71 @@ images:
   parts:
   - image:
       repository: rasmus256docker/advent_of_code_day1_part1
-      tag: 1-1673085164
+      tag: 2.0.1673556872
   - image:
       repository: rasmus256docker/advent_of_code_day1_part2
-      tag: 1-1673085164
-- title: day9
+      tag: 2.0.1673556872
+- title: day2
   parts:
   - image:
-      repository: rasmus256docker/advent_of_code_day9_part1
-      tag: 0.0.1673554095
+      repository: rasmus256docker/advent_of_code_day2_part1
+      tag: 2.0.1673556872
   - image:
-      repository: rasmus256docker/advent_of_code_day9_part2
-      tag: 2.0.1673555100
+      repository: rasmus256docker/advent_of_code_day2_part2
+      tag: 2.0.1673556872
+- title: day3
+  parts:
+  - image:
+      repository: rasmus256docker/advent_of_code_day3_part1
+      tag: 2.0.1673556872
+  - image:
+      repository: rasmus256docker/advent_of_code_day3_part2
+      tag: 2.0.1673556872
+- title: day4
+  parts:
+  - image:
+      repository: rasmus256docker/advent_of_code_day4_part1
+      tag: 2.0.1673556872
+  - image:
+      repository: rasmus256docker/advent_of_code_day4_part2
+      tag: 2.0.1673556872
+- title: day5
+  parts:
+  - image:
+      repository: rasmus256docker/advent_of_code_day5_part1
+      tag: 2.0.1673556872
+  - image:
+      repository: rasmus256docker/advent_of_code_day5_part2
+      tag: 2.0.1673556872
 - title: day6
   parts:
   - image:
       repository: rasmus256docker/advent_of_code_day6_part1
-      tag: 1-1673553054
+      tag: 2.0.1673556872
   - image:
       repository: rasmus256docker/advent_of_code_day6_part2
-      tag: 1-1673553181
+      tag: 2.0.1673556872
+- title: day7
+  parts:
+  - image:
+      repository: rasmus256docker/advent_of_code_day7_part1
+      tag: 2.0.1673556872
+  - image:
+      repository: rasmus256docker/advent_of_code_day7_part2
+      tag: 2.0.1673556872
+- title: day8
+  parts:
+  - image:
+      repository: rasmus256docker/advent_of_code_day8_part1
+      tag: 2.0.1673556872
+  - image:
+      repository: rasmus256docker/advent_of_code_day8_part2
+      tag: 2.0.1673556872
+- title: day9
+  parts:
+  - image:
+      repository: rasmus256docker/advent_of_code_day9_part1
+      tag: 2.0.1673556872
+  - image:
+      repository: rasmus256docker/advent_of_code_day9_part2
+      tag: 2.0.1673556872
