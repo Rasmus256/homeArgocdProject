@@ -12,14 +12,14 @@ items:
       release: {{ $.Release.Name | quote }}
       heritage: {{ $.Release.Service | quote }}
       version: {{ $.Chart.Version }}
-    {{- $str := "" }}
+    {{- $str := .title }}
     {{- range $i, $e := .parts }}
     {{- if $i }}
     {{- $str = print $str "-" }}
     {{- end }}
     {{- $str = print $str $e.image.tag }}
     {{- end }}
-    name: {{.title}} {{ $str }}
+    name: {{ $str }}
   spec:
     template:
       spec:
