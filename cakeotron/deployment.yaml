@@ -22,7 +22,7 @@ spec:
         - env:
           - name: DOTNET_HOSTBUILDER__RELOADCONFIGONCHANGE
             value: "false"
-          image: rasmus256docker/cakeotron:20220910123341
+          image: rasmus256docker/cakeotron:latest
           name: cakeotron
           ports:
             - containerPort: 80
