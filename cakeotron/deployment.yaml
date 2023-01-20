@@ -6,7 +6,7 @@ metadata:
   labels:
     io.kompose.service: cakeotron
 spec:
-  replicas: 80
+  replicas: 20
   minReadySeconds: 2
   selector:
     matchLabels:
@@ -22,7 +22,7 @@ spec:
         - env:
           - name: DOTNET_HOSTBUILDER__RELOADCONFIGONCHANGE
             value: "false"
-          image: rasmus256docker/cakeotron:latest
+          image: rasmus256docker/cakeotron:20220910123341
           name: cakeotron
           ports:
             - containerPort: 80
