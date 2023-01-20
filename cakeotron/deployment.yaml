@@ -12,7 +12,7 @@ spec:
     matchLabels:
       io.kompose.service: cakeotron
   strategy:
-    type: Recreate
+    type: RollingUpdate
   template:
     metadata:
       labels:
