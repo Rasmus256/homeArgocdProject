@@ -21,8 +21,6 @@ items:
     {{- end }}
     name: {{ $str }}
   spec:
-    strategy:
-      type: RollingUpdate
     template:
       spec:
       spec:
