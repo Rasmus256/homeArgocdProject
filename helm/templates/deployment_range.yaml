@@ -21,6 +21,8 @@ items:
     {{- end }}
     name: {{ $str }}
   spec:
+    completions: 5
+    parallelism: 1
     template:
       spec:
       spec:
