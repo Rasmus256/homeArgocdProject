@@ -25,6 +25,14 @@ data:
         api_key: !secret steamapikey
         accounts: 
           - 76561197983627921
+      - platform: statistics
+        entity_id: sensor.eloverblik_energy_total
+        name: Eloverblik Monthly Statistics
+        sampling_size: 50
+        state_characteristic: mean
+        max_age:
+            days: 30
+
     binary_sensor:
       - platform: ping
         host: 192.168.87.183
