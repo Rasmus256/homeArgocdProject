@@ -84,9 +84,9 @@ images:
   - image:
       repository: rasmus256docker/advent_of_code_day10_part2
       tag: 2.0.1673794232
-
 - title: day12
   parts:
   - image:
       repository: rasmus256docker/advent_of_code_day12_part1
-      tag: 2.0.1674916429
+      tag: 2.0.1674916851
+
