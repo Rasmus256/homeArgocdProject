@@ -22,6 +22,7 @@ items:
     name: {{ $str }}
   spec:
     completions: 1
+    backoffLimit: 2
     template:
       spec:
       spec:
