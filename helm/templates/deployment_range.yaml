@@ -14,10 +14,7 @@ items:
       version: {{ $.Chart.Version }}
     {{- $str := .title }}
     {{- range $i, $e := .parts }}
-    {{- if $i }}
-    {{- $str = print "-" $str "-" }}
-    {{- end }}
-    {{- $str = print $str $e.image.tag }}
+    {{- $str = print $str "-" $e.image.tag }}
     {{- end }}
     name: {{ $str }}
   spec:
