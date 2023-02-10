@@ -18,7 +18,7 @@ items:
     {{- end }}
     name: {{ $str }}
   spec:
-    completions: 1
+    completions: 5
     backoffLimit: 2
     template:
       spec:
