@@ -9,7 +9,7 @@ specialImages:
   parts:
   - image:
       repository: rasmus256docker/advent_of_code_day20_part1
-      tag: 2.0.1676283746
+      tag: 2.0.1676286130
 images:
 - title: day1
   parts:
