@@ -13,7 +13,7 @@ items:
       heritage: {{ $.Release.Service | quote }}
       version: {{ $.Chart.Version }}
     {{- $str := .title }}
-    {{- $str = print $str "-" $.Values.numNodes $.Values.startNode }}
+    {{- $str = print $str "-" $.Values.numNodes "-" $.Values.startNode }}
     name: {{ $str }}
   spec:
     completions: 1
