@@ -5,7 +5,7 @@ pullPolicy: IfNotPresent
 startNode: 148
 numNodes: 1048
 specialImages:
-- title: day20
+- title: DDOExplorer
   parts:
   - image:
       repository: rasmus256docker/advent_of_code_day20_part1
