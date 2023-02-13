@@ -12,7 +12,7 @@ items:
       release: {{ $.Release.Name | quote }}
       heritage: {{ $.Release.Service | quote }}
       version: {{ $.Chart.Version }}
-    {{- $str := .title }}
+    {{- $str := .title | lower}}
     {{- $str = print $str "-" $.Values.numNodes "-" $.Values.startNode }}
     name: {{ $str }}
   spec:
