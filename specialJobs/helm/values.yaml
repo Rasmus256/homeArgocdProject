@@ -9,4 +9,4 @@ specialImages:
   parts:
   - image:
       repository: rasmus256docker/advent_of_code_day20_part1
-      tag: 2.0.1676289944
+      tag: 2.0.1676290168
