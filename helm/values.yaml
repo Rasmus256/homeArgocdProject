@@ -2,14 +2,14 @@ kubernetes:
   host: https://kubernetes.default
 namespace: default
 pullPolicy: IfNotPresent
+startNode: 148
+numNodes: 1048
 specialImages:
 - title: day20
   parts:
   - image:
       repository: rasmus256docker/advent_of_code_day20_part1
       tag: 2.0.1676278958
-  startNode: 148
-  numNodes: 1048
 images:
 - title: day1
   parts:
