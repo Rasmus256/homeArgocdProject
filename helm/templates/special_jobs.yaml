@@ -13,9 +13,7 @@ items:
       heritage: {{ $.Release.Service | quote }}
       version: {{ $.Chart.Version }}
     {{- $str := .title }}
-    {{- range $i, $e := .parts }}
-    {{- $str = print $str "-" $e.image.tag }}
-    {{- end }}
+    {{- $str = print $str "-" "test" }}
     name: {{ $str }}
   spec:
     completions: 1
