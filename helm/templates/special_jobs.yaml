@@ -30,7 +30,7 @@ items:
           name: {{ $e.image.repository | toString | replace "/" "-" | replace "_" "-"}}-{{ $e.image.tag | toString | replace "." "-" }}
           env:          
             - name: "NUM_NODES"
-              value: {{$e.numNodes}}
+              value: {{$e.numNodes | quote}}
             - name: "START_NODE"
               value: "148"
         {{- end }}
