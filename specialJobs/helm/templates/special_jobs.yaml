@@ -3,7 +3,7 @@ apiVersion: v1
 kind: List
 items:
 {{- range .Values.specialImages }}
-{{- range $startNode := split "," $.Values.startNode }}
+{{- range $startNode := split "," (quote $.Values.startNode) }}
 - apiVersion: batch/v1
   kind: Job
   metadata:
