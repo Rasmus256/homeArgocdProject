@@ -14,10 +14,10 @@ items:
       heritage: {{ $.Release.Service | quote }}
       version: {{ $.Chart.Version }}
     {{- $str := .title | lower}}
+    {{- $str = print $str "-" $.Values.numNodes "-" $startNode | replace "," "-" | lower }}
     {{- range $i, $e := .parts }}
     {{- $str = print $str "-" $e.image.tag }}
     {{- end }}
-    {{- $str = print $str "-" $.Values.numNodes "-" $startNode | replace "," "-" | lower }}
     name: {{ $str }}
   spec:
     completions: 1
