@@ -12,8 +12,11 @@ items:
       release: {{ $.Release.Name | quote }}
       heritage: {{ $.Release.Service | quote }}
       version: {{ $.Chart.Version }}
-    {{- $str := .title "-" .parts[0].image.tag | lower}}
-    {{- $str = print $str "-" $.Values.numNodes "-" $.Values.startNode | replace "," "-"  }}
+    {{- $str := .title | lower}}
+    {{- range $i, $e := .parts }}
+    {{- $str = print $str "-" $e.image.tag }}
+    {{- end }}
+    {{- $str = print $str "-" $.Values.numNodes "-" $.Values.startNode | replace "," "-" | lower }}
     name: {{ $str }}
   spec:
     completions: 1
