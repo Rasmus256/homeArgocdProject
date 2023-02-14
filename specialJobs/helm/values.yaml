@@ -3,7 +3,7 @@ kubernetes:
 namespace: default
 pullPolicy: IfNotPresent
 startNode: "185"
-numNodes: 1048
+numNodes: 2003
 specialImages:
 - title: DDOExplorer
   parts:
