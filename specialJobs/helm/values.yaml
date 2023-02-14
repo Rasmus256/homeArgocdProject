@@ -8,5 +8,5 @@ specialImages:
 - title: DDOExplorer
   parts:
   - image:
-      repository: rasmus256docker/advent_of_code_day20_part1
-      tag: 2.0.1676362280
+      repository: rasmus256docker/ddoexplorer
+      tag: latest
