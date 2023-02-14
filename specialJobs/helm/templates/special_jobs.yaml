@@ -17,7 +17,7 @@ items:
     {{- range $i, $e := .parts }}
     {{- $str = print $str "-" $e.image.tag }}
     {{- end }}
-    {{- $str = print $str "-" $.Values.numNodes "-" $.Values.startNode | replace "," "-" | lower }}
+    {{- $str = print $str "-" $.Values.numNodes "-" $startNode | replace "," "-" | lower }}
     name: {{ $str }}
   spec:
     completions: 1
