@@ -2,7 +2,7 @@ kubernetes:
   host: https://kubernetes.default
 namespace: default
 pullPolicy: IfNotPresent
-startNode: 185
+startNode: "185"
 numNodes: 1048
 specialImages:
 - title: DDOExplorer
