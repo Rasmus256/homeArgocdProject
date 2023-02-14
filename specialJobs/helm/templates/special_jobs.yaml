@@ -34,7 +34,7 @@ items:
             - name: "NUM_NODES"
               value: {{$.Values.numNodes | quote}}
             - name: "START_NODE"
-              value: {{$startNode}}
+              value: {{$startNode |quote}}
         {{- end }}
         restartPolicy: Never
         
