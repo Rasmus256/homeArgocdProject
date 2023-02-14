@@ -9,4 +9,4 @@ specialImages:
   parts:
   - image:
       repository: rasmus256docker/ddoexplorer
-      tag: latest
+      tag: 20230214-101221
