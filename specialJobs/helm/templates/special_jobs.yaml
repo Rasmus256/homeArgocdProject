@@ -14,7 +14,7 @@ items:
       heritage: {{ $.Release.Service | quote }}
       version: {{ $.Chart.Version }}
     {{- $str := .title | lower}}
-    {{- $str = print $str "-" $.Values.numNodes "-" $startNode | replace "," "-" | lower }}
+    {{- $str = print $str "-" $startNode "-" $.Values.numNodes | replace "," "-" | lower }}
     {{- range $i, $e := .parts }}
     {{- $str = print $str "-" $e.image.tag }}
     {{- end }}
