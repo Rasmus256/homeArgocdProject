@@ -39,4 +39,4 @@ items:
         restartPolicy: Never
         
 {{- end }}    
-{{ -end }}
+{{- end }}
