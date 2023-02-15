@@ -35,6 +35,8 @@ items:
               value: {{$.Values.numNodes | quote}}
             - name: "START_NODE"
               value: {{$startNode |quote}}
+            - name: "BLACKLIST"
+              value: {{$.Values.blacklistedEdges |quote}}
         {{- end }}
         restartPolicy: Never
         
