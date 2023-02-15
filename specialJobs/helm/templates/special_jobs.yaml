@@ -15,7 +15,7 @@ items:
       version: {{ $.Chart.Version }}
     {{- $str := .title | lower}}
     {{- $postfix := $startNode "-" $.Values.numNodes "-" $.Values.blacklistedEdges | adler32sum  }}
-    {{- $str = print $str "-" postfix | replace "," "-" | lower }}
+    {{- $str = print $str "-" $postfix | replace "," "-" | lower }}
     {{- range $i, $e := .parts }}
     {{- $str = print $str "-" $e.image.tag }}
     {{- end }}
