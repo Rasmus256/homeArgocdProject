@@ -4,6 +4,7 @@ namespace: default
 pullPolicy: IfNotPresent
 startNode: "185"
 numNodes: 2003
+blacklistedEdges: "0,0;1,1"
 specialImages:
 - title: DDOExplorer
   parts:
