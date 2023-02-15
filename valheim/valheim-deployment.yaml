@@ -54,10 +54,10 @@ spec:
             - containerPort: 9001
           resources: 
             limits:
-              cpu: 2 
+              cpu: 2500m 
               memory: 4000Mi
             requests:
-              cpu: 2
+              cpu: 2500m
               memory: 3500Mi
           volumeMounts:
             - mountPath: /config
