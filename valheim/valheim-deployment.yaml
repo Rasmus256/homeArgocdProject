@@ -44,6 +44,8 @@ spec:
               value: "30695"
             - name: SUPERVISOR_HTTP
               value: "true"
+            - name: VALHEIM_PLUS
+              value: "true"
           image: lloesche/valheim-server:latest
           name: valheim
           ports:
