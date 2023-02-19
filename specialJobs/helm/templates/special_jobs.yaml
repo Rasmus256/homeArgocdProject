@@ -40,6 +40,8 @@ items:
               value: {{$.Values.blacklistedEdges |quote}}
         {{- end }}
         restartPolicy: Never
+        nodeSelector:
+          kubernetes.io/arch: amd64
         
 {{- end }}    
 {{- end }}
