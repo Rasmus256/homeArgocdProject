@@ -26,7 +26,7 @@ items:
       spec:
       spec:
         containers:
-        {{- range $i, $e := $.parts }}
+        {{- range $i, $e := $.Values.parts }}
         - image: "{{$e.image.repository }}:{{$e.image.tag | toString }}"
           imagePullPolicy: {{ $.Values.pullPolicy }}
           name: {{ $e.image.repository | toString | replace "/" "-" | replace "_" "-"}}-{{ $e.image.tag | toString | replace "." "-" }}
