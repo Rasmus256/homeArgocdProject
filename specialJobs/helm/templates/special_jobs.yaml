@@ -12,7 +12,7 @@ items:
       release: {{ $.Release.Name | quote }}
       heritage: {{ $.Release.Service | quote }}
       version: {{ $.Chart.Version }}
-    {{- $str := $.title | lower}}
+    {{- $str := .title | lower}}
     {{- $postfix := print $startNode "-" $.Values.numNodes "-" $.Values.blacklistedEdges | adler32sum  }}
     {{- $str = print $str "-" $startNode "-" $postfix | replace "," "-" | lower }}
     {{- range $i, $e := .parts }}
