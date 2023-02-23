@@ -26,9 +26,9 @@ items:
       spec:
       spec:
         containers:
-        - image: "{{$Values.image.repository }}:{{$$Values.image.tag | toString }}"
+        - image: "{{$.Values.image.repository }}:{{$.Values.image.tag | toString }}"
           imagePullPolicy: {{ $.Values.pullPolicy }}
-          name: {{ $$Values.image.repository | toString | replace "/" "-" | replace "_" "-"}}-{{ $$Values.image.tag | toString | replace "." "-" }}
+          name: {{ $.Values.image.repository | toString | replace "/" "-" | replace "_" "-"}}-{{ $.Values.image.tag | toString | replace "." "-" }}
           env:          
             - name: "NUM_NODES"
               value: {{$.Values.numNodes | quote}}
