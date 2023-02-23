@@ -24,7 +24,6 @@ items:
     backoffLimit: 2
     template:
       spec:
-      spec:
         containers:
         - image: "{{$e.image.repository }}:{{$e.image.tag | toString }}"
           imagePullPolicy: {{ $.Values.pullPolicy }}
