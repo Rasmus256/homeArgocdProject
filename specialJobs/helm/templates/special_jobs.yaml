@@ -15,7 +15,7 @@ items:
     {{- $str := $.Values.title | lower}}
     {{- $postfix := print $startNode "-" $.Values.numNodes "-" $.Values.blacklistedEdges | adler32sum  }}
     {{- $str = print $str "-" $startNode "-" $postfix | replace "," "-" | lower }}
-    {{- range $i, $e := .parts }}
+    {{- range $i, $e := $.Values.parts }}
     {{- $str = print $str "-" $e.image.tag }}
     {{- end }}
     name: {{ $str }}
