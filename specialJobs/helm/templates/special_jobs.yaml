@@ -26,7 +26,6 @@ items:
       spec:
       spec:
         containers:
-        {{- range $i, $e := $.Values.parts }}
         - image: "{{$e.image.repository }}:{{$e.image.tag | toString }}"
           imagePullPolicy: {{ $.Values.pullPolicy }}
           name: {{ $e.image.repository | toString | replace "/" "-" | replace "_" "-"}}-{{ $e.image.tag | toString | replace "." "-" }}
@@ -37,7 +36,6 @@ items:
               value: {{$startNode |quote}}
             - name: "BLACKLIST"
               value: {{$.Values.blacklistedEdges |quote}}
-        {{- end }}
         restartPolicy: Never
         nodeSelector:
           kubernetes.io/arch: amd64
