@@ -17,8 +17,8 @@ items:
     {{- $postfix = print $postfix "-" $e.image.tag }}
     {{- end }}
     {{- $postfix := $postfix | adler32sum }}
-    {{- $str := .title}}
-    name: {{ $str "-" $postfix }}
+    {{- $str := print .title "-" $postfix}}
+    name: {{ $str  }}
   spec:
     completions: 1
     backoffLimit: 2
