@@ -12,11 +12,12 @@ items:
       release: {{ $.Release.Name | quote }}
       heritage: {{ $.Release.Service | quote }}
       version: {{ $.Chart.Version }}
-    {{- $str := .title }}
+    {{- $postfix := "" }}
     {{- range $i, $e := .parts }}
-    {{- $str = print $str "-" $e.image.tag }}
+    {{- $postfix = print $postfix "-" $e.image.tag }}
     {{- end }}
-    name: {{ $str }}
+    {{- $postfix := $postfix | adler32sum }}
+    name: {{ .title "-" $postfix }}
   spec:
     completions: 1
     backoffLimit: 2
