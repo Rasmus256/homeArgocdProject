@@ -12,7 +12,7 @@ items:
       release: {{ $.Release.Name | quote }}
       heritage: {{ $.Release.Service | quote }}
       version: {{ $.Chart.Version }}
-    {{- $postfix := $.Values.completions }}
+    {{- $postfix := print $.Values.completions "-" $.Values.parallelism }}
     {{- range $i, $e := .parts }}
     {{- $postfix = print $postfix "-" $e.image.tag }}
     {{- end }}
@@ -21,6 +21,7 @@ items:
     name: {{ $str  }}
   spec:
     completions: {{ $.Values.completions }}
+    parallelism: {{ $.Values.parallelism }}
     backoffLimit: 2
     template:
       spec:
