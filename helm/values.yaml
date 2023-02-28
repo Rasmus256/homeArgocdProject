@@ -3,6 +3,7 @@ kubernetes:
 namespace: default
 pullPolicy: IfNotPresent
 completions: 1
+parallelism: 1
 images:
 - title: day1
   parts:
