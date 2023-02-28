@@ -20,7 +20,7 @@ items:
     {{- $str := print .title "-" $postfix}}
     name: {{ $str  }}
   spec:
-    completions: 5
+    completions: 1
     backoffLimit: 2
     template:
       spec:
