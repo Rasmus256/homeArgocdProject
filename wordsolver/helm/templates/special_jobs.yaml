@@ -10,7 +10,7 @@ metadata:
     version: {{ $.Chart.Version }}
   {{- $str := $.Values.title | lower}}
   {{- $str = print $str "-" $.Values.image.tag | adler32sum  }}
-  name: {{ $str }}
+  name: {{ $str | quote}}
 spec:
   completions: 1
   backoffLimit: 2
