@@ -2,9 +2,7 @@ kubernetes:
   host: https://kubernetes.default
 namespace: default
 pullPolicy: IfNotPresent
-specialImages:
-- title: WordSolver
-  parts:
-  - image:
-      repository: rasmus256docker/advent_of_code_day24_part1
-      tag: 2.1.287
+title: WordSolver
+image:
+  repository: rasmus256docker/advent_of_code_day24_part1
+  tag: 2.1.287
