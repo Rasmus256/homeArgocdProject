@@ -28,11 +28,11 @@ spec:
         name: {{ $.Values.image.repository | toString | replace "/" "-" | replace "_" "-"  | adler32sum}}-{{ $.Values.image.tag | toString | replace "." "-"  | adler32sum }}
         resources: 
           limits:
-            cpu: 1 
-            memory: 1Gi
+            cpu: 10m 
+            memory: 5Mi
           requests:
-            cpu: 1
-            memory: 1Gi
+            cpu: 10m
+            memory: 5Mi
         env:          
           - name: "FIRST"
             value: {{$.Values.first | quote}}
