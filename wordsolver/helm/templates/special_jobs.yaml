@@ -12,8 +12,8 @@ metadata:
   {{- $str = print $str "-" $.Values.image.tag | adler32sum  }}
   name: {{ $str | quote}}
 spec:
-  completions: $.Values.completions
-  parallelism: $.Values.parallelism
+  completions: {{$.Values.completions}}
+  parallelism: {{$.Values.parallelism}}
   backoffLimit: 2
   template:
     spec:
