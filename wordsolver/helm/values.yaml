@@ -6,6 +6,8 @@ title: WordSolver
 first: "send"
 second: "more"
 third: "money"
+completions: 1
+parallelism: 1
 image:
   repository: rasmus256docker/advent_of_code_day24_part1
   tag: 2.1.287
