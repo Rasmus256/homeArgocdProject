@@ -22,6 +22,13 @@ spec:
       - image: "{{$.Values.image.repository }}:{{$.Values.image.tag | toString }}"
         imagePullPolicy: {{ $.Values.pullPolicy }}
         name: {{ $.Values.image.repository | toString | replace "/" "-" | replace "_" "-"  | adler32sum}}-{{ $.Values.image.tag | toString | replace "." "-"  | adler32sum }}
+        resources: 
+          limits:
+            cpu: 50m 
+            memory: 10Mi
+          requests:
+            cpu: 30m
+            memory: 7Mi
         env:          
           - name: "FIRST"
             value: {{$.Values.first | quote}}
