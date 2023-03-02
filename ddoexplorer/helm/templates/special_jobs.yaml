@@ -1,0 +1,37 @@
+---
+apiVersion: v1
+kind: List
+items:
+{{- range .Values.specialImages }}
+- apiVersion: batch/v1
+  kind: Job
+  metadata:
+    labels:
+      app: helloworld
+      chart: "{{ $.Chart.Name }}-{{ $.Chart.Version }}"
+      release: {{ $.Release.Name | quote }}
+      heritage: {{ $.Release.Service | quote }}
+      version: {{ $.Chart.Version }}
+    {{- $str := .title | lower}}
+    {{- $str = print $str "-" $.Values.numNodes "-" $.Values.startNode | replace "," "-"  }}
+    name: {{ $str }}
+  spec:
+    completions: 1
+    backoffLimit: 2
+    template:
+      spec:
+      spec:
+        containers:
+        {{- range $i, $e := .parts }}
+        - image: "{{$e.image.repository }}:{{$e.image.tag | toString }}"
+          imagePullPolicy: {{ $.Values.pullPolicy }}
+          name: {{ $e.image.repository | toString | replace "/" "-" | replace "_" "-"}}-{{ $e.image.tag | toString | replace "." "-" }}
+          env:          
+            - name: "NUM_NODES"
+              value: {{$.Values.numNodes | quote}}
+            - name: "START_NODE"
+              value: {{$.Values.startNode | quote}}
+        {{- end }}
+        restartPolicy: Never
+        
+{{- end }}    
