@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: mc2
-  namespace: gameservers
+  namespace: argocd
   labels:
     "category": "{{$.Values.spec.labels.category}}"
 spec:
