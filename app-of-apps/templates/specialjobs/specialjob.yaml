@@ -5,8 +5,8 @@ metadata:
   namespace: argocd
 spec:
   destination:
-    name: ddoexplorer
     namespace: argocd
+    server: 'https://kubernetes.default.svc'
   source:
     path: ddoexplorer/helm
     repoURL: 'git@github.com:Rasmus256/homeArgocdProject.git'
