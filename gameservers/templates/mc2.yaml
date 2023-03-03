@@ -2,12 +2,12 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: mc2
-  namespace: argocd
+  namespace: gameservers
   labels:
     "category": "{{$.Values.spec.labels.category}}"
 spec:
   destination:
-    namespace: argocd
+    namespace: gameservers
     server: 'https://kubernetes.default.svc'
   source:
     path: gameservers/mc2
