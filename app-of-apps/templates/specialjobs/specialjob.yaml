@@ -1,16 +1,16 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: guestbook
-  namespace: argocd
+  name: specialJobs2
+  namespace: ddoexplorer
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: argocd
+    namespace: ddoexplorer
     server: {{ .Values.spec.destination.server }}
   project: default
   source:
-    path: specialJobs
+    path: specialJobs/helm
     repoURL: https://github.com/Rasmus256/homeArgocdProject
     targetRevision: HEAD
