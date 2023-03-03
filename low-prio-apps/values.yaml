@@ -1,5 +1,5 @@
 spec:
   destination:
     server: https://kubernetes.default.svc
-  tags:
+  labels:
     category: low-prio
