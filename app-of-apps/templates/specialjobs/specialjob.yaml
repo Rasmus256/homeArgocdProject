@@ -2,12 +2,12 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: specialJobs2
-  namespace: ddoexplorer
+  namespace: ddoexplorer2
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: ddoexplorer
+    namespace: ddoexplorer2
     server: {{ .Values.spec.destination.server }}
   project: default
   source:
