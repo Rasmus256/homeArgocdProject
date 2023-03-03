@@ -1,6 +1,6 @@
 kubernetes:
   host: https://kubernetes.default
-namespace: default
+namespace: hass
 pullPolicy: IfNotPresent
 image:
     repository: homeassistant/home-assistant
