@@ -8,7 +8,7 @@ spec:
     namespace: argocd
     server: 'https://kubernetes.default.svc'
   source:
-    path: cakeotron
+    path: low-prio-apps/cakeotron
     repoURL: 'git@github.com:Rasmus256/homeArgocdProject.git'
     targetRevision: HEAD
   project: default

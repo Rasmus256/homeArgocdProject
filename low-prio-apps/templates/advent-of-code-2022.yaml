@@ -8,7 +8,7 @@ spec:
     namespace: argocd
     server: 'https://kubernetes.default.svc'
   source:
-    path: adventofcode-2022
+    path: low-prio-apps/adventofcode-2022
     repoURL: 'git@github.com:Rasmus256/homeArgocdProject.git'
     targetRevision: HEAD
   project: default
