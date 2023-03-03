@@ -2,10 +2,10 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: advent-of-code-2022
-  namespace: adventofcode
+  namespace: argocd
 spec:
   destination:
-    namespace: adventofcode
+    namespace: argocd
     server: 'https://kubernetes.default.svc'
   source:
     path: adventofcode-2022
