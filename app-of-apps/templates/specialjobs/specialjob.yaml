@@ -1,16 +1,20 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: specialjobs2
-  namespace: ddoexplorer2
-  finalizers:
-  - resources-finalizer.argocd.argoproj.io
+  name: ddoexplorer
 spec:
   destination:
+    name: ''
     namespace: ddoexplorer2
-    server: {{ .Values.spec.destination.server }}
-  project: default
+    server: 'https://kubernetes.default.svc'
   source:
-    path: specialJobs/helm
-    repoURL: https://github.com/Rasmus256/homeArgocdProject
+    path: ddoexplorer/helm
+    repoURL: 'git@github.com:Rasmus256/homeArgocdProject.git'
     targetRevision: HEAD
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
