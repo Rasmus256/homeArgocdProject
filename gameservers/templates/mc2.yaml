@@ -7,7 +7,7 @@ metadata:
     "category": "{{$.Values.spec.labels.category}}"
 spec:
   destination:
-    namespace: gameservers
+    namespace: minecraft
     server: 'https://kubernetes.default.svc'
   source:
     path: gameservers/mc2
