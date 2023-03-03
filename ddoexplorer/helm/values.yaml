@@ -4,9 +4,8 @@ namespace: default
 pullPolicy: IfNotPresent
 startNode: "8,18,148,904,504"
 numNodes: 2003
-specialImages:
-- title: DDOExplorer
-  parts:
-  - image:
-      repository: rasmus256docker/advent_of_code_day20_part1
-      tag: 2.0.1676293399
+blacklistedEdges: "0,0;1,1"
+title: DDOExplorer
+image:
+  repository: rasmus256docker/ddoexplorer
+  tag: 20230215-113358
