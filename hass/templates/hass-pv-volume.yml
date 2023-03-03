@@ -24,6 +24,13 @@ spec:
 ---
 
 apiVersion: v1
+kind: Namespace
+metadata:
+  name: hass
+
+---
+
+apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: postgres-pv-claim
