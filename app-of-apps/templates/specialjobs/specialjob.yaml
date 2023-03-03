@@ -4,7 +4,7 @@ metadata:
   name: ddoexplorer
 spec:
   destination:
-    name: 'testappofapps'
+    name: ddoexplorer
     namespace: ddoexplorer2
     server: 'https://kubernetes.default.svc'
   source:
