@@ -48,10 +48,10 @@ spec:
               protocol: UDP
           resources:
             requests:
-              memory: "600Mi"
+              memory: "1300Mi"
               cpu: "1200m"
             limits:
-              memory: "600Mi"
+              memory: "1300Mi"
               cpu: "1200m"
           volumeMounts:
             - mountPath: /data
