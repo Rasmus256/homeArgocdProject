@@ -52,7 +52,7 @@ spec:
               cpu: "400m"
             limits:
               memory: "1300Mi"
-              cpu: "1200m"
+              cpu: "2000m"
           volumeMounts:
             - mountPath: /data
               name: mcbedrock-storage1
