@@ -48,8 +48,8 @@ spec:
               protocol: UDP
           resources:
             requests:
-              memory: "1300Mi"
-              cpu: "1200m"
+              memory: "600Mi"
+              cpu: "400m"
             limits:
               memory: "1300Mi"
               cpu: "1200m"
