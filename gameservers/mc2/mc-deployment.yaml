@@ -49,10 +49,10 @@ spec:
           resources:
             requests:
               memory: "600Mi"
-              cpu: "700m"
+              cpu: "1200m"
             limits:
               memory: "600Mi"
-              cpu: "700m"
+              cpu: "1200m"
           volumeMounts:
             - mountPath: /data
               name: mcbedrock-storage1
