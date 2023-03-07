@@ -14,5 +14,5 @@ completions: 1
 parallelism: 1
 image:
   repository: rasmus256docker/wordsolver
-  tag: 16
+  tag: 17
   
