@@ -9,6 +9,7 @@ inputs:
   - "much"
   - "more"
   - "money"
+reportFreq: 100000
 completions: 1
 parallelism: 1
 image:
