@@ -36,11 +36,5 @@ spec:
         env:
           - name: "INPUTS"
             value: {{$.Values.inputs | quote}}
-          - name: "FIRST"
-            value: {{index $.Values.inputs 0 | quote}}
-          - name: "SECOND"
-            value: {{index $.Values.inputs 1 | quote}}
-          - name: "THIRD"
-            value: {{index $.Values.inputs 2 | quote}}
       restartPolicy: Never
       
