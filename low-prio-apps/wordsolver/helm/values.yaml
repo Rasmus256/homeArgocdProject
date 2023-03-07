@@ -5,6 +5,8 @@ pullPolicy: IfNotPresent
 title: WordSolver
 inputs:
   - "send"
+  - "me"
+  - "many"
   - "more"
   - "money"
 completions: 1
