@@ -5,8 +5,6 @@ pullPolicy: IfNotPresent
 title: WordSolver
 inputs:
   - "send"
-  - "many"
-  - "much"
   - "more"
   - "money"
 reportFreq: 100000
