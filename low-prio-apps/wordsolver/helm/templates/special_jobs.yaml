@@ -35,10 +35,10 @@ spec:
             memory: 5Mi
         env:          
           - name: "FIRST"
-            value: {{$.Values.first | quote}}
+            value: {{$.Values.values[0] | quote}}
           - name: "SECOND"
-            value: {{$.Values.second | quote}}
+            value: {{$.Values.values[1] | quote}}
           - name: "THIRD"
-            value: {{$.Values.third | quote}}
+            value: {{$.Values.values[2] | quote}}
       restartPolicy: Never
       
