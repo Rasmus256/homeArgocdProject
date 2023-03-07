@@ -3,9 +3,10 @@ kubernetes:
 namespace: default
 pullPolicy: IfNotPresent
 title: WordSolver
-first: "send"
-second: "more"
-third: "money"
+inputs:
+  - "send"
+  - "more"
+  - "money"
 completions: 1
 parallelism: 1
 image:
