@@ -36,5 +36,7 @@ spec:
         env:
           - name: "INPUTS"
             value: {{$.Values.inputs | quote}}
+          - name: "REPORT_FREQ"
+            value: {{$.Values.reportFreq | quote}}
       restartPolicy: Never
       
