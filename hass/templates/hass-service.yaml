@@ -30,6 +30,9 @@ spec:
     http:
       paths:
       - backend:
-          serviceName: hass
+          service:
+            name: hass
+            port:
+              number: 8123
         pathType: Prefix
         path: /hass
