@@ -33,7 +33,7 @@ spec:
           service:
             name: hass
             port:
-              number: 8123
+              number: 80
         pathType: Prefix
         path: /hass
   tls:
