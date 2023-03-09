@@ -20,8 +20,9 @@ spec:
   usages:
     - server auth
     - client auth
-  emailAddresses:
-    - "Rasmus256@gmail.com"
+  # At least one of a DNS Name, URI, or IP address is required.
+  uris:
+    - spiffe://cluster.local/ns/default/sa/example
   # Issuer references are always required.
   issuerRef:
     name: letsencrypt-staging
