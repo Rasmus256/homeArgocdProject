@@ -21,8 +21,8 @@ spec:
     - server auth
     - client auth
   # At least one of a DNS Name, URI, or IP address is required.
-  uris:
-    - spiffe://cluster.local/ns/default/sa/example
+  dnsNames:
+    - hosrasmus.hopto.org
   # Issuer references are always required.
   issuerRef:
     name: letsencrypt-staging
