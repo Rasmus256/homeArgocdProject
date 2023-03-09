@@ -31,6 +31,5 @@ spec:
       paths:
       - backend:
           serviceName: hass
-          servicePort: "8123"
         pathType: Prefix
         path: /hass
