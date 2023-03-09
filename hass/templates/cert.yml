@@ -21,7 +21,7 @@ spec:
     - server auth
     - client auth
   emailAddresses:
-    - Rasmus256@gmail.com
+    - "Rasmus256@gmail.com"
   # Issuer references are always required.
   issuerRef:
     name: letsencrypt-staging
