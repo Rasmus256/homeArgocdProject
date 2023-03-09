@@ -14,7 +14,7 @@ spec:
   ports:
     - name: "4000"
       port: 4000
-      targetPort: 4000
+      targetPort: 80
   selector:
     io.kompose.service: cakeotron
 status:
