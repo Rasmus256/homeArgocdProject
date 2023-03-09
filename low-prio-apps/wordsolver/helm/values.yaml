@@ -1,0 +1,16 @@
+kubernetes:
+  host: https://kubernetes.default
+namespace: default
+pullPolicy: IfNotPresent
+title: WordSolver
+inputs:
+  - "send"
+  - "more"
+  - "money"
+reportFreq: 100000
+completions: 1
+parallelism: 1
+image:
+  repository: rasmus256docker/wordsolver
+  tag: 17
+  

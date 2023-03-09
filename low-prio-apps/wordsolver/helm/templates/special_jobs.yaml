@@ -1,0 +1,43 @@
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  labels:
+    app: wordsolver
+    chart: "{{ $.Chart.Name }}-{{ $.Chart.Version }}"
+    release: {{ $.Release.Name | quote }}
+    heritage: {{ $.Release.Service | quote }}
+    version: {{ $.Chart.Version }}
+  {{- $str := $.Values.title | lower}}
+  {{- $str = print $str $.Values.completions}}
+  {{- $str = print $str $.Values.parallelism}}
+  {{- $str = print $str "-" $.Values.image.tag }}
+  {{- $str = print $str $.Values.inputs }}
+  {{- $str = print $str $.Values.reportFreq }}
+  {{- $str = print $str | adler32sum  }}
+  name: {{ $str | quote}}
+spec:
+  completions: {{$.Values.completions}}
+  parallelism: {{$.Values.parallelism}}
+  backoffLimit: 2
+  template:
+    spec:
+    spec:
+      containers:
+      - image: "{{$.Values.image.repository }}:{{$.Values.image.tag | toString }}"
+        imagePullPolicy: {{ $.Values.pullPolicy }}
+        name: {{ $.Values.image.repository | toString | replace "/" "-" | replace "_" "-"  | adler32sum}}-{{ $.Values.image.tag | toString | replace "." "-"  | adler32sum }}
+        resources: 
+          limits:
+            cpu: 500m 
+            memory: 5Mi
+          requests:
+            cpu: 10m
+            memory: 5Mi
+        env:
+          - name: "INPUTS"
+            value: {{$.Values.inputs | quote}}
+          - name: "REPORT_FREQ"
+            value: {{$.Values.reportFreq | quote}}
+      restartPolicy: Never
+      

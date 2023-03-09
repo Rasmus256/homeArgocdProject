@@ -1,7 +1,7 @@
 kubernetes:
   host: https://kubernetes.default
-namespace: default
+namespace: hass
 pullPolicy: IfNotPresent
 image:
     repository: homeassistant/home-assistant
-    tag: 2023.2.4
+    tag: 2023.3.1

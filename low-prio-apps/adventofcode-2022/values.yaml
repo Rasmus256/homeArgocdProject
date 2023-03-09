@@ -2,6 +2,8 @@ kubernetes:
   host: https://kubernetes.default
 namespace: default
 pullPolicy: IfNotPresent
+completions: 1
+parallelism: 1
 images:
 - title: day1
   parts:
@@ -103,15 +105,15 @@ images:
   parts:
   - image:
       repository: rasmus256docker/advent_of_code_day13_part1
-      tag: 2.0.1675108250
+      tag: 2.0.1677524119
   - image:
       repository: rasmus256docker/advent_of_code_day13_part2
-      tag: 2.0.1675108250
+      tag: 2.0.1677527731
 - title: day14
   parts:
   - image:
       repository: rasmus256docker/advent_of_code_day14_part1
-      tag: 2.0.1675108250
+      tag: 2.1.286
   - image:
       repository: rasmus256docker/advent_of_code_day14_part2
       tag: 2.0.1675108250
@@ -191,7 +193,7 @@ images:
   parts:
   - image:
       repository: rasmus256docker/advent_of_code_day24_part1
-      tag: 2.0.1675108250
+      tag: 2.1.290
   - image:
       repository: rasmus256docker/advent_of_code_day24_part2
       tag: 2.0.1675108250

@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: wordsolver
+  namespace: argocd
+  labels:
+    "category": "{{$.Values.spec.labels.category}}"
+spec:
+  destination:
+    namespace: wordsolver
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: low-prio-apps/wordsolver/helm
+    repoURL: 'git@github.com:Rasmus256/homeArgocdProject.git'
+    targetRevision: HEAD
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
