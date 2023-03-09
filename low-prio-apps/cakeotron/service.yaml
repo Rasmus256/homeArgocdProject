@@ -19,20 +19,3 @@ spec:
     io.kompose.service: cakeotron
 status:
   loadBalancer: {}
----
-
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: cake-ingress
-spec:
-  rules:
-  - http:
-      paths:
-      - path: /cake
-        pathType: Prefix
-        backend:
-          service:
-            name: cakeotron
-            port: 
-              number: 4000
