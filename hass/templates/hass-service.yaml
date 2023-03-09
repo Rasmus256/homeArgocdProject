@@ -13,9 +13,6 @@ spec:
     - name: "8123"
       port: 8123
       targetPort: 8123
-    - name: "80"
-      port: 80
-      targetPort: 8123
   selector:
     io.kompose.service: hass
 status:
@@ -36,9 +33,9 @@ spec:
           service:
             name: hass
             port:
-              number: 80
+              number: 8123
         pathType: Prefix
-        path: /hass
+        path: /
   tls:
   - secretName: hasscert-tls
     hosts:
