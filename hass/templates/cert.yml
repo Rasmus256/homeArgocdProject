@@ -23,7 +23,6 @@ spec:
   # At least one of a DNS Name, URI, or IP address is required.
   dnsNames:
     - hosrasmus.hopto.org
-    - www.hosrasmus.hopto.org
   # Issuer references are always required.
   issuerRef:
     name: letsencrypt-staging
