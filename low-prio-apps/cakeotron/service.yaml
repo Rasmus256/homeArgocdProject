@@ -13,9 +13,30 @@ spec:
   type: LoadBalancer
   ports:
     - name: "80"
-      port: 4000
+      port: 80
       targetPort: 80
   selector:
     io.kompose.service: cakeotron
 status:
   loadBalancer: {}
+---
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: cake-ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /cake
+        pathType: Prefix
+        backend:
+          service:
+            name: cakeotron
+            port: 
+              number: 80
+  tls:
+  - secretName: cakecert-tls
+    hosts:
+      - hosrasmus.hopto.org
