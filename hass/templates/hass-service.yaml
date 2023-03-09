@@ -36,3 +36,7 @@ spec:
               number: 8123
         pathType: Prefix
         path: /hass
+  tls:
+  - secretName: hasscert-tls
+    hosts:
+      - hosrasmus.hopto.org
