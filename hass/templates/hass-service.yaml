@@ -29,7 +29,7 @@ metadata:
   name: hass-ingress
 spec:
   rules:
-  - host: hosrasmus.hopto.org
+  - host: www.hosrasmus.hopto.org
     http:
       paths:
       - backend:
@@ -42,4 +42,4 @@ spec:
   tls:
   - secretName: hasscert-tls
     hosts:
-      - hosrasmus.hopto.org
+      - www.hosrasmus.hopto.org
