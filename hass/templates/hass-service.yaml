@@ -36,6 +36,15 @@ spec:
               number: 8123
         pathType: Prefix
         path: /lovelace
+    https:
+      paths:
+      - backend:
+          service:
+            name: hass
+            port:
+              number: 8123
+        pathType: Prefix
+        path: /lovelace
   tls:
   - secretName: hasscert-tls
     hosts:
