@@ -17,26 +17,3 @@ spec:
     io.kompose.service: hass
 status:
   loadBalancer: {}
-
----
-
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: hass-ingress
-spec:
-  rules:
-  - host: hosrasmus.hopto.org
-    http:
-      paths:
-      - backend:
-          service:
-            name: hass
-            port:
-              number: 8123
-        pathType: Prefix
-        path: /
-  tls:
-  - secretName: hasscert-tls
-    hosts:
-      - hosrasmus.hopto.org
