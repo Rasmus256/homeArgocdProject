@@ -2,26 +2,19 @@ apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: cakecert
-  namespace: default
+  namespace: cake
 spec:
   # Secret names are always required.
   secretName: cakecert-tls
-
   duration: 2160h0m0s # 90d
   renewBefore: 360h0m0s # 15d
-  subject:
-    organizations:
-      - jetstack
-  privateKey:
-    algorithm: RSA
-    encoding: PKCS1
-    size: 2048
   usages:
     - server auth
     - client auth
   # At least one of a DNS Name, URI, or IP address is required.
   dnsNames:
     - hosrasmus.hopto.org
+    - "hosrasmus.hopto.org"
   # Issuer references are always required.
   issuerRef:
     name: letsencrypt-prod
