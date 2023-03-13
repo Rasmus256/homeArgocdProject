@@ -33,4 +33,4 @@ spec:
           service:
             name: mcbedrock
             port: 
-              number: 8123
+              number: 19132
