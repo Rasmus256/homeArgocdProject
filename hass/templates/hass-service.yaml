@@ -28,7 +28,7 @@ spec:
   rules:
   - http:
       paths:
-      - path: /lovelace
+      - path: /
         pathType: Prefix
         backend:
           service:
@@ -56,7 +56,7 @@ spec:
     - client auth
   # At least one of a DNS Name, URI, or IP address is required.
   dnsNames:
-    - *.hosrasmus.hopto.org
+    - hass.hosrasmus.hopto.org
   # Issuer references are always required.
   issuerRef:
     name: letsencrypt-prod
