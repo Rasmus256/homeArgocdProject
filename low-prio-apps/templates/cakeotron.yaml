@@ -13,6 +13,9 @@ spec:
     path: low-prio-apps/cakeotron
     repoURL: 'git@github.com:Rasmus256/homeArgocdProject.git'
     targetRevision: HEAD
+    helm:
+      valueFiles:
+      - values.yaml
   project: default
   syncPolicy:
     automated:
