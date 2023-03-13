@@ -10,7 +10,6 @@ data:
     # recorder:
     #   db_url: "postgresql://homeassistant:yourpassword@localhost:5432/homeassistant_db"
     #   db_retry_wait: 3 # Wait 15 seconds before retrying
-    # Text to speech
     http:
       use_x_forwarded_for: true
       trusted_proxies:
@@ -18,6 +17,7 @@ data:
         - 127.0.0.1
         - ::1
         - 10.42.0.8
+    # Text to speech
     tts:
       - platform: google_translate
     template:
