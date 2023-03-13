@@ -5,7 +5,7 @@ metadata:
   namespace: cake
 spec:
   # Secret names are always required.
-  secretName: cakecert-tls
+  secretName: cakecert-wild-tls
   duration: 2160h0m0s # 90d
   renewBefore: 360h0m0s # 15d
   usages:
