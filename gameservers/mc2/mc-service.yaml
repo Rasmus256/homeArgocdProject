@@ -22,6 +22,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: mc2-ingress
+  namespace: minecraft
 spec:
   rules:
   - host: mc.hosrasmus.hopto.org
@@ -33,4 +34,4 @@ spec:
           service:
             name: mcbedrock
             port: 
-              number: 19132
+              name: "19132"
