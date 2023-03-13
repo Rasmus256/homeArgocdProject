@@ -50,7 +50,7 @@ spec:
   # Secret names are always required.
   secretName: hasscert-tls
   duration: 10h0m0s
-  renewBefore: 360h0m0s # 15d
+  renewBefore: 9h59m0s # 15d
   usages:
     - server auth
     - client auth
