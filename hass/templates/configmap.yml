@@ -180,6 +180,9 @@ data:
       report_state: true
       exposed_domains:
         - vacuum
+        - light 
+        - switch 
+        - media_player
       entity_config:
         vacuum.ip:
           name: IP_STOVSUG
