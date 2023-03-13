@@ -46,7 +46,7 @@ spec:
     - name: http
       protocol: TCP
       port: 80
-      targetPort: 30080
+      targetPort: 30695
     - name: https
       protocol: TCP
       port: 444
@@ -54,7 +54,26 @@ spec:
   type: LoadBalancer
   selector:
     io.kompose.service: valheim
-    
+
+---
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: valheimhttp-ingress
+spec:
+  rules:
+  - host: valheimsupervisor.hosrasmus.hopto.org
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: valheimhttp
+            port: 
+              name: "http"
+
 ---
 
 apiVersion: v1
