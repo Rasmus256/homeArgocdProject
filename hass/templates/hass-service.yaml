@@ -24,6 +24,10 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: hass-ingress
+  annotations:
+    acme.cert-manager.io/http01-ingress-class: traefik
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    acme.cert-manager.io/http01-edit-in-place: "true"
 spec:
   rules:
   - host: hass.hosrasmus.hopto.org
@@ -37,30 +41,6 @@ spec:
             port: 
               number: 8123
   tls:
-  - secretName: hasscert-wild-tls
+  - secretName: hasscert-tls-cert
     hosts:
       - hass.hosrasmus.hopto.org
-
----
-
-apiVersion: cert-manager.io/v1
-kind: Certificate
-metadata:
-  name: hasscert
-spec:
-  # Secret names are always required.
-  secretName: hasscert-wild-tls
-  duration: 3600h0m0s
-  renewBefore: 1200h0m0s # 15d
-  usages:
-    - server auth
-    - client auth
-  # At least one of a DNS Name, URI, or IP address is required.
-  dnsNames:
-    - hass.hosrasmus.hopto.org
-  # Issuer references are always required.
-  issuerRef:
-    name: letsencrypt-prod
-    # We can reference ClusterIssuers by changing the kind here.
-    # The default value is Issuer (i.e. a locally namespaced Issuer)
-    kind: ClusterIssuer
