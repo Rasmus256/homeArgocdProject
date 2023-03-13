@@ -26,7 +26,8 @@ metadata:
   name: hass-ingress
 spec:
   rules:
-  - http:
+  - host: hass.hosrasmus.hopto.org
+    http:
       paths:
       - path: /
         pathType: Prefix
