@@ -39,7 +39,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: cake
+            name: cakeotron
             port: 
               name: "cake"
   tls:
