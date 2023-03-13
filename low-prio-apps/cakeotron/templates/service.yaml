@@ -43,6 +43,5 @@ spec:
             port: 
               name: "cake"
   tls:
-  - secretName: cakecert-wild-3-tls
-    hosts:
+  - hosts:
       - {{ .Values.baseurl}}
