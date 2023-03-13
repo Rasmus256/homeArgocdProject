@@ -28,7 +28,7 @@ spec:
   rules:
   - http:
       paths:
-      - path: /
+      - path: /lovelace
         pathType: Prefix
         backend:
           service:
