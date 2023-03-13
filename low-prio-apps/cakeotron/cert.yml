@@ -1,11 +1,11 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: cakecert2
+  name: cakecert-wild
   namespace: cake
 spec:
   # Secret names are always required.
-  secretName: cakecert-wild-tls
+  secretName: cakecert-wild-2-tls
   duration: 2160h0m0s # 90d
   renewBefore: 360h0m0s # 15d
   usages:
