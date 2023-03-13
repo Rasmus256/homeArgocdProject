@@ -30,7 +30,7 @@ spec:
   rules:
   - http:
       paths:
-      - path: /cake
+      - path: /
         pathType: Prefix
         backend:
           service:
