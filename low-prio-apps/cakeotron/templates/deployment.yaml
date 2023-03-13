@@ -26,6 +26,7 @@ spec:
           name: cakeotron
           ports:
             - containerPort: 80
+            - containerPort: 443
           resources:
             requests:
               memory: "8Mi"

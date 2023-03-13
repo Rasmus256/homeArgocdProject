@@ -3,3 +3,5 @@ spec:
     server: https://kubernetes.default.svc
   labels:
     category: low-prio
+cakeotron:
+  baseurl_uber: cake.hosrasmus.hopto.org

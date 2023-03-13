@@ -10,6 +10,13 @@ data:
     # recorder:
     #   db_url: "postgresql://homeassistant:yourpassword@localhost:5432/homeassistant_db"
     #   db_retry_wait: 3 # Wait 15 seconds before retrying
+    http:
+      use_x_forwarded_for: true
+      trusted_proxies:
+        - 172.30.33.3
+        - 127.0.0.1
+        - ::1
+        - 10.42.0.8
     # Text to speech
     tts:
       - platform: google_translate
@@ -173,12 +180,17 @@ data:
       report_state: true
       exposed_domains:
         - vacuum
+        - light 
+        - switch 
+        - media_player
       entity_config:
         vacuum.ip:
           name: IP_STOVSUG
           aliases:
             - SPISEBORD
             - STØVSUG
+        light.kids_light:
+          name: toilet lights
 
     logger:
       default: info
