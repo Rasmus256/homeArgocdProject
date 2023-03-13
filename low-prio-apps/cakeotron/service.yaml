@@ -27,6 +27,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: cake-ingress
+  namespace: cake
   annotations:
     acme.cert-manager.io/http01-ingress-class: traefik
 spec:
