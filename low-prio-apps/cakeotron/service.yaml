@@ -12,7 +12,7 @@ metadata:
 spec:
   type: LoadBalancer
   ports:
-    - name: "4000"
+    - name: "cake"
       port: 4000
       targetPort: 80
   selector:
@@ -20,3 +20,21 @@ spec:
 status:
   loadBalancer: {}
 
+---
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: cake-ingress
+spec:
+  rules:
+  - host: cake.hosrasmus.hopto.org
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: cake
+            port: 
+              number: 8123
