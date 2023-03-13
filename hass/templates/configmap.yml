@@ -190,7 +190,7 @@ data:
             - SPISEBORD
             - STØVSUG
         light.kids_light:
-          name: albert
+          name: toilet lights
 
     logger:
       default: info
