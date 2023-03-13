@@ -49,8 +49,8 @@ metadata:
 spec:
   # Secret names are always required.
   secretName: hasscert-tls
-  duration: 0h5m0s
-  renewBefore: 0h1m0s # 15d
+  duration: 1h0m0s
+  renewBefore: 0h59m0s # 15d
   usages:
     - server auth
     - client auth
