@@ -30,6 +30,8 @@ metadata:
   namespace: cake
   annotations:
     acme.cert-manager.io/http01-ingress-class: traefik
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    acme.cert-manager.io/http01-edit-in-place: "true"
 spec:
   rules:
   - host: {{ .Values.baseurl}}
@@ -43,5 +45,6 @@ spec:
             port: 
               name: "cake"
   tls:
-  - hosts:
+  - secretName: cakecert-wild-4-tls
+    hosts:
       - {{ .Values.baseurl}}
