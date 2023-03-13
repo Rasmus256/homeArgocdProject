@@ -32,7 +32,7 @@ metadata:
     acme.cert-manager.io/http01-ingress-class: traefik
 spec:
   rules:
-  - host: cake.hosrasmus.hopto.org
+  - host: {{ .Values.baseurl}}
     http:
       paths:
       - path: /
