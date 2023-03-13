@@ -27,6 +27,8 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: cake-ingress
+  annotations:
+    acme.cert-manager.io/http01-ingress-class: traefik
 spec:
   rules:
   - host: cake.hosrasmus.hopto.org
