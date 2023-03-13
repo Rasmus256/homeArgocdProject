@@ -32,7 +32,7 @@ metadata:
     acme.cert-manager.io/http01-ingress-class: traefik
 spec:
   rules:
-  - host: {{- .Values.baseurl }}
+  - host: {{ .Values.baseurl }}
     http:
       paths:
       - path: /
@@ -45,4 +45,4 @@ spec:
   tls:
   - secretName: cakecert-wild-2-tls
     hosts:
-      - {{- .Values.baseurl }}
+      - {{ .Values.baseurl }}

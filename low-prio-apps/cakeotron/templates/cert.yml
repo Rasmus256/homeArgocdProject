@@ -13,7 +13,7 @@ spec:
     - client auth
   # At least one of a DNS Name, URI, or IP address is required.
   dnsNames:
-    - {{- .Values.baseurl }}
+    - {{ .Values.baseurl }}
   # Issuer references are always required.
   issuerRef:
     name: letsencrypt-prod
