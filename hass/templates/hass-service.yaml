@@ -36,7 +36,7 @@ spec:
             port: 
               number: 8123
   tls:
-  - secretName: hasscert-tls
+  - secretName: hasscert-wild-tls
     hosts:
       - hass.hosrasmus.hopto.org
 
@@ -48,7 +48,7 @@ metadata:
   name: hasscert
 spec:
   # Secret names are always required.
-  secretName: hasscert-tls
+  secretName: hasscert-wild-tls
   duration: 3600h0m0s
   renewBefore: 1200h0m0s # 15d
   usages:
