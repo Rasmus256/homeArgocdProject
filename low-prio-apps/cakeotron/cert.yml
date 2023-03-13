@@ -13,8 +13,7 @@ spec:
     - client auth
   # At least one of a DNS Name, URI, or IP address is required.
   dnsNames:
-    - hosrasmus.hopto.org
-    - "hosrasmus.hopto.org"
+    - cake.hosrasmus.hopto.org
   # Issuer references are always required.
   issuerRef:
     name: letsencrypt-prod
