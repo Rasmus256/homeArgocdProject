@@ -21,7 +21,7 @@ spec:
           port: 80
           scheme: h2c
   tls:
-    secretName: argocd-server-tls
+    secretName: neverbeforeseensecretname
     
 ---
 
