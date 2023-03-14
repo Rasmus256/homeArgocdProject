@@ -34,8 +34,8 @@ metadata:
 spec:
   # Secret names are always required.
   secretName: argocd-server-tls
-  duration: 3600h0m0s
-  renewBefore: 3590h0m0s # 15d
+  duration: 24h0m0s
+  renewBefore: 1h0m0s # 15d
   usages:
     - server auth
     - client auth
