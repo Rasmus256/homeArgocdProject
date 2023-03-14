@@ -7,6 +7,7 @@ inputs:
   - "send"
   - "more"
   - "money"
+  - "asap"
 reportFreq: 100000
 completions: 1
 parallelism: 1
