@@ -16,7 +16,7 @@ spec:
           service:
             name: argocd-server
             port: 
-              name: "http"
+              name: "https"
   tls:
   - secretName: argocd-server-tls
     hosts:
