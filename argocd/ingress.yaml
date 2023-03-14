@@ -21,4 +21,5 @@ spec:
           port: 80
           scheme: h2c
   tls:
-    certResolver: default
+    domains:
+      - main: "argocd.hosrasmus.hopto.org"
