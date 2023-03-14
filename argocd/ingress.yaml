@@ -16,7 +16,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: argocd-argocd-server
+            name: argocd-server
             port: 
               name: "https"
   tls:
