@@ -21,5 +21,4 @@ spec:
           port: 80
           scheme: h2c
   tls:
-    domains:
-      - main: "argocd.hosrasmus.hopto.org"
+    secretName: argocd-server-tls
