@@ -7,7 +7,7 @@ metadata:
     cert-manager.io/cluster-issuer: letsencrypt-prod
 spec:
   rules:
-  - host: argocd.hosrasmus.hopto.org
+  - host: argocdtest.hosrasmus.hopto.org
     http:
       paths:
       - path: /
@@ -20,4 +20,4 @@ spec:
   tls:
   - secretName: argocd-server-tls
     hosts:
-      - argocd.hosrasmus.hopto.org
+      - argocdtest.hosrasmus.hopto.org
