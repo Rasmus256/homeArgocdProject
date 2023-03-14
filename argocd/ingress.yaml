@@ -18,8 +18,4 @@ spec:
           service:
             name: argocd-server
             port: 
-              name: "https"
-  tls:
-  - secretName: argocdcert-tls-cert
-    hosts:
-      - argocd.hosrasmus.hopto.org
+              name: "http"
