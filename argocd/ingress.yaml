@@ -20,6 +20,10 @@ spec:
             port: 
               name: "https"
 
+  tls:
+  - secretName: argocd-server-tls
+    hosts:
+      - argocd.hosrasmus.hopto.org
 ---
 
 apiVersion: cert-manager.io/v1
