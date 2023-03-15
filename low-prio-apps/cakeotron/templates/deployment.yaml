@@ -19,7 +19,8 @@ spec:
         io.kompose.service: cakeotron
     spec:
       containers:
-        - security_context.allow_privilege_escalation: false
+        - security_context:
+            allow_privilege_escalation: "false"
           env:
           - name: DOTNET_HOSTBUILDER__RELOADCONFIGONCHANGE
             value: "false"
