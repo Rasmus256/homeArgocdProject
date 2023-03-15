@@ -26,7 +26,7 @@ spec:
             allowPrivilegeEscalation: false
             runAsNonRoot: true
             runAsUser: 99999
-            readOnlyRootFilesystem: true
+            readOnlyRootFilesystem: false
             capabilities:
               drop:
                 - ALL
@@ -43,11 +43,11 @@ spec:
             limits:
               memory: "64Mi"
               cpu: "50m"
-          volumeMounts:
-            - mountPath: /
-              name: tmpfs-1
-      volumes:
-        - name: tmpfs-1
-          emptyDir: {}
+#           volumeMounts:
+#             - mountPath: /
+#               name: tmpfs-1
+#       volumes:
+#         - name: tmpfs-1
+#           emptyDir: {}
       restartPolicy: Always
 status: {}
