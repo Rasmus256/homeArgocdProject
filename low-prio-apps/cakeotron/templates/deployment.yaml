@@ -18,12 +18,13 @@ spec:
       labels:
         io.kompose.service: cakeotron
     spec:
-      securityContext:
-        allow_privilege_escalation: "false"
+
       containers:
         - env:
           - name: DOTNET_HOSTBUILDER__RELOADCONFIGONCHANGE
             value: "false"
+          securityContext:
+            allowPrivilegeEscalation: false
           image: rasmus256docker/cakeotron:20220910123341
           name: cakeotron
           ports:
