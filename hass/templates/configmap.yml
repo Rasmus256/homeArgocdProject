@@ -27,13 +27,13 @@ data:
         device_class: monetary
         unit_of_measurement: "kr/kWh"
         state: >
-          {{ 1.25 * (float(states('sensor.eloverblik_tariff_sum')) + float(states('sensor.nordpool_kwh_dk1_dkk_3_10_0'))) }}
+          {{ 1.25 * (float(states('sensor.eloverblik_tariff_sum')) + float(states('sensor.nordpool_kwh_dk1_dkk_3_10_0'))) | float(0) }}
         attributes:
           today: >
             {% if state_attr('sensor.nordpool_kwh_dk1_dkk_3_10_0', 'today') %}
               {% set ns = namespace (prices=[]) %}
               {% for h in range(24) %}
-                {% set ns.prices = ns.prices + [(1.25 * (float(state_attr('sensor.nordpool_kwh_dk1_dkk_3_10_0', 'today')[h]))) | round(5)] %}
+                {% set ns.prices = ns.prices + [(1.25 * (float(state_attr('sensor.nordpool_kwh_dk1_dkk_3_10_0', 'today')[h]))) | float(0) | round(5)] %}
               {% endfor %}
               {{ ns.prices }}
             {% endif %}
@@ -41,7 +41,7 @@ data:
             {% if state_attr('sensor.nordpool_kwh_dk1_dkk_3_10_0', 'tomorrow') %}
               {% set ns = namespace (prices=[]) %}
               {% for h in range(24) %}
-                {% set ns.prices = ns.prices + [(1.25 * (float(state_attr('sensor.nordpool_kwh_dk1_dkk_3_10_0', 'tomorrow')[h]))) | round(5)] %}
+                {% set ns.prices = ns.prices + [(1.25 * (float(state_attr('sensor.nordpool_kwh_dk1_dkk_3_10_0', 'tomorrow')[h]))) | float(0) | round(5)] %}
               {% endfor %}
               {{ ns.prices }}
             {% endif %}
