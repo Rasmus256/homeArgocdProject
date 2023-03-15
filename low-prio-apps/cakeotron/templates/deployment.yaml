@@ -46,8 +46,8 @@ spec:
           volumeMounts:
             - mountPath: /
               name: tmpfs-1
-          volumes:
-            - name: tmpfs-1
-              emptyDir: {}
+      volumes:
+        - name: tmpfs-1
+          emptyDir: {}
       restartPolicy: Always
 status: {}
