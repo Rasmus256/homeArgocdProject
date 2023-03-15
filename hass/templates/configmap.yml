@@ -194,6 +194,4 @@ data:
 
     logger:
       default: info
-      logs:
-        custom_components.xiaomi_cloud_map_extractor: debug
   `}}
