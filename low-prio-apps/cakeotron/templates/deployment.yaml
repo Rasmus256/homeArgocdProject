@@ -18,7 +18,6 @@ spec:
       labels:
         io.kompose.service: cakeotron
     spec:
-
       containers:
         - env:
           - name: DOTNET_HOSTBUILDER__RELOADCONFIGONCHANGE
@@ -27,11 +26,13 @@ spec:
             allowPrivilegeEscalation: false
             runAsNonRoot: true
             runAsUser: 99999
+            readOnlyRootFilesystem: true
             capabilities:
               drop:
                 - ALL
           image: rasmus256docker/cakeotron:20220910123341
           name: cakeotron
+          imagePullPolicy: Always
           ports:
             - containerPort: 80
             - containerPort: 443
