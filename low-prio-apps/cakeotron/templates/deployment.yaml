@@ -25,6 +25,10 @@ spec:
             value: "false"
           securityContext:
             allowPrivilegeEscalation: false
+            runAsNonRoot: true
+            capabilities:
+              drop:
+                - ALL
           image: rasmus256docker/cakeotron:20220910123341
           name: cakeotron
           ports:
