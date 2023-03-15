@@ -6,6 +6,7 @@ metadata:
   labels:
     io.kompose.service: cakeotron
 spec:
+  revisionHistoryLimit: 3
   replicas: 2
   minReadySeconds: 2
   selector:
