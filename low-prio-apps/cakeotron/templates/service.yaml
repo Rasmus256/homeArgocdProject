@@ -7,7 +7,7 @@ metadata:
   name: cakeotron
 spec:
   loadBalancerSourceRanges:
-    - "194.239.188.2"
+    - "194.239.188.0/30"
   type: LoadBalancer
   ports:
     - name: "cake"
