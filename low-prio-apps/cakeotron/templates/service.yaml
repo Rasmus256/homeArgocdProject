@@ -6,8 +6,6 @@ metadata:
     io.kompose.service: cakeotron
   name: cakeotron
 spec:
-  loadBalancerSourceRanges:
-    - "194.239.188.0/30"
   type: LoadBalancer
   ports:
     - name: "cake"
