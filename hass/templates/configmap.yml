@@ -45,6 +45,15 @@ data:
               {% endfor %}
               {{ ns.prices }}
             {% endif %}
+      - name: "Eloverblik Time Series"
+        unique_id: eloverblik_series
+        device_class: energy
+        unit_of_measurement: "kWh"
+        state: >
+          {% set ns = namespace (usages=[]) %}
+          {% set ns.usages = ns.usages + [float(states('sensor.eloverblik_energy_0_1'),0)] %}
+          {% set ns.usages = ns.usages + [float(states('sensor.eloverblik_energy_1_2'),0)] %}
+          {{ns.usages}}
     sensor:
       - platform: systemmonitor
         resources:
