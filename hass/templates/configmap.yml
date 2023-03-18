@@ -52,7 +52,7 @@ data:
         state: >
           {% set ns = namespace (usages=[]) %}
           
-          {% for h in range(3) %}
+          {% for h in range(24) %}
             {% set hourstr = h | string %}
             {% set nexthourstr = (h+1) | string %}
             {% set ns.usages = ns.usages + [float(states('sensor.eloverblik_energy_'+hourstr+'_'+nexthourstr),0)] %}
