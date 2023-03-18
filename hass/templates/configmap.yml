@@ -51,8 +51,10 @@ data:
         unit_of_measurement: "kWh"
         state: >
           {% set ns = namespace (usages=[]) %}
-          {% set ns.usages = ns.usages + [float(states('sensor.eloverblik_energy_0_1'),0)] %}
-          {% set ns.usages = ns.usages + [float(states('sensor.eloverblik_energy_1_2'),0)] %}
+          
+          {% for h in range(3) %}
+            {% set ns.usages = ns.usages + [float(states('sensor.eloverblik_energy_'+str(h)+'-'+str(h+1)),0)] %}
+          {% endfor %}
           {{ns.usages}}
     sensor:
       - platform: systemmonitor
