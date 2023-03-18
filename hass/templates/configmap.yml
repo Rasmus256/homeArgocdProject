@@ -49,15 +49,17 @@ data:
         unique_id: eloverblik_series
         device_class: energy
         unit_of_measurement: "kWh"
-        state: >
-          {% set ns = namespace (usages=[]) %}
-          
-          {% for h in range(24) %}
-            {% set hourstr = h | string %}
-            {% set nexthourstr = (h+1) | string %}
-            {% set ns.usages = ns.usages + [float(states('sensor.eloverblik_energy_'+hourstr+'_'+nexthourstr),0)] %}
-          {% endfor %}
-          {{ns.usages}}
+        state: 0
+        attributes:
+          series: >
+            {% set ns = namespace (usages=[]) %}
+
+            {% for h in range(24) %}
+              {% set hourstr = h | string %}
+              {% set nexthourstr = (h+1) | string %}
+              {% set ns.usages = ns.usages + [float(states('sensor.eloverblik_energy_'+hourstr+'_'+nexthourstr),0)] %}
+            {% endfor %}
+            {{ns.usages}}
     sensor:
       - platform: systemmonitor
         resources:
