@@ -55,7 +55,7 @@ data:
           {% for h in range(3) %}
             {% set hourstr = h | string %}
             {% set nexthourstr = (h+1) | string %}
-            {% set ns.usages = ns.usages + [float(states('sensor.eloverblik_energy_'+hourstr+'-'+nexthourstr),0)] %}
+            {% set ns.usages = ns.usages + [float(states('sensor.eloverblik_energy_'+hourstr+'_'+nexthourstr),0)] %}
           {% endfor %}
           {{ns.usages}}
     sensor:
