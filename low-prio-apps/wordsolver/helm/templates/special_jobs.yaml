@@ -17,8 +17,6 @@ metadata:
   name: {{ $str | quote}}
   namespace: wordsolver
 spec:
-  completions: {{$.Values.completions}}
-  parallelism: {{$.Values.parallelism}}
   backoffLimit: 2
   template:
     spec:
@@ -101,8 +99,6 @@ metadata:
   name: {{ $str | quote}}
   namespace: wordsolver
 spec:
-  completions: {{$.Values.completions}}
-  parallelism: {{$.Values.parallelism}}
   backoffLimit: 2
   template:
     spec:
