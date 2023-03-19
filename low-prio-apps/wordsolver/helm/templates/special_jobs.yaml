@@ -8,7 +8,7 @@ metadata:
     release: {{ $.Release.Name | quote }}
     heritage: {{ $.Release.Service | quote }}
     version: {{ $.Chart.Version }}
-  {{- $str := $.Values.title | lower}}
+  {{- $str := "producer" | lower}}
   {{- $str = print $str $.Values.completions}}
   {{- $str = print $str $.Values.parallelism}}
   {{- $str = print $str "-" $.Values.producerImage.tag }}
@@ -49,7 +49,7 @@ metadata:
     release: {{ $.Release.Name | quote }}
     heritage: {{ $.Release.Service | quote }}
     version: {{ $.Chart.Version }}
-  {{- $str := $.Values.title | lower}}
+  {{- $str := "processor" | lower}}
   {{- $str = print $str $.Values.completions}}
   {{- $str = print $str $.Values.parallelism}}
   {{- $str = print $str "-" $.Values.processorImage.tag }}
@@ -91,7 +91,7 @@ metadata:
     release: {{ $.Release.Name | quote }}
     heritage: {{ $.Release.Service | quote }}
     version: {{ $.Chart.Version }}
-  {{- $str := $.Values.title | lower}}
+  {{- $str := resultwriter | lower}}
   {{- $str = print $str $.Values.completions}}
   {{- $str = print $str $.Values.parallelism}}
   {{- $str = print $str "-" $.Values.resultprinterImage.tag }}
