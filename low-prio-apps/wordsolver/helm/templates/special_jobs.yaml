@@ -54,7 +54,7 @@ metadata:
   {{- $str = print $str $.Values.inputs }}
   {{- $str = print $str $.Values.reportFreq }}
   {{- $str = print $str | adler32sum  }}
-  name: {{ $str | quote}}
+  name: {{ print "processor" $str | quote}}
   namespace: wordsolver
 spec:
   selector:
@@ -71,7 +71,7 @@ spec:
         name: {{ $.Values.processorImage.repository | toString | replace "/" "-" | replace "_" "-"  | adler32sum}}-{{ $.Values.processorImage.tag | toString | replace "." "-"  | adler32sum }}
         resources: 
           limits:
-            cpu: 500m 
+            cpu: 10m 
             memory: 25Mi
           requests:
             cpu: 10m
