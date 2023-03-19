@@ -11,7 +11,14 @@ inputs:
 reportFreq: 100000
 completions: 1
 parallelism: 1
-image:
-  repository: rasmus256docker/wordsolver
+producer-image:
+  repository: rasmus256docker/wordsolver-producer
   tag: 17
   
+processor-image:
+  repository: rasmus256docker/wordsolver-processor
+  tag: 17
+  
+resultprinter-image:
+  repository: rasmus256docker/wordsolver-resultprinter
+  tag: 17
