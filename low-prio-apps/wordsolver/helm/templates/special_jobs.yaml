@@ -11,7 +11,7 @@ metadata:
   {{- $str := $.Values.title | lower}}
   {{- $str = print $str $.Values.completions}}
   {{- $str = print $str $.Values.parallelism}}
-  {{- $str = print $str "-" $.Values.producer-image.tag }}
+  {{- $str = print $str "-" $.Values.producerImage.tag }}
   {{- $str = print $str $.Values.inputs }}
   {{- $str = print $str | adler32sum  }}
   name: {{ $str | quote}}
@@ -24,9 +24,9 @@ spec:
     spec:
     spec:
       containers:
-      - image: "{{$.Values.producer-image.repository }}:{{$.Values.producer-image.tag | toString }}"
+      - image: "{{$.Values.producerImage.repository }}:{{$.Values.producerImage.tag | toString }}"
         imagePullPolicy: {{ $.Values.pullPolicy }}
-        name: {{ $.Values.producer-image.repository | toString | replace "/" "-" | replace "_" "-"  | adler32sum}}-{{ $.Values.producer-image.tag | toString | replace "." "-"  | adler32sum }}
+        name: {{ $.Values.producerImage.repository | toString | replace "/" "-" | replace "_" "-"  | adler32sum}}-{{ $.Values.producerImage.tag | toString | replace "." "-"  | adler32sum }}
         resources: 
           limits:
             cpu: 500m 
@@ -52,7 +52,7 @@ metadata:
   {{- $str := $.Values.title | lower}}
   {{- $str = print $str $.Values.completions}}
   {{- $str = print $str $.Values.parallelism}}
-  {{- $str = print $str "-" $.Values.processor-image.tag }}
+  {{- $str = print $str "-" $.Values.processorImage.tag }}
   {{- $str = print $str $.Values.inputs }}
   {{- $str = print $str $.Values.reportFreq }}
   {{- $str = print $str | adler32sum  }}
@@ -66,9 +66,9 @@ spec:
     spec:
     spec:
       containers:
-      - image: "{{$.Values.processor-image.repository }}:{{$.Values.processor-image.tag | toString }}"
+      - image: "{{$.Values.processorImage.repository }}:{{$.Values.processorImage.tag | toString }}"
         imagePullPolicy: {{ $.Values.pullPolicy }}
-        name: {{ $.Values.processor-image.repository | toString | replace "/" "-" | replace "_" "-"  | adler32sum}}-{{ $.Values.processor-image.tag | toString | replace "." "-"  | adler32sum }}
+        name: {{ $.Values.processorImage.repository | toString | replace "/" "-" | replace "_" "-"  | adler32sum}}-{{ $.Values.processorImage.tag | toString | replace "." "-"  | adler32sum }}
         resources: 
           limits:
             cpu: 500m 
@@ -94,7 +94,7 @@ metadata:
   {{- $str := $.Values.title | lower}}
   {{- $str = print $str $.Values.completions}}
   {{- $str = print $str $.Values.parallelism}}
-  {{- $str = print $str "-" $.Values.resultprinter-image.tag }}
+  {{- $str = print $str "-" $.Values.resultprinterImage.tag }}
   {{- $str = print $str $.Values.inputs }}
   {{- $str = print $str $.Values.reportFreq }}
   {{- $str = print $str | adler32sum  }}
@@ -108,9 +108,9 @@ spec:
     spec:
     spec:
       containers:
-      - image: "{{$.Values.resultprinter-image.repository }}:{{$.Values.resultprinter-image.tag | toString }}"
+      - image: "{{$.Values.resultprinterImage.repository }}:{{$.Values.resultprinterImage.tag | toString }}"
         imagePullPolicy: {{ $.Values.pullPolicy }}
-        name: {{ $.Values.resultprinter-image.repository | toString | replace "/" "-" | replace "_" "-"  | adler32sum}}-{{ $.Values.resultprinter-image.tag | toString | replace "." "-"  | adler32sum }}
+        name: {{ $.Values.resultprinterImage.repository | toString | replace "/" "-" | replace "_" "-"  | adler32sum}}-{{ $.Values.resultprinterImage.tag | toString | replace "." "-"  | adler32sum }}
         resources: 
           limits:
             cpu: 500m 
