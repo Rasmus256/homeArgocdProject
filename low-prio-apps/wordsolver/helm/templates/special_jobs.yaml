@@ -91,7 +91,7 @@ metadata:
     release: {{ $.Release.Name | quote }}
     heritage: {{ $.Release.Service | quote }}
     version: {{ $.Chart.Version }}
-  {{- $str := resultwriter | lower}}
+  {{- $str := "resultwriter" | lower}}
   {{- $str = print $str $.Values.completions}}
   {{- $str = print $str $.Values.parallelism}}
   {{- $str = print $str "-" $.Values.resultprinterImage.tag }}
