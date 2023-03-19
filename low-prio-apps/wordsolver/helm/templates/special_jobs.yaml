@@ -38,8 +38,8 @@ spec:
       restartPolicy: Never
       
 ---
-apiVersion: batch/v1
-kind: Job
+apiVersion: apps/v1
+kind: Deployment
 metadata:
   labels:
     app: wordsolver
@@ -57,8 +57,6 @@ metadata:
   name: {{ $str | quote}}
   namespace: wordsolver
 spec:
-  completions: {{$.Values.completions}}
-  parallelism: {{$.Values.parallelism}}
   backoffLimit: 2
   template:
     spec:
@@ -77,7 +75,7 @@ spec:
         env:
           - name: "REPORT_FREQ"
             value: {{$.Values.reportFreq | quote}}
-      restartPolicy: Never
+      restartPolicy: Always
       
 ---
 apiVersion: batch/v1
