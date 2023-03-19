@@ -13,12 +13,12 @@ completions: 1
 parallelism: 1
 producerImage:
   repository: rasmus256docker/wordsolver-producer
-  tag: 19
+  tag: 21
   
 processorImage:
   repository: rasmus256docker/wordsolver-processor
-  tag: 19
+  tag: 21
   
 resultprinterImage:
   repository: rasmus256docker/wordsolver-resultprinter
-  tag: 19
+  tag: 21
