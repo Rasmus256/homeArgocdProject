@@ -57,7 +57,9 @@ metadata:
   name: {{ $str | quote}}
   namespace: wordsolver
 spec:
-  backoffLimit: 2
+  selector:
+    matchLabels:
+      run: wordsolver-processor
   template:
     spec:
     spec:
