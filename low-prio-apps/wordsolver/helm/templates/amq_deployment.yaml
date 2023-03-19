@@ -53,7 +53,7 @@ spec:
       port: 61613
       targetPort: 61613
     - name: "8161"
-      port: 8161
+      port: 8162
       targetPort: 8161
     - name: "5672"
       port: 5672
