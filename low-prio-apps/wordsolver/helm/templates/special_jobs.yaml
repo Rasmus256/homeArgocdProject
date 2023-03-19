@@ -64,10 +64,10 @@ spec:
         name: {{ $.Values.processorImage.repository | toString | replace "/" "-" | replace "_" "-"  | adler32sum}}-{{ $.Values.processorImage.tag | toString | replace "." "-"  | adler32sum }}
         resources: 
           limits:
-            cpu: 10m 
+            cpu: 30m 
             memory: 25Mi
           requests:
-            cpu: 10m
+            cpu: 30m
             memory: 25Mi
         env:
           - name: "REPORT_FREQ"
