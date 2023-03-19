@@ -30,10 +30,10 @@ spec:
         resources: 
           limits:
             cpu: 500m 
-            memory: 5Mi
+            memory: 25Mi
           requests:
             cpu: 10m
-            memory: 5Mi
+            memory: 25Mi
         env:
           - name: "INPUTS"
             value: {{$.Values.inputs | quote}}
@@ -72,10 +72,10 @@ spec:
         resources: 
           limits:
             cpu: 500m 
-            memory: 5Mi
+            memory: 25Mi
           requests:
             cpu: 10m
-            memory: 5Mi
+            memory: 25Mi
         env:
           - name: "REPORT_FREQ"
             value: {{$.Values.reportFreq | quote}}
@@ -114,10 +114,10 @@ spec:
         resources: 
           limits:
             cpu: 500m 
-            memory: 5Mi
+            memory: 25Mi
           requests:
             cpu: 10m
-            memory: 5Mi
+            memory: 25Mi
         env:
           - name: "INPUTS"
             value: {{$.Values.inputs | quote}}
