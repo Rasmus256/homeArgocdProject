@@ -4,10 +4,11 @@ namespace: default
 pullPolicy: IfNotPresent
 title: WordSolver
 inputs:
-  - "send"
-  - "more"
-  - "money"
-  - "asap"
+  - "abcdef"
+  - "ghijkl"
+  - "mnopqr"
+  - "stuvwx"
+  - "yzæøå"
 reportFreq: 100000
 completions: 1
 parallelism: 1
