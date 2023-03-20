@@ -118,7 +118,7 @@ spec:
 apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
- name: wordsolver
+ name: wordsolverprocessor
  namespace: wordsolver
 spec:
  scaleTargetRef:
@@ -134,7 +134,7 @@ spec:
 apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
- name: wordsolver
+ name: wordsolverresultprinter
  namespace: wordsolver
 spec:
  scaleTargetRef:
