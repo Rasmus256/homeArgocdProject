@@ -22,21 +22,6 @@ spec:
     spec:
     spec:
       containers:
-      - image: "{{$.Values.resultprinterImage.repository }}:{{$.Values.resultprinterImage.tag | toString }}"
-        imagePullPolicy: {{ $.Values.pullPolicy }}
-        name: "resultprinter"
-        resources: 
-          limits:
-            cpu: 500m 
-            memory: 25Mi
-          requests:
-            cpu: 10m
-            memory: 25Mi
-        env:
-          - name: "INPUTS"
-            value: {{$.Values.inputs | quote}}
-          - name: "REPORT_FREQ"
-            value: {{$.Values.reportFreq | quote}}
       - image: "{{$.Values.producerImage.repository }}:{{$.Values.producerImage.tag | toString }}"
         imagePullPolicy: {{ $.Values.pullPolicy }}
         name: "producer"
@@ -51,7 +36,45 @@ spec:
           - name: "INPUTS"
             value: {{$.Values.inputs | quote}}
       restartPolicy: Never
-      
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: wordsolver-resultprinter
+    chart: "{{ $.Chart.Name }}-{{ $.Chart.Version }}"
+    release: {{ $.Release.Name | quote }}
+    heritage: {{ $.Release.Service | quote }}
+    version: {{ $.Chart.Version }}
+  name: wordsolverresultprinter
+  namespace: wordsolver
+spec:
+  selector:
+    matchLabels:
+      app: wordsolver-resultprinter
+  template:
+    metadata:
+      labels:
+        app: wordsolver-resultprinter
+    spec:
+      containers:
+      - image: "{{$.Values.resultprinterImage.repository }}:{{$.Values.resultprinterImage.tag | toString }}"
+        imagePullPolicy: {{ $.Values.pullPolicy }}
+        name: "resultprinter"
+        resources: 
+          limits:
+            cpu: 30m 
+            memory: 25Mi
+          requests:
+            cpu: 10m
+            memory: 25Mi
+        env:
+          - name: "INPUTS"
+            value: {{$.Values.inputs | quote}}
+          - name: "REPORT_FREQ"
+            value: {{$.Values.reportFreq | quote}}
+      restartPolicy: Always
+
 ---
 apiVersion: apps/v1
 kind: Deployment
