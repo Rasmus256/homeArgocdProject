@@ -18,6 +18,7 @@ metadata:
   namespace: wordsolver
 spec:
   backoffLimit: 2
+  revisionHistoryLimit: 2
   template:
     spec:
     spec:
