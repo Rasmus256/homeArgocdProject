@@ -79,8 +79,8 @@ spec:
         name: {{ $.Values.processorImage.repository | toString | replace "/" "-" | replace "_" "-"  | adler32sum}}-{{ $.Values.processorImage.tag | toString | replace "." "-"  | adler32sum }}
         resources: 
           limits:
-            cpu: 30m 
-            memory: 25Mi
+            cpu: 300m 
+            memory: 50Mi
           requests:
             cpu: 30m
             memory: 25Mi
