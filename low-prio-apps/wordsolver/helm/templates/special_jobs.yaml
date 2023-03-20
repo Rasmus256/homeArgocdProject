@@ -104,7 +104,7 @@ spec:
         name: "processor"
         resources: 
           limits:
-            cpu: 300m 
+            cpu: 50m 
             memory: 50Mi
           requests:
             cpu: 30m
@@ -127,7 +127,7 @@ spec:
    name: wordsolverprocessor
  minReplicas: 1
  maxReplicas: {{$.Values.processorScale}}
- targetCPUUtilizationPercentage: 50
+ targetCPUUtilizationPercentage: 80
  
 ---
 
