@@ -51,7 +51,6 @@ spec:
       protocol: TCP
       port: 444
       targetPort: 30081
-  type: LoadBalancer
   selector:
     io.kompose.service: valheim
 
