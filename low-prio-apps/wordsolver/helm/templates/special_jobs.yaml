@@ -113,3 +113,18 @@ spec:
           - name: "REPORT_FREQ"
             value: {{$.Values.reportFreq | quote}}
       restartPolicy: Always
+
+---
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+ name: wordsolver
+ namespace: wordsolver
+spec:
+ scaleTargetRef:
+   apiVersion: apps/v1
+   kind: Deployment
+   name: wordsolverprocessor
+ minReplicas: 1
+ maxReplicas: 10
+ targetCPUUtilizationPercentage: 50
