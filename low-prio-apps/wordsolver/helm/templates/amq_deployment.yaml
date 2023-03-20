@@ -47,7 +47,6 @@ metadata:
     io.kompose.service: amq
   name: amq
 spec:
-  type: LoadBalancer
   ports:
     - name: "61613"
       port: 61613
@@ -60,5 +59,3 @@ spec:
       targetPort: 5672
   selector:
     io.kompose.service: amq
-status:
-  loadBalancer: {}
