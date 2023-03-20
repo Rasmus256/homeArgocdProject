@@ -18,7 +18,6 @@ metadata:
   namespace: wordsolver
 spec:
   backoffLimit: 2
-  revisionHistoryLimit: 2
   template:
     spec:
     spec:
@@ -50,6 +49,7 @@ metadata:
   name: wordsolverresultprinter
   namespace: wordsolver
 spec:
+  revisionHistoryLimit: 2
   selector:
     matchLabels:
       app: wordsolver-resultprinter
@@ -89,6 +89,7 @@ metadata:
   name: wordsolverprocessor
   namespace: wordsolver
 spec:
+  revisionHistoryLimit: 2
   selector:
     matchLabels:
       app: wordsolver-processor
