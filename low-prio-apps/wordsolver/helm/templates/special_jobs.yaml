@@ -126,7 +126,7 @@ spec:
    kind: Deployment
    name: wordsolverprocessor
  minReplicas: 1
- maxReplicas: 9
+ maxReplicas: {{$.Values.processorScale}}
  targetCPUUtilizationPercentage: 50
  
 ---
