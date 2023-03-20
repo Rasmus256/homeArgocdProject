@@ -76,7 +76,7 @@ spec:
       containers:
       - image: "{{$.Values.processorImage.repository }}:{{$.Values.processorImage.tag | toString }}"
         imagePullPolicy: {{ $.Values.pullPolicy }}
-        name: {{ $.Values.processorImage.repository | toString | replace "/" "-" | replace "_" "-"  | adler32sum}}-{{ $.Values.processorImage.tag | toString | replace "." "-"  | adler32sum }}
+        name: "processor"
         resources: 
           limits:
             cpu: 300m 
