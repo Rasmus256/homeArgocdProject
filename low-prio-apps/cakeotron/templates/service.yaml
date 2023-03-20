@@ -6,15 +6,12 @@ metadata:
     io.kompose.service: cakeotron
   name: cakeotron
 spec:
-  type: LoadBalancer
   ports:
     - name: "cake"
       port: 80
       targetPort: 80
   selector:
     io.kompose.service: cakeotron
-status:
-  loadBalancer: {}
 
 ---
 
