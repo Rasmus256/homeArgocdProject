@@ -24,7 +24,7 @@ spec:
       containers:
       - image: "{{$.Values.resultprinterImage.repository }}:{{$.Values.resultprinterImage.tag | toString }}"
         imagePullPolicy: {{ $.Values.pullPolicy }}
-        name: {{ $.Values.resultprinterImage.repository | toString | replace "/" "-" | replace "_" "-"  | adler32sum}}-{{ $.Values.resultprinterImage.tag | toString | replace "." "-"  | adler32sum }}
+        name: "resultprinter"
         resources: 
           limits:
             cpu: 500m 
@@ -39,7 +39,7 @@ spec:
             value: {{$.Values.reportFreq | quote}}
       - image: "{{$.Values.producerImage.repository }}:{{$.Values.producerImage.tag | toString }}"
         imagePullPolicy: {{ $.Values.pullPolicy }}
-        name: {{ $.Values.producerImage.repository | toString | replace "/" "-" | replace "_" "-"  | adler32sum}}-{{ $.Values.producerImage.tag | toString | replace "." "-"  | adler32sum }}
+        name: "producer"
         resources: 
           limits:
             cpu: 500m 
