@@ -10,6 +10,7 @@ inputs:
 reportFreq: 100000
 completions: 1
 parallelism: 1
+processorScale: 9
 producerImage:
   repository: rasmus256docker/wordsolver-producer
   tag: 25
