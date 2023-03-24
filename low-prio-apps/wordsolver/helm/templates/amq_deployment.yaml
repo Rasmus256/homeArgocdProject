@@ -1,7 +1,10 @@
 apiVersion: broker.amq.io/v1beta1
 kind: ActiveMQArtemis
 metadata:
-  name: ex-aao
+  name: amq
+  namespace: wordsolver
+  labels:
+    io.kompose.service: amq
 spec:
   deploymentPlan:
     size: 1
