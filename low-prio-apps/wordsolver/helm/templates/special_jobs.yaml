@@ -40,6 +40,11 @@ spec:
               secretKeyRef:
                 name: amq-credentials-secret
                 key: AMQ_USER
+          - name: "PASSWORD"
+            valueFrom:
+              secretKeyRef:
+                name: amq-credentials-secret
+                key: AMQ_PASSWORD
       restartPolicy: Never
 ---
 apiVersion: apps/v1
