@@ -16,6 +16,28 @@ spec:
 
 ---
 
+apiVersion: broker.amq.io/v1beta1
+kind: ActiveMQArtemisAddress
+metadata:
+  name: wordsolverin
+spec:
+  addressName: wordsolver.input
+  queueName: wordsolver.input
+  routingType: multicast
+  removeFromBrokerOnDelete: true
+---
+
+apiVersion: broker.amq.io/v1beta1
+kind: ActiveMQArtemisAddress
+metadata:
+  name: wordsolverout
+spec:
+  addressName: wordsolver.output
+  queueName: wordsolver.output
+  routingType: multicast
+  removeFromBrokerOnDelete: true
+
+---
 
 apiVersion: v1
 kind: Service
