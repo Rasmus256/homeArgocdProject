@@ -35,6 +35,11 @@ spec:
         env:
           - name: "INPUTS"
             value: {{$.Values.inputs | quote}}
+          - name: "USERNAME"
+            valueFrom:
+              secretKeyRef:
+                name: amq-credentials-secret
+                key: AMQ_USER
       restartPolicy: Never
 ---
 apiVersion: apps/v1
