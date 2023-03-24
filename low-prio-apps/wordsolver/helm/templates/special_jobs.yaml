@@ -122,6 +122,16 @@ spec:
         env:
           - name: "REPORT_FREQ"
             value: {{$.Values.reportFreq | quote}}
+          - name: "USERNAME"
+            valueFrom:
+              secretKeyRef:
+                name: amq-credentials-secret
+                key: AMQ_USER
+          - name: "PASSWORD"
+            valueFrom:
+              secretKeyRef:
+                name: amq-credentials-secret
+                key: AMQ_PASSWORD
       restartPolicy: Always
 
 ---
