@@ -7,7 +7,7 @@ metadata:
     io.kompose.service: amq
 spec:
   deploymentPlan:
-    size: 2
+    size: 1
     image: placeholder
   acceptors:
   - name: "stomp"
