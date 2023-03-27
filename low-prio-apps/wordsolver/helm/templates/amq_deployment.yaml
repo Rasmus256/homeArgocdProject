@@ -15,19 +15,14 @@ spec:
     protocols: stomp
 
 ---
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: secondamqqueues
----
 
 apiVersion: broker.amq.io/v1beta1
 kind: ActiveMQArtemisAddress
 metadata:
-  name: wordsolverintest
+  name: wordsolverin
 spec:
   addressName: wordsolver.input
-  queueName: wordsolver.test
+  queueName: wordsolver.input
   routingType: multicast
   removeFromBrokerOnDelete: true
 ---
