@@ -39,24 +39,53 @@ spec:
 
 ---
 
-apiVersion: v1
-kind: Service
+apiVersion: networking.k8s.io/v1
+kind: Ingress
 metadata:
+  name: amq-ingress
   namespace: wordsolver
-  creationTimestamp: null
-  labels:
-    io.kompose.service: amq
-  name: amq
+  annotations:
+    acme.cert-manager.io/http01-ingress-class: traefik
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    acme.cert-manager.io/http01-edit-in-place: "true"
 spec:
-  ports:
-    - name: "61613"
-      port: 61613
-      targetPort: 61613
-    - name: "8161"
-      port: 8162
-      targetPort: 8161
-    - name: "5672"
-      port: 5672
-      targetPort: 5672
-  selector:
-    io.kompose.service: amq
+  rules:
+  - host: "amq.hosrasmus.hopto.org"
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: amq-hdls-svc
+            port: 
+              name: "console-jolokai"
+  tls:
+  - secretName: amqcert-wild-4-tls
+    hosts:
+      - "amq.hosrasmus.hopto.org"
+
+---
+
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: amq-cert
+  namespace: wordsolver
+spec:
+  # Secret names are always required.
+  secretName: amqcert-wild-4-tls
+  duration: 2160h0m0s
+  renewBefore: 360h0m0s # 15d
+  usages:
+    - server auth
+    - client auth
+  # At least one of a DNS Name, URI, or IP address is required.
+  dnsNames:
+    - "amq.hosrasmus.hopto.org"
+  # Issuer references are always required.
+  issuerRef:
+    name: letsencrypt-prod
+    # We can reference ClusterIssuers by changing the kind here.
+    # The default value is Issuer (i.e. a locally namespaced Issuer)
+    kind: ClusterIssuer
