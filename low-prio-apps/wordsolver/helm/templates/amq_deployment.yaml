@@ -59,7 +59,7 @@ spec:
           service:
             name: amq-hdls-svc
             port: 
-              name: "console-jolokai"
+              name: "console-jolokia"
   tls:
   - secretName: amqcert-wild-4-tls
     hosts:
