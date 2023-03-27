@@ -24,18 +24,6 @@ metadata:
 apiVersion: broker.amq.io/v1beta1
 kind: ActiveMQArtemisAddress
 metadata:
-  name: wordsolverintestsecondnamespace
-  namespace: secondamqqueues
-spec:
-  addressName: wordsolver.input
-  queueName: wordsolver.from.second.namespace
-  routingType: multicast
-  removeFromBrokerOnDelete: true
----
-
-apiVersion: broker.amq.io/v1beta1
-kind: ActiveMQArtemisAddress
-metadata:
   name: wordsolverintest
 spec:
   addressName: wordsolver.input
