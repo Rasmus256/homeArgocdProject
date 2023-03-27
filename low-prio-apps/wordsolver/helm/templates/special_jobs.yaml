@@ -162,5 +162,5 @@ spec:
    kind: Deployment
    name: wordsolverresultprinter
  minReplicas: 1
- maxReplicas: 1
+ maxReplicas: 3
  targetCPUUtilizationPercentage: 50
