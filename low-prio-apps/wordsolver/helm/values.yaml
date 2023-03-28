@@ -7,7 +7,6 @@ inputs:
   - "send"
   - "more"
   - "money"
-reportFreq: 100000
 completions: 1
 parallelism: 1
 processorScale: 9
