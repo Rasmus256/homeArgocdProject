@@ -82,8 +82,6 @@ spec:
         env:
           - name: "INPUTS"
             value: {{$.Values.inputs | quote}}
-          - name: "REPORT_FREQ"
-            value: {{$.Values.reportFreq | quote}}
       restartPolicy: Always
 
 ---
@@ -120,8 +118,6 @@ spec:
             cpu: 30m
             memory: 25Mi
         env:
-          - name: "REPORT_FREQ"
-            value: {{$.Values.reportFreq | quote}}
           - name: "USERNAME"
             valueFrom:
               secretKeyRef:
