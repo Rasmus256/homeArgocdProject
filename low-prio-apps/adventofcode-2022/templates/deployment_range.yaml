@@ -46,7 +46,7 @@ items:
 - apiVersion: broker.amq.io/v1beta1
   kind: ActiveMQArtemisAddress
   metadata:
-    name: {{$addName}}
+    name: {{$addName |replace "_" "-"}}
     namespace: adventofcode
   spec:
     addressName: {{$addName}}
