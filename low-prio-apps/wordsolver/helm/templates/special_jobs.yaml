@@ -38,13 +38,13 @@ spec:
           - name: "USERNAME"
             valueFrom:
               secretKeyRef:
-                name: amq-credentials-secret
-                key: AMQ_USER
+                name: amqpassword
+                key: username
           - name: "PASSWORD"
             valueFrom:
               secretKeyRef:
-                name: amq-credentials-secret
-                key: AMQ_PASSWORD
+                name: amqpassword
+                key: password
       restartPolicy: Never
 ---
 apiVersion: apps/v1
@@ -82,6 +82,17 @@ spec:
         env:
           - name: "INPUTS"
             value: {{$.Values.inputs | quote}}
+                env:
+          - name: "USERNAME"
+            valueFrom:
+              secretKeyRef:
+                name: amqpassword
+                key: username
+          - name: "PASSWORD"
+            valueFrom:
+              secretKeyRef:
+                name: amqpassword
+                key: password
       restartPolicy: Always
 
 ---
@@ -121,13 +132,13 @@ spec:
           - name: "USERNAME"
             valueFrom:
               secretKeyRef:
-                name: amq-credentials-secret
-                key: AMQ_USER
+                name: amqpassword
+                key: username
           - name: "PASSWORD"
             valueFrom:
               secretKeyRef:
-                name: amq-credentials-secret
-                key: AMQ_PASSWORD
+                name: amqpassword
+                key: password
       restartPolicy: Always
 
 ---
