@@ -13,7 +13,23 @@ spec:
   - name: "stomp"
     port: 61613
     protocols: stomp
-
+---
+apiVersion: broker.amq.io/v1alpha1
+kind: ActiveMQArtemisSecurity
+metadata:
+  name: wordsolver-amq-security
+  namespace: wordsolver
+spec:
+  securitySettings:
+    broker:
+    - match: 'wordsolver.#'
+      permissions:
+      - operationType: 'consume'
+        roles:
+        - wordsolver
+      - operationType: 'send'
+        roles:
+        - wordsolver
 ---
 
 apiVersion: broker.amq.io/v1beta1
