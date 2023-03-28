@@ -9,199 +9,199 @@ images:
   parts:
   - image:
       repository: rasmus256docker/advent_of_code_day1_part1
-      tag: 2.1.301
+      tag: 2.1.302
   - image:
       repository: rasmus256docker/advent_of_code_day1_part2
-      tag: 2.1.301
+      tag: 2.1.302
 - title: day2
   parts:
   - image:
       repository: rasmus256docker/advent_of_code_day2_part1
-      tag: 2.1.301
+      tag: 2.1.302
   - image:
       repository: rasmus256docker/advent_of_code_day2_part2
-      tag: 2.1.301
+      tag: 2.1.302
 - title: day3
   parts:
   - image:
       repository: rasmus256docker/advent_of_code_day3_part1
-      tag: 2.1.301
+      tag: 2.1.302
   - image:
       repository: rasmus256docker/advent_of_code_day3_part2
-      tag: 2.1.301
+      tag: 2.1.302
 - title: day4
   parts:
   - image:
       repository: rasmus256docker/advent_of_code_day4_part1
-      tag: 2.1.301
+      tag: 2.1.302
   - image:
       repository: rasmus256docker/advent_of_code_day4_part2
-      tag: 2.1.301
+      tag: 2.1.302
 - title: day5
   parts:
   - image:
       repository: rasmus256docker/advent_of_code_day5_part1
-      tag: 2.1.301
+      tag: 2.1.302
   - image:
       repository: rasmus256docker/advent_of_code_day5_part2
-      tag: 2.1.301
+      tag: 2.1.302
 - title: day6
   parts:
   - image:
       repository: rasmus256docker/advent_of_code_day6_part1
-      tag: 2.1.301
+      tag: 2.1.302
   - image:
       repository: rasmus256docker/advent_of_code_day6_part2
-      tag: 2.1.301
+      tag: 2.1.302
 - title: day7
   parts:
   - image:
       repository: rasmus256docker/advent_of_code_day7_part1
-      tag: 2.1.301
+      tag: 2.1.302
   - image:
       repository: rasmus256docker/advent_of_code_day7_part2
-      tag: 2.1.301
+      tag: 2.1.302
 - title: day8
   parts:
   - image:
       repository: rasmus256docker/advent_of_code_day8_part1
-      tag: 2.1.301
+      tag: 2.1.302
   - image:
       repository: rasmus256docker/advent_of_code_day8_part2
-      tag: 2.1.301
+      tag: 2.1.302
 - title: day9
   parts:
   - image:
       repository: rasmus256docker/advent_of_code_day9_part1
-      tag: 2.1.301
+      tag: 2.1.302
   - image:
       repository: rasmus256docker/advent_of_code_day9_part2
-      tag: 2.1.301
+      tag: 2.1.302
 - title: day10
   parts:
   - image:
       repository: rasmus256docker/advent_of_code_day10_part1
-      tag: 2.1.301
+      tag: 2.1.302
   - image:
       repository: rasmus256docker/advent_of_code_day10_part2
-      tag: 2.1.301
+      tag: 2.1.302
 - title: day11
   parts:
   - image:
       repository: rasmus256docker/advent_of_code_day11_part1
-      tag: 2.1.301
+      tag: 2.1.302
   - image:
       repository: rasmus256docker/advent_of_code_day11_part2
-      tag: 2.1.301
+      tag: 2.1.302
 - title: day12
   parts:
   - image:
       repository: rasmus256docker/advent_of_code_day12_part1
-      tag: 2.1.301
+      tag: 2.1.302
   - image:
       repository: rasmus256docker/advent_of_code_day12_part2
-      tag: 2.1.301
+      tag: 2.1.302
 - title: day13
   parts:
   - image:
       repository: rasmus256docker/advent_of_code_day13_part1
-      tag: 2.1.301
+      tag: 2.1.302
   - image:
       repository: rasmus256docker/advent_of_code_day13_part2
-      tag: 2.1.301
+      tag: 2.1.302
 - title: day14
   parts:
   - image:
       repository: rasmus256docker/advent_of_code_day14_part1
-      tag: 2.1.301
+      tag: 2.1.302
   - image:
       repository: rasmus256docker/advent_of_code_day14_part2
-      tag: 2.1.301
+      tag: 2.1.302
 - title: day15
   parts:
   - image:
       repository: rasmus256docker/advent_of_code_day15_part1
-      tag: 2.1.301
+      tag: 2.1.302
   - image:
       repository: rasmus256docker/advent_of_code_day15_part2
-      tag: 2.1.301
+      tag: 2.1.302
 - title: day16
   parts:
   - image:
       repository: rasmus256docker/advent_of_code_day16_part1
-      tag: 2.1.301
+      tag: 2.1.302
   - image:
       repository: rasmus256docker/advent_of_code_day16_part2
-      tag: 2.1.301
+      tag: 2.1.302
 - title: day17
   parts:
   - image:
       repository: rasmus256docker/advent_of_code_day17_part1
-      tag: 2.1.301
+      tag: 2.1.302
   - image:
       repository: rasmus256docker/advent_of_code_day17_part2
-      tag: 2.1.301
+      tag: 2.1.302
 - title: day18
   parts:
   - image:
       repository: rasmus256docker/advent_of_code_day18_part1
-      tag: 2.1.301
+      tag: 2.1.302
   - image:
       repository: rasmus256docker/advent_of_code_day18_part2
-      tag: 2.1.301
+      tag: 2.1.302
 - title: day19
   parts:
   - image:
       repository: rasmus256docker/advent_of_code_day19_part1
-      tag: 2.1.301
+      tag: 2.1.302
   - image:
       repository: rasmus256docker/advent_of_code_day19_part2
-      tag: 2.1.301
+      tag: 2.1.302
 - title: day20
   parts:
   - image:
       repository: rasmus256docker/advent_of_code_day20_part1
-      tag: 2.1.301
+      tag: 2.1.302
   - image:
       repository: rasmus256docker/advent_of_code_day20_part2
-      tag: 2.1.301
+      tag: 2.1.302
 - title: day21
   parts:
   - image:
       repository: rasmus256docker/advent_of_code_day21_part1
-      tag: 2.1.301
+      tag: 2.1.302
   - image:
       repository: rasmus256docker/advent_of_code_day21_part2
-      tag: 2.1.301
+      tag: 2.1.302
 - title: day22
   parts:
   - image:
       repository: rasmus256docker/advent_of_code_day22_part1
-      tag: 2.1.301
+      tag: 2.1.302
   - image:
       repository: rasmus256docker/advent_of_code_day22_part2
-      tag: 2.1.301
+      tag: 2.1.302
 - title: day23
   parts:
   - image:
       repository: rasmus256docker/advent_of_code_day23_part1
-      tag: 2.1.301
+      tag: 2.1.302
   - image:
       repository: rasmus256docker/advent_of_code_day23_part2
-      tag: 2.1.301
+      tag: 2.1.302
 - title: day24
   parts:
   - image:
       repository: rasmus256docker/advent_of_code_day24_part1
-      tag: 2.1.301
+      tag: 2.1.302
   - image:
       repository: rasmus256docker/advent_of_code_day24_part2
-      tag: 2.1.301
+      tag: 2.1.302
 - title: day25
   parts:
   - image:
       repository: rasmus256docker/advent_of_code_day25_part1
-      tag: 2.1.301
+      tag: 2.1.302
   - image:
       repository: rasmus256docker/advent_of_code_day25_part2
-      tag: 2.1.301
+      tag: 2.1.302
