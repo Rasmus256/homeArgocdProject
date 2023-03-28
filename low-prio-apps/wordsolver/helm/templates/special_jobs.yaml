@@ -1,52 +1,4 @@
 ---
-apiVersion: batch/v1
-kind: Job
-metadata:
-  labels:
-    app: wordsolver
-    chart: "{{ $.Chart.Name }}-{{ $.Chart.Version }}"
-    release: {{ $.Release.Name | quote }}
-    heritage: {{ $.Release.Service | quote }}
-    version: {{ $.Chart.Version }}
-  {{- $str := "producer" | lower}}
-  {{- $str = print $str $.Values.completions}}
-  {{- $str = print $str $.Values.parallelism}}
-  {{- $str = print $str "-" $.Values.producerImage.tag }}
-  {{- $str = print $str $.Values.inputs }}
-  {{- $str = print $str | adler32sum  }}
-  name: {{ $str | quote}}
-  namespace: wordsolver
-spec:
-  backoffLimit: 2
-  template:
-    spec:
-    spec:
-      containers:
-      - image: "{{$.Values.producerImage.repository }}:{{$.Values.producerImage.tag | toString }}"
-        imagePullPolicy: {{ $.Values.pullPolicy }}
-        name: "producer"
-        env:
-          - name: "INPUTS"
-            value: {{$.Values.inputs | quote}}
-          - name: "USERNAME"
-            valueFrom:
-              secretKeyRef:
-                name: amqpassword
-                key: username
-          - name: "PASSWORD"
-            valueFrom:
-              secretKeyRef:
-                name: amqpassword
-                key: password
-        resources: 
-          limits:
-            cpu: 500m 
-            memory: 25Mi
-          requests:
-            cpu: 10m
-            memory: 25Mi
-      restartPolicy: Never
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -94,7 +46,54 @@ spec:
                 name: amqpassword
                 key: password
       restartPolicy: Always
-
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  labels:
+    app: wordsolver
+    chart: "{{ $.Chart.Name }}-{{ $.Chart.Version }}"
+    release: {{ $.Release.Name | quote }}
+    heritage: {{ $.Release.Service | quote }}
+    version: {{ $.Chart.Version }}
+  {{- $str := "producer" | lower}}
+  {{- $str = print $str $.Values.completions}}
+  {{- $str = print $str $.Values.parallelism}}
+  {{- $str = print $str "-" $.Values.producerImage.tag }}
+  {{- $str = print $str $.Values.inputs }}
+  {{- $str = print $str | adler32sum  }}
+  name: {{ $str | quote}}
+  namespace: wordsolver
+spec:
+  backoffLimit: 2
+  template:
+    spec:
+    spec:
+      containers:
+      - image: "{{$.Values.producerImage.repository }}:{{$.Values.producerImage.tag | toString }}"
+        imagePullPolicy: {{ $.Values.pullPolicy }}
+        name: "producer"
+        env:
+          - name: "INPUTS"
+            value: {{$.Values.inputs | quote}}
+          - name: "USERNAME"
+            valueFrom:
+              secretKeyRef:
+                name: amqpassword
+                key: username
+          - name: "PASSWORD"
+            valueFrom:
+              secretKeyRef:
+                name: amqpassword
+                key: password
+        resources: 
+          limits:
+            cpu: 500m 
+            memory: 25Mi
+          requests:
+            cpu: 10m
+            memory: 25Mi
+      restartPolicy: Never
 ---
 apiVersion: apps/v1
 kind: Deployment
