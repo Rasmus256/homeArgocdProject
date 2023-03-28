@@ -9,7 +9,6 @@ spec:
   deploymentPlan:
     size: 1
     image: placeholder
-    requireLogin: false
   acceptors:
   - name: "stomp"
     port: 61613
