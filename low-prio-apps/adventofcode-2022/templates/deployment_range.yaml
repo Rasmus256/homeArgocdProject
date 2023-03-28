@@ -19,6 +19,7 @@ items:
     {{- $postfix := $postfix | adler32sum }}
     {{- $str := print .title "-" $postfix}}
     name: {{ $str  }}
+    namespace: adventofcode
   spec:
     completions: {{ $.Values.completions }}
     parallelism: {{ $.Values.parallelism }}
@@ -33,9 +34,15 @@ items:
           name: {{ $e.image.repository | toString | replace "/" "-" | replace "_" "-"}}-{{ $e.image.tag | toString | replace "." "-" }}
           env:
             - name: "USERNAME"
-              value: "adventofcode"
+              valueFrom:
+                secretKeyRef:
+                  name: amqpassword
+                  key: username
             - name: "PASSWORD"
-              value: "123456"
+              valueFrom:
+                secretKeyRef:
+                  name: amqpassword
+                  key: password
         {{- end }}
         restartPolicy: Never
 
