@@ -23,7 +23,7 @@ spec:
   apiVersion: broker.amq.io/v1beta1
   kind: ActiveMQArtemisAddress
   metadata:
-    name: $address
+    name: {{$address}}
     namespace: adventofcode
   spec:
     addressName: {{$address}}
