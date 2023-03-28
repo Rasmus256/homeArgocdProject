@@ -13,3 +13,20 @@ spec:
   - name: "stomp"
     port: 61613
     protocols: stomp
+---
+apiVersion: broker.amq.io/v1alpha1
+kind: ActiveMQArtemisSecurity
+metadata:
+  name: adventofcode-amq-security
+  namespace: adventofcode
+spec:
+  securitySettings:
+    broker:
+    - match: 'adventofcode.#'
+      permissions:
+      - operationType: 'consume'
+        roles:
+        - adventofcode
+      - operationType: 'send'
+        roles:
+        - adventofcode
