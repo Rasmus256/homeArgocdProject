@@ -20,24 +20,24 @@ metadata:
   name: adventofcode-amq-security
   namespace: adventofcode
 spec:
-  loginModules:
-    propertiesLoginModules:
-      - name: "prop-module"
-        users:
-          - name: "sam"
-            password: "samsecret"
-            roles:
-              - "sender"
-          - name: "rob"
-            password: "robsecret"
-            roles:
-              - "receiver"
-  securityDomains:
-    brokerDomain:
-      name: "activemq"
-      loginModules:
-        - name: "prop-module"
-          flag: "sufficient"
+#   loginModules:
+#     propertiesLoginModules:
+#       - name: "prop-module"
+#         users:
+#           - name: "sam"
+#             password: "samsecret"
+#             roles:
+#               - "sender"
+#           - name: "rob"
+#             password: "robsecret"
+#             roles:
+#               - "receiver"
+#   securityDomains:
+#     brokerDomain:
+#       name: "activemq"
+#       loginModules:
+#         - name: "prop-module"
+#           flag: "sufficient"
   securitySettings:
     broker:
     - match: 'adventofcode.#'
