@@ -13,22 +13,3 @@ spec:
   - name: "stomp"
     port: 61613
     protocols: stomp
-
-#day2_part2
-{{$daylimit := $.Values.numberOfDays | int}}
-{{range $day, $f := until $daylimit }}
-{{range $part, $e := until 2}}
-{{- $address := print "day" $day "_part" $part}}
----
-  apiVersion: broker.amq.io/v1beta1
-  kind: ActiveMQArtemisAddress
-  metadata:
-    name: {{$address}}
-    namespace: adventofcode
-  spec:
-    addressName: {{$address}}
-    queueName: {{$address}}
-    routingType: multicast
-    removeFromBrokerOnDelete: true
-{{end}}
-{{end}}
