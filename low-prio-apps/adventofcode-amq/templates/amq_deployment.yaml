@@ -32,6 +32,12 @@ spec:
             password: "robsecret"
             roles:
               - "receiver"
+  securityDomains:
+    brokerDomain:
+      name: "activemq"
+      loginModules:
+        - name: "prop-module"
+          flag: "sufficient"
   securitySettings:
     broker:
     - match: 'adventofcode.#'
