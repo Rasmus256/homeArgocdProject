@@ -35,3 +35,24 @@ items:
         restartPolicy: Never
 
 {{- end }}    
+---
+apiVersion: v1
+kind: List
+items:
+{{- range .Values.images }}
+  {{- $title := .title }}
+  {{- range $i, $e := .parts }}
+  {{ $addName := print $title "_" $i }}
+- apiVersion: broker.amq.io/v1beta1
+  kind: ActiveMQArtemisAddress
+  metadata:
+    name: {{$addName}}
+    namespace: adventofcode
+  spec:
+    addressName: {{$addName}}
+    queueName: {{$addName}}
+    routingType: multicast
+    removeFromBrokerOnDelete: true
+  {{- end }}    
+{{- end }}    
+---
