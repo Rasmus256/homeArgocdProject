@@ -148,19 +148,4 @@ spec:
  minReplicas: 1
  maxReplicas: {{$.Values.processorScale}}
  targetCPUUtilizationPercentage: 70
- 
----
 
-apiVersion: autoscaling/v1
-kind: HorizontalPodAutoscaler
-metadata:
- name: wordsolverresultprinter
- namespace: wordsolver
-spec:
- scaleTargetRef:
-   apiVersion: apps/v1
-   kind: Deployment
-   name: wordsolverresultprinter
- minReplicas: 1
- maxReplicas: 3
- targetCPUUtilizationPercentage: 50
