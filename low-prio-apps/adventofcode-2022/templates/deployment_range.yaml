@@ -42,7 +42,7 @@ items:
 {{- range .Values.images }}
   {{- $title := .title }}
   {{- range $i, $e := .parts }}
-  {{- $partName := add1 $i}
+  {{- $partName := add1 $i}}
   {{ $addName := print $title "_part" $partName }}
 - apiVersion: broker.amq.io/v1beta1
   kind: ActiveMQArtemisAddress
