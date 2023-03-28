@@ -33,7 +33,6 @@ spec:
         env:
           - name: "INPUTS"
             value: {{$.Values.inputs | quote}}
-                env:
           - name: "USERNAME"
             valueFrom:
               secretKeyRef:
