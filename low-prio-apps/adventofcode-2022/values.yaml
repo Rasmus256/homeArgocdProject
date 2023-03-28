@@ -81,10 +81,10 @@ images:
   parts:
   - image:
       repository: rasmus256docker/advent_of_code_day10_part1
-      tag: 2.1.304
+      tag: 2.1.307
   - image:
       repository: rasmus256docker/advent_of_code_day10_part2
-      tag: 2.1.306
+      tag: 2.1.308
 - title: day11
   parts:
   - image:
