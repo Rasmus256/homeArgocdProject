@@ -25,6 +25,19 @@ spec:
       - image: "{{$.Values.producerImage.repository }}:{{$.Values.producerImage.tag | toString }}"
         imagePullPolicy: {{ $.Values.pullPolicy }}
         name: "producer"
+        env:
+          - name: "INPUTS"
+            value: {{$.Values.inputs | quote}}
+          - name: "USERNAME"
+            valueFrom:
+              secretKeyRef:
+                name: amqpassword
+                key: username
+          - name: "PASSWORD"
+            valueFrom:
+              secretKeyRef:
+                name: amqpassword
+                key: password
         resources: 
           limits:
             cpu: 500m 
@@ -32,9 +45,6 @@ spec:
           requests:
             cpu: 10m
             memory: 25Mi
-        env:
-          - name: "INPUTS"
-            value: {{$.Values.inputs | quote}}
       restartPolicy: Never
 ---
 apiVersion: apps/v1
