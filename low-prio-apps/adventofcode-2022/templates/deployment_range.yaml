@@ -43,11 +43,12 @@ items:
   {{- $title := .title }}
   {{- range $i, $e := .parts }}
   {{- $partName := add1 $i}}
-  {{ $addName := print $title "_part" $partName }}
+  #adventofcode.day6.part1
+  {{ $addName := print "adventofcode." $title ".part" $partName }}
 - apiVersion: broker.amq.io/v1beta1
   kind: ActiveMQArtemisAddress
   metadata:
-    name: {{$addName |replace "_" "-"}}
+    name: {{$addName |replace "_" "-" |replace "." "-"}}
     namespace: adventofcode
   spec:
     addressName: {{$addName}}
