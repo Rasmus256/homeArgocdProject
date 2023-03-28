@@ -16,8 +16,8 @@ spec:
 
 ---
 #day2_part2
-{{$daylimit := $.Values.numberOfDays | int}}
-{{range $day, $f := until $daylimit}}
+{{$daylimit := $.Values.numberOfDays + 1| int}}
+{{range $day, $f := until $daylimit +1 }}
 {{range $part, $e := until 2}}
 {{- $address := print "day" $day "_part" $part}}
   apiVersion: broker.amq.io/v1beta1
