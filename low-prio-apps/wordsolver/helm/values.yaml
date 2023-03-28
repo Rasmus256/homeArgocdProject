@@ -3,6 +3,7 @@ kubernetes:
 namespace: default
 pullPolicy: IfNotPresent
 title: WordSolver
+ingressEnabled: "true"
 inputs:
   - "send"
   - "more"
