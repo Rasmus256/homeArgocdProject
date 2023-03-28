@@ -30,3 +30,56 @@ spec:
       - operationType: 'send'
         roles:
         - adventofcode
+---
+---
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: amq-ingress
+  namespace: adventofcode
+  annotations:
+    acme.cert-manager.io/http01-ingress-class: traefik
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    acme.cert-manager.io/http01-edit-in-place: "true"
+spec:
+  rules:
+  - host: "adventofcodebroker.hosrasmus.hopto.org"
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: amq-hdls-svc
+            port: 
+              name: "console-jolokia"
+  tls:
+  - secretName: amqcert-wild-4-tls
+    hosts:
+      - "adventofcodebroker.hosrasmus.hopto.org"
+
+---
+
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: amq-cert
+  namespace: adventofcode
+spec:
+  # Secret names are always required.
+  secretName: amqcert-wild-4-tls
+  duration: 2160h0m0s
+  renewBefore: 360h0m0s # 15d
+  usages:
+    - server auth
+    - client auth
+  # At least one of a DNS Name, URI, or IP address is required.
+  dnsNames:
+    - "adventofcodebroker.hosrasmus.hopto.org"
+  # Issuer references are always required.
+  issuerRef:
+    name: letsencrypt-prod
+    # We can reference ClusterIssuers by changing the kind here.
+    # The default value is Issuer (i.e. a locally namespaced Issuer)
+    kind: ClusterIssuer
