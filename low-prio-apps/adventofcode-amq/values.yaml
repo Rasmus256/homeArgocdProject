@@ -4,3 +4,4 @@ namespace: default
 pullPolicy: IfNotPresent
 numberOfDays: 26
 topicsPrDay: 3
+ingressEnabled: "true"
