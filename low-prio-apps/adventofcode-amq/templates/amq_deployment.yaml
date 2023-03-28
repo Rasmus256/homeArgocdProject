@@ -1,0 +1,33 @@
+apiVersion: broker.amq.io/v1beta1
+kind: ActiveMQArtemis
+metadata:
+  name: amq
+  namespace: adventofcode
+  labels:
+    io.kompose.service: amq
+spec:
+  deploymentPlan:
+    size: 1
+    image: placeholder
+  acceptors:
+  - name: "stomp"
+    port: 61613
+    protocols: stomp
+
+---
+#day2_part2
+{{range $day, $f := until $.Values.numberOfDays}}
+{{range $part, $e := until 2}}
+{{- $address := print "day" $day "_part" $part}}
+  apiVersion: broker.amq.io/v1beta1
+  kind: ActiveMQArtemisAddress
+  metadata:
+    name: $address
+    namespace: adventofcode
+  spec:
+    addressName: {{$address}}
+    queueName: {{$address}}
+    routingType: multicast
+    removeFromBrokerOnDelete: true
+{{end}}
+{{end}}
