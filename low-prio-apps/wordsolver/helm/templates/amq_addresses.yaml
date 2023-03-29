@@ -14,6 +14,18 @@ spec:
 apiVersion: broker.amq.io/v1beta1
 kind: ActiveMQArtemisAddress
 metadata:
+  name: wordsolverintest
+spec:
+  addressName: wordsolver.input
+  queueConfiguration:
+    purgeOnNoConsumers: false
+    durable: true
+  queueName: wordsolver.input
+  routingType: multicast
+---
+apiVersion: broker.amq.io/v1beta1
+kind: ActiveMQArtemisAddress
+metadata:
   name: wordsolverinaddress
 spec:
   addressName: wordsolver.input
