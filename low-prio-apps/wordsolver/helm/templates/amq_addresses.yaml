@@ -11,6 +11,13 @@ spec:
   routingType: multicast
   removeFromBrokerOnDelete: true
 ---
+apiVersion: broker.amq.io/v1beta1
+kind: ActiveMQArtemisAddress
+metadata:
+  name: wordsolverinaddress
+spec:
+  addressName: wordsolver.input
+---
 
 apiVersion: broker.amq.io/v1beta1
 kind: ActiveMQArtemisAddress
