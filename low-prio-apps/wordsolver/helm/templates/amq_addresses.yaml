@@ -4,6 +4,9 @@ metadata:
   name: wordsolverin
 spec:
   addressName: wordsolver.input
+  queueConfiguration:
+    purgeOnNoConsumers: false
+    durable: true
   queueName: wordsolver.input
   routingType: multicast
   removeFromBrokerOnDelete: true
@@ -15,6 +18,9 @@ metadata:
   name: wordsolverout
 spec:
   addressName: wordsolver.output
+  queueConfiguration:
+    purgeOnNoConsumers: false
+    durable: true
   queueName: wordsolver.output
   routingType: multicast
   removeFromBrokerOnDelete: true
@@ -25,6 +31,9 @@ metadata:
   name: wordsolver.heartbeat
 spec:
   addressName: wordsolver.heartbeat
+  queueConfiguration:
+    purgeOnNoConsumers: false
+    durable: true
   queueName: wordsolver.heartbeat
   routingType: multicast
   removeFromBrokerOnDelete: true
