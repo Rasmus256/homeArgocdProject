@@ -9,6 +9,10 @@ spec:
   deploymentPlan:
     size: 1
     image: placeholder
+  addressSettings:
+    addressSetting:
+      - match: '#'
+        autoCreateAddresses: false
   acceptors:
   - name: "stomp"
     port: 61613
