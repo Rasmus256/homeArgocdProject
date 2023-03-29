@@ -18,6 +18,13 @@ data:
         - ::1
         - 10.42.0.8
     # Text to speech
+    zone:
+      # This will override the default home zone
+      - name: Home
+        latitude: 55.727996706819916
+        longitude: 9.605113863945009
+        radius: 20
+        icon: mdi:home
     tts:
       - platform: google_translate
     template:
