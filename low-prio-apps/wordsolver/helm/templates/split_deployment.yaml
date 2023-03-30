@@ -17,7 +17,7 @@ metadata:
   namespace: wordsolver
 spec:
   backoffLimit: 2
-  completions: 10
+  completions: 1
   template:
     spec:
     spec:
