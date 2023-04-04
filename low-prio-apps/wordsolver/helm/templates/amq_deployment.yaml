@@ -7,7 +7,7 @@ metadata:
     io.kompose.service: amq
 spec:
   deploymentPlan:
-    size: 1
+    size: 3
     image: placeholder
   addressSettings:
     addressSetting:
