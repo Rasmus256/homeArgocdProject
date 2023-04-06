@@ -214,8 +214,6 @@ data:
         light.kids_light:
           name: toilet lights
     
-    shell_comand: !include shell_commands.yaml
-    
     switch:
       - platform: wake_on_lan
         name: RemotePC
