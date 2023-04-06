@@ -2,7 +2,6 @@ apiVersion: broker.amq.io/v1beta1
 kind: ActiveMQArtemis
 metadata:
   name: amq
-  namespace: wordsolver
   labels:
     io.kompose.service: amq
 spec:
@@ -24,7 +23,6 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: amq-ingress
-  namespace: wordsolver
   annotations:
     acme.cert-manager.io/http01-ingress-class: traefik
     cert-manager.io/cluster-issuer: letsencrypt-prod
@@ -52,7 +50,6 @@ apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: amq-cert
-  namespace: wordsolver
 spec:
   # Secret names are always required.
   secretName: amqcert-wild-4-tls
