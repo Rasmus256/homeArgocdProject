@@ -218,17 +218,11 @@ data:
     switch:
       - platform: wake_on_lan
         name: RemotePC
-        host: 192.168.87.14
+        broadcast_port: 9
         mac: d4:3d:7e:19:f4:fa
+        broadcast_address: 192.168.87.14
         turn_off:
           service: shell_command.turn_off_remote_pc
-        turn_on:
-          service: wake_on_lan.send_magic_packet
-          data:
-            broadcast_port: 9
-            mac: d4:3d:7e:19:f4:fa
-            broadcast_address: 192.168.87.14
-
     
     logger:
       default: info
