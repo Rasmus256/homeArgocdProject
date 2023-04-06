@@ -213,7 +213,17 @@ data:
             - STØVSUG
         light.kids_light:
           name: toilet lights
-
+    
+    shell_comand: !include shell_commands.yaml
+    
+    switch:
+      - platform: wake_on_lan
+        name: RemotePC
+        host: 192.168.87.14
+        mac: d4:3d:7e:19:f4:fa
+        turn_off
+          service: shell_command.turn_off_remote_pc
+    
     logger:
       default: info
   `}}
