@@ -8,7 +8,6 @@ metadata:
     heritage: {{ $.Release.Service | quote }}
     version: {{ $.Chart.Version }}
   name: wordsolverresultprinter
-  namespace: wordsolver
 spec:
   revisionHistoryLimit: 0
   selector:
