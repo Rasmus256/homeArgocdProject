@@ -221,7 +221,7 @@ data:
         name: RemotePC
         host: 192.168.87.14
         mac: d4:3d:7e:19:f4:fa
-        turn_off
+        turn_off:
           service: shell_command.turn_off_remote_pc
     
     logger:
