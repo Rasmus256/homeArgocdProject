@@ -110,7 +110,7 @@ data:
       - platform: ping
         host: 192.168.87.14
         name: grampapc
-        scan_interval: 30
+        scan_interval: 3
 
     group: !include groups.yaml
     automation: !include automations.yaml
