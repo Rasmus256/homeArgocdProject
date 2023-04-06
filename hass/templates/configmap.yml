@@ -107,6 +107,10 @@ data:
         host: 192.168.87.111
         name: raspberrypi
         scan_interval: 30
+      - platform: ping
+        host: 192.168.87.14
+        name: grampapc
+        scan_interval: 30
 
     group: !include groups.yaml
     automation: !include automations.yaml
