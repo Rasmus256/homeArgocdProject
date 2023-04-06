@@ -9,7 +9,6 @@ metadata:
     heritage: {{ $.Release.Service | quote }}
     version: {{ $.Chart.Version }}
   name: wordsolverprocessor
-  namespace: wordsolver
 spec:
   revisionHistoryLimit: 0
   selector:
@@ -49,7 +48,6 @@ apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
  name: wordsolverprocessor
- namespace: wordsolver
 spec:
  scaleTargetRef:
    apiVersion: apps/v1
