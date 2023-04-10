@@ -8,6 +8,8 @@ spec:
   deploymentPlan:
     size: 3
     image: placeholder
+    clustered: true
+    persistenceEnabled: true
   addressSettings:
     addressSetting:
       - match: '#'
