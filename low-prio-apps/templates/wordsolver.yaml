@@ -1,13 +1,13 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: wordsolvertmp
+  name: wordsolver
   namespace: argocd
   labels:
     "category": "{{$.Values.spec.labels.category}}"
 spec:
   destination:
-    namespace: wordsolvertmp
+    namespace: wordsolver
     server: 'https://kubernetes.default.svc'
   source:
     path: low-prio-apps/wordsolver/helm
