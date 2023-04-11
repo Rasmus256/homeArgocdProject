@@ -10,6 +10,8 @@ spec:
     image: placeholder
     clustered: true
     persistenceEnabled: true
+  brokerProperties:
+    - globalMaxSize=1G
   addressSettings:
     addressSetting:
       - match: '#'
