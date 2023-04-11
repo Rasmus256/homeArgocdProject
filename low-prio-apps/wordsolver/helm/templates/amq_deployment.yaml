@@ -12,6 +12,9 @@ spec:
     persistenceEnabled: true
   brokerProperties:
     - globalMaxSize=1G
+  env:
+  - name: AMQ_GLOBAL_MAX_SIZE
+    value: "900 mb"
   addressSettings:
     addressSetting:
       - match: '#'
