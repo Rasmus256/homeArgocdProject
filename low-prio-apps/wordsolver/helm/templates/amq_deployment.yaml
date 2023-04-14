@@ -34,10 +34,10 @@ spec:
     propertiesLoginModules:
       - name: "prop-module"
         users:
-          - name: "sam"
-            password: "samsecret"
+          - name: "wordsolver"
+            password: "wordsolverPasswordSet!"
             roles:
-              - "admin"
+              - "adventofcode"
   securityDomains:
     consoleDomain:
       loginModules:
