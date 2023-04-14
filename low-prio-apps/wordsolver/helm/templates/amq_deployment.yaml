@@ -29,7 +29,6 @@ apiVersion: broker.amq.io/v1alpha1
 kind: ActiveMQArtemisSecurity
 metadata:
   name: adventofcode-amq-security
-  namespace: adventofcode
 spec:
   loginModules:
     propertiesLoginModules:
