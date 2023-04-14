@@ -37,7 +37,7 @@ spec:
           - name: "wordsolver"
             password: "wordsolverPasswordSet!"
             roles:
-              - "adventofcode"
+              - "wordsolver"
   securityDomains:
     brokerDomain:
       loginModules:
@@ -46,14 +46,14 @@ spec:
           debug: true
   securitySettings:
     broker:
-    - match: 'adventofcode.#'
+    - match: 'wordsolver.#'
       permissions:
       - operationType: 'consume'
         roles:
-        - adventofcode
+        - wordsolver
       - operationType: 'send'
         roles:
-        - adventofcode
+        - wordsolver
 {{- if eq $.Values.ingressEnabled "true" }}
 ---
 apiVersion: networking.k8s.io/v1
