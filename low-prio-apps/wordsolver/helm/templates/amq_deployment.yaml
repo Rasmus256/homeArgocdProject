@@ -19,7 +19,6 @@ spec:
     addressSetting:
       - match: 'wordsolver.#'
         autoCreateAddresses: false
-        maxSizeBytes: "-1"
   acceptors:
   - name: "stomp"
     port: 61613
