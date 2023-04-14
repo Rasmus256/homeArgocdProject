@@ -24,7 +24,37 @@ spec:
   - name: "stomp"
     port: 61613
     protocols: stomp
-
+---
+apiVersion: broker.amq.io/v1alpha1
+kind: ActiveMQArtemisSecurity
+metadata:
+  name: adventofcode-amq-security
+  namespace: adventofcode
+spec:
+  loginModules:
+    propertiesLoginModules:
+      - name: "prop-module"
+        users:
+          - name: "sam"
+            password: "samsecret"
+            roles:
+              - "sender"
+  securityDomains:
+    brokerDomain:
+      name: "activemq"
+      loginModules:
+        - name: "prop-module"
+          flag: "sufficient"
+  securitySettings:
+    broker:
+    - match: 'adventofcode.#'
+      permissions:
+      - operationType: 'consume'
+        roles:
+        - adventofcode
+      - operationType: 'send'
+        roles:
+        - adventofcode
 {{- if eq $.Values.ingressEnabled "true" }}
 ---
 apiVersion: networking.k8s.io/v1
