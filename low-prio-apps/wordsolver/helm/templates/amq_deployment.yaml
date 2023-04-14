@@ -17,7 +17,7 @@ spec:
     value: "900 mb"
   addressSettings:
     addressSetting:
-      - match: '#'
+      - match: 'wordsolver.#'
         autoCreateAddresses: false
         maxSizeBytes: "-1"
   acceptors:
