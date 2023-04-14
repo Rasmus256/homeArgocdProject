@@ -39,7 +39,7 @@ spec:
             roles:
               - "adventofcode"
   securityDomains:
-    consoleDomain:
+    brokerDomain:
       loginModules:
         - name: "prop-module"
           flag: "sufficient"
