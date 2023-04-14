@@ -30,20 +30,20 @@ kind: ActiveMQArtemisSecurity
 metadata:
   name: adventofcode-amq-security
 spec:
-#   loginModules:
-#     propertiesLoginModules:
-#       - name: "prop-module"
-#         users:
-#           - name: "sam"
-#             password: "samsecret"
-#             roles:
-#               - "admin"
-#   securityDomains:
-#     consoleDomain:
-#       name: "activemq"
-#       loginModules:
-#         - name: "prop-module"
-#           flag: "sufficient"
+  loginModules:
+    propertiesLoginModules:
+      - name: "prop-module"
+        users:
+          - name: "sam"
+            password: "samsecret"
+            roles:
+              - "admin"
+  securityDomains:
+    consoleDomain:
+      loginModules:
+        - name: "prop-module"
+          flag: "sufficient"
+          debug: true
   securitySettings:
     broker:
     - match: 'adventofcode.#'
