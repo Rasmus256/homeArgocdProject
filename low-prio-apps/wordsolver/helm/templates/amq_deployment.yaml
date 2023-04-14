@@ -39,7 +39,7 @@ spec:
             roles:
               - "admin"
   securityDomains:
-    brokerDomain:
+    consoleDomain:
       name: "activemq"
       loginModules:
         - name: "prop-module"
