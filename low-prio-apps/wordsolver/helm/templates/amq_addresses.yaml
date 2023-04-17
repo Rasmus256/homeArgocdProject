@@ -53,7 +53,7 @@ spec:
 apiVersion: broker.amq.io/v1beta1
 kind: ActiveMQArtemisAddress
 metadata:
-  name: testQueueDef1
+  name: firstTestQueueDef
 spec:
   addressName: testAddress
   queueConfiguration:
@@ -67,7 +67,7 @@ spec:
 apiVersion: broker.amq.io/v1beta1
 kind: ActiveMQArtemisAddress
 metadata:
-  name: testQueueDef2
+  name: secondTestQueueDef
 spec:
   addressName: testAddress
   queueConfiguration:
