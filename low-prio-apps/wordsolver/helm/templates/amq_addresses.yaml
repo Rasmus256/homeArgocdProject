@@ -39,3 +39,40 @@ spec:
   queueName: wordsolver.heartbeat
   routingType: multicast
   removeFromBrokerOnDelete: true
+---
+
+apiVersion: broker.amq.io/v1beta1
+kind: ActiveMQArtemisAddress
+metadata:
+  name: testAddressDef
+spec:
+  addressName: testAddress
+  removeFromBrokerOnDelete: true
+---
+
+apiVersion: broker.amq.io/v1beta1
+kind: ActiveMQArtemisAddress
+metadata:
+  name: testQueueDef1
+spec:
+  addressName: testAddress
+  queueConfiguration:
+    purgeOnNoConsumers: true
+    durable: false
+  queueName: myFirstQueue
+  routingType: multicast
+  removeFromBrokerOnDelete: true
+---
+
+apiVersion: broker.amq.io/v1beta1
+kind: ActiveMQArtemisAddress
+metadata:
+  name: testQueueDef2
+spec:
+  addressName: testAddress
+  queueConfiguration:
+    purgeOnNoConsumers: true
+    durable: false
+  queueName: mySecondQueue
+  routingType: multicast
+  removeFromBrokerOnDelete: true
