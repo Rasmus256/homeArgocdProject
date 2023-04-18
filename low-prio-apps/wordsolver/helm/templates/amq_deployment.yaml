@@ -43,6 +43,7 @@ spec:
         - name: "prop-module"
           flag: "sufficient"
           debug: true
+          reload: true
   securitySettings:
     broker:
     - match: 'wordsolver.#'
