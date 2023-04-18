@@ -39,15 +39,7 @@ spec:
   queueName: wordsolver.heartbeat
   routingType: multicast
   removeFromBrokerOnDelete: true
----
 
-apiVersion: broker.amq.io/v1beta1
-kind: ActiveMQArtemisAddress
-metadata:
-  name: testaddressdef
-spec:
-  addressName: testAddress
-  removeFromBrokerOnDelete: true
 ---
 
 apiVersion: broker.amq.io/v1beta1
