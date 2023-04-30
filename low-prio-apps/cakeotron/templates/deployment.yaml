@@ -31,7 +31,7 @@ spec:
             capabilities:
               drop:
                 - ALL
-          image: rasmus256docker/cakeotron:20220910123341
+          image: rasmus256docker/cakeotron:3
           name: cakeotron
           imagePullPolicy: Always
           ports:
