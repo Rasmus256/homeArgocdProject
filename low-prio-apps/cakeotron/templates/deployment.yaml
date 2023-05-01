@@ -31,7 +31,7 @@ spec:
             capabilities:
               drop:
                 - ALL
-          image: rasmus256docker/cakeotron:3
+          image: "{{$.Values.image.repository }}:{{$.Values.image.tag | toString }}"
           name: cakeotron
           imagePullPolicy: Always
           ports:
