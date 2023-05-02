@@ -41,7 +41,7 @@ spec:
             - name: BACKUPS_IF_IDLE
               value: "false"
             - name: BACKUPS_IDLE_GRACE_PERIOD
-              value: 1200
+              value: 3600
             - name: STATUS_HTTP
               value: "true"
             - name: STATUS_HTTP_PORT
