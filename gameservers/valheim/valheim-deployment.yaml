@@ -38,6 +38,10 @@ spec:
                   optional: false
             - name: BACKUPS_MAX_AGE
               value: "10"
+            - name: BACKUPS_IF_IDLE
+              value: "false"
+            - name: BACKUPS_IDLE_GRACE_PERIOD
+              value: 1200
             - name: STATUS_HTTP
               value: "true"
             - name: STATUS_HTTP_PORT
