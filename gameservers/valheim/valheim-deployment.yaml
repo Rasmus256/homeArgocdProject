@@ -42,6 +42,8 @@ spec:
               value: "false"
             - name: BACKUPS_IDLE_GRACE_PERIOD
               value: "3600"
+            - name: UPDATE_CRON
+              value: "00 00 31 02 *"
             - name: STATUS_HTTP
               value: "true"
             - name: STATUS_HTTP_PORT
