@@ -50,7 +50,8 @@ spec:
               value: "true"
             - name: VALHEIM_PLUS
               value: "false"
-          runAsUser: 11000
+          securityContext:
+            runAsUser: 11000
           image: lloesche/valheim-server:latest
           name: valheim
           ports:
