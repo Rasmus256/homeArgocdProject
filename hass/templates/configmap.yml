@@ -67,9 +67,6 @@ data:
             {% endfor %}
             {{ns.usages}}
     sensor:
-      - platform: worxlandroid
-        host: 192.168.0.10
-        pin: 0239
       - platform: systemmonitor
         resources:
           - type: memory_free
