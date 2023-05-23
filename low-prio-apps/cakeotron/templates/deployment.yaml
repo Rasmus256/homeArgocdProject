@@ -50,16 +50,9 @@ spec:
               port: 80
             initialDelaySeconds: 0
             periodSeconds: 600
-            timeoutSeconds: 1
-            failureThreshold: 3
-          readinessProbe:
-            httpGet:
-              path: /
-              port: 80
-            initialDelaySeconds: 0
-            periodSeconds: 5
-            timeoutSeconds: 1
-            failureThreshold: 3
+            timeoutSeconds: 5
+            failureThreshold: 1
+
           volumeMounts:
             - mountPath:  /tmp
               name: tmpfs-1
