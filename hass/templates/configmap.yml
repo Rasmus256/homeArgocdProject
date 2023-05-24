@@ -67,12 +67,6 @@ data:
             {% endfor %}
             {{ns.usages}}
     sensor:
-      - platform: systemmonitor
-        resources:
-          - type: memory_free
-          - type: memory_use_percent
-          - type: processor_use
-          - type: processor_temperature
       - platform: steam_online
         api_key: !secret steamapikey
         accounts: 
