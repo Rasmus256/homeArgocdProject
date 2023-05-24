@@ -227,4 +227,6 @@ data:
     
     logger:
       default: info
+      logs:
+        custom_components.aula: debug
   `}}
