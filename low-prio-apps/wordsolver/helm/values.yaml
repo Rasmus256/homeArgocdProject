@@ -5,9 +5,9 @@ pullPolicy: IfNotPresent
 title: WordSolver
 ingressEnabled: "true"
 inputs:
-  - "send"
-  - "more"
-  - "money"
+  - "abcdef"
+  - "gihjkl"
+  - "mnopqrt"
 lockedinit: 'm,1;o,0;s,9'
 completions: 1
 parallelism: 1
