@@ -41,6 +41,8 @@ spec:
               secretKeyRef:
                 name: amqpassword
                 key: password
+          - name: "PROCESSING_LIMIT"
+            value: {{$.Values.processinglimit | quoted }}
       restartPolicy: Always
 
 ---
