@@ -15,7 +15,7 @@ producerImage:
   tag: 81
 processorImage:
   repository: rasmus256docker/wordsolver-processor
-  tag: 80
+  tag: 87
 resultprinterImage:
   repository: rasmus256docker/wordsolver-resultprinter
   tag: 73
