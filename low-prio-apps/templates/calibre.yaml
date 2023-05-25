@@ -10,7 +10,7 @@ spec:
     namespace: calibre
     server: 'https://kubernetes.default.svc'
   source:
-    path: /
+    path: .
     repoURL: 'https://github.com/Rasmus256/calibre-kubernetes.git'
     targetRevision: HEAD
   project: default
