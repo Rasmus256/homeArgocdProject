@@ -11,7 +11,7 @@ spec:
     server: 'https://kubernetes.default.svc'
   source:
     path: /
-    repoURL: 'git@github.com:Rasmus256/calibre-kubernetes.git'
+    repoURL: 'https://github.com/Rasmus256/calibre-kubernetes.git'
     targetRevision: HEAD
   project: default
   syncPolicy:
