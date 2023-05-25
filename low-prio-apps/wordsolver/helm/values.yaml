@@ -8,13 +8,13 @@ inputs:
   - "send"
   - "more"
   - "money"
-lockedinit: '{"m":1, "o":0, "s":9}'
+lockedinit: 'm,1;o,0;s,9'
 completions: 1
 parallelism: 1
 processorScale: 9
 producerImage:
   repository: rasmus256docker/wordsolver-producer
-  tag: 73
+  tag: 75
 processorImage:
   repository: rasmus256docker/wordsolver-processor
   tag: 73
