@@ -28,7 +28,7 @@ spec:
           - name: "INPUTS"
             value: {{$.Values.inputs | quote}}
           - name: "LOCKED_INIT"
-            value: '{"A":"5"}'
+            value: '{"m":1, "o":0, "s":9}'
           - name: "USERNAME"
             valueFrom:
               secretKeyRef:
