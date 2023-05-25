@@ -27,6 +27,8 @@ spec:
         env:
           - name: "INPUTS"
             value: {{$.Values.inputs | quote}}
+          - name: "LOCKED_INIT"
+            value: "{'A':'5'}"
           - name: "USERNAME"
             valueFrom:
               secretKeyRef:
