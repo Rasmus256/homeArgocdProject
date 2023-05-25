@@ -12,6 +12,7 @@ metadata:
   {{- $str = print $str $.Values.parallelism}}
   {{- $str = print $str "-" $.Values.producerImage.tag }}
   {{- $str = print $str $.Values.inputs }}
+  {{- $str = print $str $.Values.lockedinit }}
   {{- $str = print $str | adler32sum  }}
   name: {{ $str | quote}}
 spec:
@@ -28,7 +29,7 @@ spec:
           - name: "INPUTS"
             value: {{$.Values.inputs | quote}}
           - name: "LOCKED_INIT"
-            value: '{"m":1, "o":0, "s":9}'
+            value: {{$.Values.lockedinit | quote}}
           - name: "USERNAME"
             valueFrom:
               secretKeyRef:
