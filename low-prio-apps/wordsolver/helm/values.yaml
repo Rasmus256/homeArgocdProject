@@ -4,10 +4,7 @@ namespace: default
 pullPolicy: IfNotPresent
 title: WordSolver
 ingressEnabled: "true"
-inputs:
-  - "abcdef"
-  - "gihjkl"
-  - "mnopqrt"
+inputs: "abcdef ghijkl mnopqrt"
 lockedinit: 'm,1;o,0;s,9'
 processinglimit: 3
 completions: 1
