@@ -24,7 +24,7 @@ metadata:
     acme.cert-manager.io/http01-edit-in-place: "true"
 spec:
   rules:
-  - host: hass2.hosrasmus.hopto.org
+  - host: hass.hosrasmus.hopto.org
     http:
       paths:
       - path: /
@@ -35,6 +35,6 @@ spec:
             port: 
               number: 8123
   tls:
-  - secretName: hasscert-tls-cert
+  - secretName: hasscert2-tls-cert
     hosts:
-      - hass2.hosrasmus.hopto.org
+      - hass.hosrasmus.hopto.org
