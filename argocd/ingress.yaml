@@ -7,7 +7,7 @@ metadata:
     cert-manager.io/cluster-issuer: letsencrypt-prod
 spec:
   rules:
-  - host: argocd.hosrasmus.hopto.org
+  - host: argocd2.hosrasmus.hopto.org
     http:
       paths:
       - path: /
@@ -18,9 +18,9 @@ spec:
             port: 
               name: "http"
   tls:
-  - secretName: neverbeforeseensecretname
+  - secretName: argocdingresssecretname
     hosts:
-      - argocd.hosrasmus.hopto.org
+      - argocd2.hosrasmus.hopto.org
     
 ---
 
@@ -32,7 +32,7 @@ metadata:
   namespace: argocd
 spec:
   # Secret names are always required.
-  secretName: neverbeforeseensecretname
+  secretName: argocdingresssecretname
   duration: 2160h0m0s
   renewBefore: 360h0m0s # 15d
   usages:
@@ -40,7 +40,7 @@ spec:
     - client auth
   # At least one of a DNS Name, URI, or IP address is required.
   dnsNames:
-    - argocd.hosrasmus.hopto.org
+    - argocd2.hosrasmus.hopto.org
   # Issuer references are always required.
   issuerRef:
     name: letsencrypt-prod
