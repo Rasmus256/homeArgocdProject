@@ -24,7 +24,7 @@ metadata:
     acme.cert-manager.io/http01-edit-in-place: "true"
 spec:
   rules:
-  - host: hass.hosrasmus.hopto.org
+  - host: hass2.hosrasmus.hopto.org
     http:
       paths:
       - path: /
