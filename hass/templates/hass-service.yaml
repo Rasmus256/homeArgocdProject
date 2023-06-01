@@ -37,4 +37,4 @@ spec:
   tls:
   - secretName: hasscert-tls-cert
     hosts:
-      - hass.hosrasmus.hopto.org
+      - hass2.hosrasmus.hopto.org
