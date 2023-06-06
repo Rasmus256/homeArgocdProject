@@ -6,7 +6,7 @@ metadata:
   labels:
     io.kompose.service: ddoexplorer
 spec:
-  revisionHistoryLimit: 3
+  revisionHistoryLimit: 1
   replicas: 2
   minReadySeconds: 20
   selector:
