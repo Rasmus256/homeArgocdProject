@@ -45,11 +45,7 @@ spec:
             limits:
               memory: "64Mi"
               cpu: "50m"
-          livenessProbe:
-            httpGet:
-              path: /healthz
-              port: 80
-          readinessProbe:
+          startupProbe:
             httpGet:
               path: /healthz
               port: 80
