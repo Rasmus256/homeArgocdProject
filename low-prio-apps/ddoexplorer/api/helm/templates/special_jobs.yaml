@@ -7,8 +7,8 @@ metadata:
     io.kompose.service: ddoexplorer
 spec:
   revisionHistoryLimit: 1
-  replicas: 2
-  minReadySeconds: 20
+  replicas: 1
+  minReadySeconds: 5
   selector:
     matchLabels:
       io.kompose.service: ddoexplorer
@@ -20,11 +20,11 @@ spec:
         io.kompose.service: ddoexplorer
     spec:
       containers:
-        - env:        
+        - env:
             - name: "NUM_NODES"
-              value: {{$.Values.numNodes | quote}}
+              value: { { $.Values.numNodes | quote } }
             - name: "BLACKLIST"
-              value: {{$.Values.blacklistedEdges |quote}}
+              value: { { $.Values.blacklistedEdges |quote } }
           securityContext:
             allowPrivilegeEscalation: false
             runAsNonRoot: true
@@ -49,5 +49,23 @@ spec:
             httpGet:
               path: /healthz
               port: 80
+            initialDelaySeconds: 3
+            timeoutSeconds: 5
+            failureThreshold: 1
       restartPolicy: Always
 status: {}
+
+---
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: ddoexplorerscaler
+  namespace: ddoexplorer
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: ddoexplorer
+  minReplicas: 1
+  maxReplicas: 4
+  targetCPUUtilizationPercentage: 70
