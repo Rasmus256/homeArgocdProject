@@ -35,6 +35,6 @@ spec:
             port: 
               number: 8123
   tls:
-  - secretName: hasscert2-tls-cert
+  - secretName: hasscert-tls-cert
     hosts:
       - hass.hosrasmus.hopto.org
