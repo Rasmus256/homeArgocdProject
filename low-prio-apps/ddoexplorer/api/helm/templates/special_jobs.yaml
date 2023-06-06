@@ -22,9 +22,9 @@ spec:
       containers:
         - env:
             - name: "NUM_NODES"
-              value: { { $.Values.numNodes | quote } }
+              value: {{ $.Values.numNodes | quote }}
             - name: "BLACKLIST"
-              value: { { $.Values.blacklistedEdges |quote } }
+              value: {{ $.Values.blacklistedEdges |quote }}
           securityContext:
             allowPrivilegeEscalation: false
             runAsNonRoot: true
