@@ -6,6 +6,11 @@
   "ignorePaths": ["**/low-prio-apps/adventofcode-2022/**"],
   "packageRules": [
     {
+      "matchPaths": ["low-prio-apps/*"],
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "automerge": true
+    },
+    {
       "matchPaths": ["helm/*"],
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "automerge": true,
