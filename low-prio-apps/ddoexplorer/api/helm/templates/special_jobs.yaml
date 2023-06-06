@@ -7,7 +7,7 @@ metadata:
     io.kompose.service: ddoexplorer
 spec:
   revisionHistoryLimit: 3
-  replicas: 1
+  replicas: 2
   minReadySeconds: 20
   selector:
     matchLabels:
@@ -49,9 +49,9 @@ spec:
             httpGet:
               path: /healthz
               port: 80
-            initialDelaySeconds: 0
-            periodSeconds: 600
-            timeoutSeconds: 5
-            failureThreshold: 1
+          readynessProbe:
+            httpGet:
+              path: /healthz
+              port: 80
       restartPolicy: Always
 status: {}
