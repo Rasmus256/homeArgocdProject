@@ -8,7 +8,7 @@ metadata:
 spec:
   revisionHistoryLimit: 1
   replicas: 1
-  minReadySeconds: 5
+  minReadySeconds: 2
   selector:
     matchLabels:
       io.kompose.service: ddoexplorer
