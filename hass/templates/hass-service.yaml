@@ -21,7 +21,6 @@ metadata:
   annotations:
     acme.cert-manager.io/http01-ingress-class: traefik
     cert-manager.io/cluster-issuer: letsencrypt-prod
-    acme.cert-manager.io/http01-edit-in-place: "true"
 spec:
   rules:
   - host: hass.hosrasmus.hopto.org
