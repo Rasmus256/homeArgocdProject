@@ -8,4 +8,4 @@ title: DDOExplorer
 baseurl: ddoexplorer.hosrasmus.hopto.org
 image:
   repository: rasmus256docker/ddoexplorer-api
-  tag: 20230606-105833
+  tag: 20230606-135832
