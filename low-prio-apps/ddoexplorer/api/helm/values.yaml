@@ -1,0 +1,10 @@
+kubernetes:
+  host: https://kubernetes.default
+namespace: default
+pullPolicy: IfNotPresent
+numNodes: 2003
+blacklistedEdges: "0,0;1,1"
+title: DDOExplorer
+image:
+  repository: rasmus256docker/ddoexplorer-api
+  tag: 20230215-113358
