@@ -19,7 +19,6 @@ kind: Ingress
 metadata:
   name: hass-ingress
   annotations:
-    acme.cert-manager.io/http01-ingress-class: traefik
     cert-manager.io/cluster-issuer: letsencrypt-prod
 spec:
   rules:
