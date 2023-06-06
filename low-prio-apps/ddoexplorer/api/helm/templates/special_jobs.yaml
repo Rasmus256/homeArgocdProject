@@ -8,7 +8,7 @@ metadata:
 spec:
   revisionHistoryLimit: 1
   replicas: 1
-  minReadySeconds: 2
+  minReadySeconds: 1
   selector:
     matchLabels:
       io.kompose.service: ddoexplorer
@@ -51,7 +51,7 @@ spec:
               port: 80
             initialDelaySeconds: 3
             timeoutSeconds: 5
-            failureThreshold: 1
+            failureThreshold: 3
       restartPolicy: Always
 status: {}
 
