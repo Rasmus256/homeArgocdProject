@@ -8,4 +8,4 @@ blacklistedEdges: "0,0;1,1"
 title: DDOExplorer
 image:
   repository: rasmus256docker/ddoexplorer
-  tag: 20230215-113358
+  tag: 20230607-125110
