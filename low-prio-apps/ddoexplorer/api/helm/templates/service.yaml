@@ -29,7 +29,7 @@ spec:
   - host: {{ .Values.baseurl}}
     http:
       paths:
-      - path: /
+      - path: /api
         pathType: Prefix
         backend:
           service:
