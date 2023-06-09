@@ -18,4 +18,4 @@ processorImage:
   tag: 133
 resultprinterImage:
   repository: rasmus256docker/wordsolver-resultprinter
-  tag: 133
+  tag: 134
