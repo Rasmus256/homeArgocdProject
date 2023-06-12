@@ -82,5 +82,6 @@ spec:
       services:
         - name: ddoexplorer
           port: 80
+          weight: 10
         - name: ddoexplorertwo
           port: 80
