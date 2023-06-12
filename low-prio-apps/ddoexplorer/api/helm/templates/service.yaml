@@ -89,7 +89,7 @@ spec:
         - name: whoami
           image: containous/whoami
           ports:
-            - name: web
+            - name: webp
               containerPort: 80
 ---
 apiVersion: v1
@@ -113,7 +113,7 @@ metadata:
 
 spec:
   entryPoints:
-    - web
+    - webp
   routes:
     - match: Host(`whoami.hosrasmus.hopto.org`)
       kind: Rule
