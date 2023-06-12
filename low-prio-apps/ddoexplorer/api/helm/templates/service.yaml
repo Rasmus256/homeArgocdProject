@@ -42,7 +42,6 @@ metadata:
     acme.cert-manager.io/http01-edit-in-place: "true"
     traefik.ingress.kubernetes.io/service-weights: |
       ddoexplorer: 50%
-      ddoexplorertwo: 50%
 spec:
   rules:
   - host: {{ .Values.baseurl}}
