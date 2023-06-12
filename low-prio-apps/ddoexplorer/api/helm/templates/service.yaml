@@ -20,7 +20,7 @@ metadata:
   namespace: ddoexplorer
   labels:
     io.kompose.service: ddoexplorertwo
-  name: ddoexplorerddoexplorertwo
+  name: ddoexplorertwo
 spec:
   ports:
     - name: "ddoexplorer"
