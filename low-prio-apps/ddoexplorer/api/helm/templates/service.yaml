@@ -82,7 +82,7 @@ spec:
       services:
         - name: ddoexplorer
           port: 80
-          weight: 10
+          weight: 2
         - name: ddoexplorertwo
           port: 80
   tls:
