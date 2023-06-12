@@ -37,6 +37,6 @@ spec:
             port: 
               name: "workdaycounter"
   tls:
-  - secretName: workdaycountercert-wild-4-tls
+  - secretName: workdaycountercert-wild-tls
     hosts:
       - {{ .Values.baseurl}}
