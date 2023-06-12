@@ -39,7 +39,7 @@ metadata:
 
 spec:
   entryPoints:
-    - web
+    - ddoexplorer
   routes:
     - match: Host(`ddoexplorer.hosramus.hopto.org`)
       kind: Rule
