@@ -19,7 +19,7 @@ spec:
         io.kompose.service: workdaycounter
     spec:
       containers:
-          securityContext:
+        - securityContext:
             allowPrivilegeEscalation: false
             runAsNonRoot: true
             runAsUser: 99999
