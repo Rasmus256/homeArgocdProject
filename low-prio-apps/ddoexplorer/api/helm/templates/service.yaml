@@ -41,7 +41,7 @@ spec:
   entryPoints:
     - web
   routes:
-    - match: /api/greet
+    - match: Host(`ddoexplorer.hosramus.hopto.org`)
       kind: Rule
       services:
         - name: ddoexplorertwo
