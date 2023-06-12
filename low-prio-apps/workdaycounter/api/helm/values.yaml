@@ -1,0 +1,9 @@
+kubernetes:
+  host: https://kubernetes.default
+namespace: default
+pullPolicy: IfNotPresent
+title: WorkdayCounter
+baseurl: workdaycounter.hosrasmus.hopto.org
+image:
+  repository: rasmus256docker/workdaycounter
+  tag: 20230612-060842
