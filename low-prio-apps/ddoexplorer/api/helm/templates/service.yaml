@@ -30,42 +30,6 @@ spec:
     io.kompose.service: ddoexplorertwo
 
 ---
-
-# apiVersion: networking.k8s.io/v1
-# kind: Ingress
-# metadata:
-#   name: ddoexplorer-ingress
-#   namespace: ddoexplorer
-#   annotations:
-#     acme.cert-manager.io/http01-ingress-class: traefik
-#     cert-manager.io/cluster-issuer: letsencrypt-prod
-#     acme.cert-manager.io/http01-edit-in-place: "true"
-#     traefik.ingress.kubernetes.io/service-weights: |
-#       ddoexplorer: 50%
-# spec:
-#   rules:
-#   - host: {{ .Values.baseurl}}
-#     http:
-#       paths:
-#       - path: /api
-#         pathType: Prefix
-#         backend:
-#           service:
-#             name: ddoexplorer
-#             port: 
-#               name: "ddoexplorer"
-#       - path: /api
-#         pathType: Prefix
-#         backend:
-#           service:
-#             name: ddoexplorertwo
-#             port: 
-#               name: "ddoexplorer"
-#   tls:
-#   - secretName: ddoexplorercert-wild-4-tls
-#     hosts:
-#       - {{ .Values.baseurl}}
-# ---
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
@@ -77,7 +41,7 @@ spec:
     - web
     - websecure
   routes:
-    - match: Host(`ddoexplorer.hosrasmus.hopto.org`)
+    - match: Host(`{{ .Values.baseurl}}`)
       kind: Rule
       services:
         - name: ddoexplorer
