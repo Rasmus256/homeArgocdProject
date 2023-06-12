@@ -100,7 +100,7 @@ metadata:
 spec:
   ports:
     - protocol: TCP
-      name: web
+      name: webp
       port: 80
   selector:
     app: whoami
