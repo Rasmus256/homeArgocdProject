@@ -65,3 +65,20 @@ spec:
   - secretName: ddoexplorercert-wild-4-tls
     hosts:
       - {{ .Values.baseurl}}
+---
+
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: whoami
+  namespace: ddoexplorer
+
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: /api/greet
+      kind: Rule
+      services:
+        - name: ddoexplorertwo
+          port: 80
