@@ -6,4 +6,4 @@ title: WorkdayCounter
 baseurl: workdaycounter.hosrasmus.hopto.org
 image:
   repository: rasmus256docker/workdaycounter
-  tag: 20230612-060842
+  tag: 20230612-065505
