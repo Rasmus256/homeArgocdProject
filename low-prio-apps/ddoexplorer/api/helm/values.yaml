@@ -5,6 +5,7 @@ pullPolicy: IfNotPresent
 numNodes: 2003
 blacklistedEdges: "0,0;1,1"
 title: DDOExplorer
+canaryweight: 0
 baseurl: ddoexplorer.hosrasmus.hopto.org
 image:
   repository: rasmus256docker/ddoexplorer-api
