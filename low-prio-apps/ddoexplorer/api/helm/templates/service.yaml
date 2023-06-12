@@ -52,6 +52,13 @@ spec:
             name: ddoexplorer
             port: 
               name: "ddoexplorer"
+      - path: /api
+        pathType: Prefix
+        backend:
+          service:
+            name: ddoexplorertwo
+            port: 
+              name: "ddoexplorer"
   tls:
   - secretName: ddoexplorercert-wild-4-tls
     hosts:
