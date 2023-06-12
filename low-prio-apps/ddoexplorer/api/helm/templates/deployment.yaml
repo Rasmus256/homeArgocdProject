@@ -24,6 +24,8 @@ spec:
               value: {{ $.Values.numNodes | quote }}
             - name: "BLACKLIST"
               value: {{ $.Values.blacklistedEdges |quote }}
+            - name: "GREETING_MSG"
+              value: "World"
           securityContext:
             allowPrivilegeEscalation: false
             runAsNonRoot: true
@@ -55,6 +57,66 @@ spec:
 status: {}
 
 ---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ddoexplorertwo
+  namespace: ddoexplorer
+  labels:
+    io.kompose.service: ddoexplorertwo
+spec:
+  revisionHistoryLimit: 1
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: ddoexplorertwo
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        io.kompose.service: ddoexplorertwo
+    spec:
+      containers:
+        - env:
+            - name: "NUM_NODES"
+              value: {{ $.Values.numNodes | quote }}
+            - name: "BLACKLIST"
+              value: {{ $.Values.blacklistedEdges |quote }}
+            - name: "GREETING_MSG"
+              value: "Hello"
+          securityContext:
+            allowPrivilegeEscalation: false
+            runAsNonRoot: true
+            runAsUser: 99999
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop:
+                - ALL
+          image: "{{$.Values.image.repository }}:{{$.Values.image.tag | toString }}"
+          name: ddoexplorertwo
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              memory: "8Mi"
+              cpu: "30m"
+            limits:
+              memory: "64Mi"
+              cpu: "50m"
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: 80
+            periodSeconds: 60
+            initialDelaySeconds: 5
+            timeoutSeconds: 1
+      restartPolicy: Always
+status: {}
+
+---
 apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
@@ -65,6 +127,21 @@ spec:
     apiVersion: apps/v1
     kind: Deployment
     name: ddoexplorer
+  minReplicas: 1
+  maxReplicas: 2
+  targetCPUUtilizationPercentage: 70
+
+---
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: ddoexplorerscaler
+  namespace: ddoexplorer
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: ddoexplorertwo
   minReplicas: 1
   maxReplicas: 2
   targetCPUUtilizationPercentage: 70
