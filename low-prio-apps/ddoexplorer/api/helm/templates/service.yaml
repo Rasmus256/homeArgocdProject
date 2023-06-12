@@ -113,7 +113,7 @@ metadata:
 
 spec:
   entryPoints:
-    - webp
+    - web
   routes:
     - match: Host(`whoami.hosrasmus.hopto.org`)
       kind: Rule
