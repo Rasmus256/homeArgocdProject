@@ -115,7 +115,7 @@ spec:
   entryPoints:
     - web
   routes:
-    - match: Host(`whoami.mydomain.io`)
+    - match: Host(`whoami.hosrasmus.hopto.org`)
       kind: Rule
       services:
         - name: whoami
