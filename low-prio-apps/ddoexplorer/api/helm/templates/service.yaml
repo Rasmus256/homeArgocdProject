@@ -113,10 +113,10 @@ metadata:
 
 spec:
   entryPoints:
-    - web
+    - ddoexplorer
   routes:
     - match: Host(`whoami.hosrasmus.hopto.org`)
       kind: Rule
       services:
-        - name: whoami
+        - name: ddoexplorer
           port: 80
