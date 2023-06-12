@@ -67,7 +67,7 @@ metadata:
     io.kompose.service: ddoexplorertwo
 spec:
   revisionHistoryLimit: 1
-  replicas: 1
+  replicas: 0
   selector:
     matchLabels:
       io.kompose.service: ddoexplorertwo
