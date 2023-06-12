@@ -125,7 +125,7 @@ spec:
     apiVersion: apps/v1
     kind: Deployment
     name: ddoexplorer
-  minReplicas: 2
+  minReplicas: 1
   maxReplicas: 4
   targetCPUUtilizationPercentage: 70
 
@@ -140,6 +140,6 @@ spec:
     apiVersion: apps/v1
     kind: Deployment
     name: ddoexplorertwo
-  minReplicas: 2
+  minReplicas: 1
   maxReplicas: 4
   targetCPUUtilizationPercentage: 70
