@@ -14,6 +14,22 @@ spec:
     io.kompose.service: ddoexplorer
 
 ---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: ddoexplorer
+  labels:
+    io.kompose.service: ddoexplorertwo
+  name: ddoexplorerddoexplorertwo
+spec:
+  ports:
+    - name: "ddoexplorer"
+      port: 80
+      targetPort: 80
+  selector:
+    io.kompose.service: ddoexplorertwo
+
+---
 
 apiVersion: networking.k8s.io/v1
 kind: Ingress
