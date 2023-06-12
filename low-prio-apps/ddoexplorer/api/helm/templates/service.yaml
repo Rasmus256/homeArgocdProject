@@ -46,7 +46,7 @@ spec:
       services:
         - name: ddoexplorer
           port: 80
-          weight: 2
+          weight: {{ .Values.canaryweight }}
         - name: ddoexplorertwo
           port: 80
   tls:
