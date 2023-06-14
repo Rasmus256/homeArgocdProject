@@ -46,7 +46,7 @@ spec:
               cpu: "50m"
           livenessProbe:
             httpGet:
-              path: /
+              path: /cake
               port: 80
             initialDelaySeconds: 0
             periodSeconds: 600
