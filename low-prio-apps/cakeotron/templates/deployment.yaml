@@ -7,7 +7,7 @@ metadata:
     io.kompose.service: cakeotron
 spec:
   revisionHistoryLimit: 3
-  replicas: 2
+  replicas: 1
   minReadySeconds: 2
   selector:
     matchLabels:
@@ -40,7 +40,7 @@ spec:
           resources:
             requests:
               memory: "8Mi"
-              cpu: "10m"
+              cpu: "30m"
             limits:
               memory: "64Mi"
               cpu: "50m"
