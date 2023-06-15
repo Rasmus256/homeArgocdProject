@@ -29,6 +29,14 @@ spec:
           requests:
             cpu: 10m
             memory: 25Mi
+        securityContext:
+          allowPrivilegeEscalation: false
+          runAsNonRoot: true
+          runAsUser: 99999
+          readOnlyRootFilesystem: true
+          capabilities:
+            drop:
+              - ALL
         env:
           - name: "INPUTS"
             value: {{$.Values.inputs | quote}}
