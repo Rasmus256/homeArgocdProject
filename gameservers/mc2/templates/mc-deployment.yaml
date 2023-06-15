@@ -41,7 +41,7 @@ spec:
               value: "ShellyTuna8375,FavouredBell851"
             - name: "ALLOW_CHEATS"
               value: "true"
-          image: itzg/minecraft-bedrock-server:2022.1.0
+          image: "{{$.Values.image.repository }}:{{$.Values.image.tag | toString }}"
           name: mcbedrock
           ports:
             - containerPort: 19132
