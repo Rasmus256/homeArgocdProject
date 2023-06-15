@@ -61,6 +61,7 @@ metadata:
     cert-manager.io/cluster-issuer: letsencrypt-prod
     acme.cert-manager.io/http01-edit-in-place: "true"
 spec:
+  load_balancer_source_ranges: 0.0.0.0/0
   rules:
   - host: "adventofcodebroker.hosrasmus.hopto.org"
     http:
