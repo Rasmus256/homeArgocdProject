@@ -30,14 +30,14 @@ spec:
           requests:
             cpu: 30m
             memory: 25Mi
-          securityContext:
-            allowPrivilegeEscalation: false
-            runAsNonRoot: true
-            runAsUser: 99999
-            readOnlyRootFilesystem: true
-            capabilities:
-              drop:
-                - ALL
+        securityContext:
+          allowPrivilegeEscalation: false
+          runAsNonRoot: true
+          runAsUser: 99999
+          readOnlyRootFilesystem: true
+          capabilities:
+            drop:
+              - ALL
         env:
           - name: "USERNAME"
             valueFrom:
