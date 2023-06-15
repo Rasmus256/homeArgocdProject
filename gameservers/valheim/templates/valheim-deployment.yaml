@@ -52,7 +52,7 @@ spec:
               value: "true"
             - name: VALHEIM_PLUS
               value: "false"
-          image: "{{$.Values.image.repository }}@{{$.Values.image.digest | toString }}"
+          image: "{{$.Values.image.repository }}:{{$.Values.image.version | toString }}"
           name: valheim
           ports:
             - containerPort: 2456
