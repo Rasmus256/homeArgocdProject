@@ -25,6 +25,14 @@ spec:
       - image: "{{$.Values.producerImage.repository }}:{{$.Values.producerImage.tag | toString }}"
         imagePullPolicy: {{ $.Values.pullPolicy }}
         name: "producer"
+        securityContext:
+          allowPrivilegeEscalation: false
+          runAsNonRoot: true
+          runAsUser: 99999
+          readOnlyRootFilesystem: true
+          capabilities:
+            drop:
+              - ALL
         env:
           - name: "INPUTS"
             value: {{$.Values.inputs | quote}}
