@@ -1,3 +1,4 @@
+baseurl: cake.hosrasmus.hopto.org
 image:
-  repository: itzg/minecraft-bedrock-server
-  tag: 2022.1.0
+  repository: rasmus256docker/cakeotron
+  tag: 59
