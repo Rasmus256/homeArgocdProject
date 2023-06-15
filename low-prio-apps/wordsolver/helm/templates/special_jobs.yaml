@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - image: "{{$.Values.processorImage.repository }}:{{$.Values.processorImage.tag | toString }}"
-        imagePullPolicy: {{ $.Values.pullPolicy }}
+        imagePullPolicy: Always
         name: "processor"
         resources: 
           limits:
@@ -30,6 +30,12 @@ spec:
           requests:
             cpu: 30m
             memory: 25Mi
+        securityContext: 
+          allowPrivilegeEscalation: false
+          run_as_non_root: true
+          capabilities.drop:
+            - ALL
+          read_only_root_filesystem: true
         env:
           - name: "USERNAME"
             valueFrom:
