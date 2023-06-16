@@ -84,7 +84,7 @@ spec:
         io.kompose.service: cakeotron-dateservice
     spec:
       containers:
-          securityContext:
+         - securityContext:
             allowPrivilegeEscalation: false
             runAsNonRoot: true
             runAsUser: 99999
