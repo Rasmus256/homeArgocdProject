@@ -92,7 +92,7 @@ spec:
             capabilities:
               drop:
                 - ALL
-          image: "{{$.Values.image.repository }}-dateservice:{{$.Values.image.tag | toString }}"
+          image: "{{$.Values.imagedateservice.repository }}:{{$.Values.imagedateservice.tag | toString }}"
           name: cakeotron-dateservice
           imagePullPolicy: Always
           ports:
