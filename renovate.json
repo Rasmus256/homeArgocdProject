@@ -11,11 +11,6 @@
       "automerge": true
     },
     {
-      "matchPaths": ["cakeotron/*"],
-      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
-      "automerge": true
-    },
-    {
       "matchPaths": ["helm/*"],
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "automerge": true,
