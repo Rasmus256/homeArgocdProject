@@ -52,7 +52,14 @@ spec:
             port: 
               name: "cake"
       - path: /
-        pathType: Prefix
+        pathType: Exact
+        backend:
+          service:
+            name: cakeotron
+            port: 
+              name: "cake"
+      - path: /criteria
+        pathType: Exact
         backend:
           service:
             name: cakeotron
