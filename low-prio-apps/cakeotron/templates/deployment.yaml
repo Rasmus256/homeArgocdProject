@@ -61,3 +61,64 @@ spec:
           emptyDir: {}
       restartPolicy: Always
 status: {}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cakeotron-dateservice
+  namespace: cake
+  labels:
+    io.kompose.service: cakeotron-dateservice
+spec:
+  revisionHistoryLimit: 3
+  replicas: 3
+  minReadySeconds: 2
+  selector:
+    matchLabels:
+      io.kompose.service: cakeotron-dateservice
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        io.kompose.service: cakeotron-dateservice
+    spec:
+      containers:
+          securityContext:
+            allowPrivilegeEscalation: false
+            runAsNonRoot: true
+            runAsUser: 99999
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop:
+                - ALL
+          image: "{{$.Values.image.repository }}-dateservice:{{$.Values.image.tag | toString }}"
+          name: cakeotron-dateservice
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+            - containerPort: 443
+          resources:
+            requests:
+              memory: "8Mi"
+              cpu: "30m"
+            limits:
+              memory: "64Mi"
+              cpu: "50m"
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 80
+            initialDelaySeconds: 0
+            periodSeconds: 600
+            timeoutSeconds: 5
+            failureThreshold: 1
+
+          volumeMounts:
+            - mountPath:  /tmp
+              name: tmpfs-1
+      volumes:
+        - name: tmpfs-1
+          emptyDir: {}
+      restartPolicy: Always
+status: {}
