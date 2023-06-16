@@ -6,7 +6,7 @@ metadata:
   labels:
     io.kompose.service: cakeotron
 spec:
-  revisionHistoryLimit: 3
+  revisionHistoryLimit: 1
   replicas: 2
   minReadySeconds: 2
   selector:
@@ -70,7 +70,7 @@ metadata:
   labels:
     io.kompose.service: cakeotron-dateservice
 spec:
-  revisionHistoryLimit: 3
+  revisionHistoryLimit: 1
   replicas: 2
   minReadySeconds: 2
   selector:
