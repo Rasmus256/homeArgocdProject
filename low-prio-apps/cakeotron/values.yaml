@@ -4,4 +4,4 @@ image:
   tag: 1.0.0@sha256:6b4c33b4811a78ef2397b871e9a8b676d08db190873c114a5ce12f6f67717aa8
 dateserviceImage:
   repository: rasmus256docker/cakeotron-dateservice
-  tag: 1.0.0@sha256:d2637dbe0854a173c50bb9490d6bde63bcabcc51bc273b23529425247a5dae65
+  tag: 1.0.0@sha256:a008c569b36a67f1f21236552024c3c17ef5d01b5b24ef203e9d524fbafc13b9
