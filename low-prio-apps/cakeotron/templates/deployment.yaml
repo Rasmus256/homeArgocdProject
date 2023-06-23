@@ -55,7 +55,7 @@ spec:
 
           startupProbe:
             httpGet:
-              path: /healthz
+              path: /cake
               port: 80
             failureThreshold: 30
             periodSeconds: 10
