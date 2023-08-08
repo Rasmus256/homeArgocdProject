@@ -20,8 +20,8 @@ data:
     zone:
       # This will override the default home zone
       - name: Home
-        latitude: 55.727996706819916
-        longitude: 9.605113863945009
+        latitude: 55.4611298
+        longitude: 9.3421597
         radius: 20
         icon: mdi:home
     tts:
