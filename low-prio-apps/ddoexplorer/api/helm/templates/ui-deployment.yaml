@@ -7,6 +7,7 @@ metadata:
     io.kompose.service: ddoexplorerui
 spec:
   revisionHistoryLimit: 1
+  replicas: 1
   selector:
     matchLabels:
       io.kompose.service: ddoexplorerui
@@ -44,6 +45,7 @@ metadata:
     io.kompose.service: ddoexploreruitwo
 spec:
   revisionHistoryLimit: 1
+  replicas: 1
   selector:
     matchLabels:
       io.kompose.service: ddoexploreruitwo
