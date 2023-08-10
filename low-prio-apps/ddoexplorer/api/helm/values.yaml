@@ -18,4 +18,4 @@ uiimage:
   tag: 20230810-061929
 uicanaryimage:
   repository: rasmus256docker/ddoexplorer-ui
-  tag: 20230810-061929
+  tag: 20230810-071839
