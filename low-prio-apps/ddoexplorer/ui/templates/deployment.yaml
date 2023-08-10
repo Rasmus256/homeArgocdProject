@@ -1,0 +1,117 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ddoexplorerui
+  namespace: ddoexplorer
+  labels:
+    io.kompose.service: ddoexplorerui
+spec:
+  revisionHistoryLimit: 1
+  selector:
+    matchLabels:
+      io.kompose.service: ddoexplorerui
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        io.kompose.service: ddoexplorerui
+    spec:
+      containers:
+        - securityContext:
+            allowPrivilegeEscalation: false
+            runAsNonRoot: true
+            runAsUser: 99999
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop:
+                - ALL
+          image: "{{$.Values.image.repository }}:{{$.Values.image.tag | toString }}"
+          name: ddoexplorerui
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              memory: "8Mi"
+              cpu: "30m"
+            limits:
+              memory: "64Mi"
+              cpu: "50m"
+      restartPolicy: Always
+status: {}
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ddoexploreruitwo
+  namespace: ddoexplorer
+  labels:
+    io.kompose.service: ddoexploreruitwo
+spec:
+  revisionHistoryLimit: 1
+  selector:
+    matchLabels:
+      io.kompose.service: ddoexploreruitwo
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        io.kompose.service: ddoexploreruitwo
+    spec:
+      containers:
+        - securityContext:
+            allowPrivilegeEscalation: false
+            runAsNonRoot: true
+            runAsUser: 99999
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop:
+                - ALL
+          image: "{{$.Values.image.repository }}:{{$.Values.image.tag | toString }}"
+          name: ddoexploreruitwo
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              memory: "8Mi"
+              cpu: "30m"
+            limits:
+              memory: "64Mi"
+              cpu: "50m"
+      restartPolicy: Always
+status: {}
+
+---
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: ddoexplorerscaler
+  namespace: ddoexplorer
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: ddoexplorerui
+  minReplicas: 1
+  maxReplicas: 4
+  targetCPUUtilizationPercentage: 70
+
+---
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: ddoexplorerscalertwo
+  namespace: ddoexplorer
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: ddoexploreruitwo
+  minReplicas: 1
+  maxReplicas: 4
+  targetCPUUtilizationPercentage: 70
