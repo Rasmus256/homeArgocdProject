@@ -18,7 +18,7 @@ spec:
         io.kompose.service: ddoexplorerui
     spec:
       containers:
-          image: "{{$.Values.image.repository }}:{{$.Values.image.tag | toString }}"
+        - image: "{{$.Values.image.repository }}:{{$.Values.image.tag | toString }}"
           name: ddoexplorerui
           imagePullPolicy: Always
           ports:
