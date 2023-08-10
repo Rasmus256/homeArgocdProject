@@ -72,7 +72,7 @@ spec:
     - web
     - websecure
   routes:
-    - match: Host(`{{ .Values.baseurl}}/api`)
+    - match: Host(`{{ .Values.baseurl}}`) &&  PathPrefix(`/api`)
       kind: Rule
       services:
         - name: ddoexplorer
