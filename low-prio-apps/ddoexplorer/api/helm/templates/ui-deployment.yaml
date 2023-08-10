@@ -57,7 +57,7 @@ spec:
         io.kompose.service: ddoexploreruitwo
     spec:
       containers:
-        - image: "{{$.Values.uiimage.repository }}:{{$.Values.uiimage.tag | toString }}"
+        - image: "{{$.Values.uicanaryimage.repository }}:{{$.Values.uicanaryimage.tag | toString }}"
           name: ddoexploreruitwo
           imagePullPolicy: Always
           ports:
