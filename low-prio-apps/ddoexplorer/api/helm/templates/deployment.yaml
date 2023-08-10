@@ -92,7 +92,7 @@ spec:
             capabilities:
               drop:
                 - ALL
-          image: "{{$.Values.image.repository }}:{{$.Values.image.tag | toString }}"
+          image: "{{$.Values.canaryimage.repository }}:{{$.Values.canaryimage.tag | toString }}"
           name: ddoexplorertwo
           imagePullPolicy: Always
           ports:
