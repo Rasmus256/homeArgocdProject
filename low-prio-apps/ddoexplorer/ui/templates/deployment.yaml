@@ -18,14 +18,6 @@ spec:
         io.kompose.service: ddoexplorerui
     spec:
       containers:
-        - securityContext:
-            allowPrivilegeEscalation: false
-            runAsNonRoot: true
-            runAsUser: 99999
-            readOnlyRootFilesystem: true
-            capabilities:
-              drop:
-                - ALL
           image: "{{$.Values.image.repository }}:{{$.Values.image.tag | toString }}"
           name: ddoexplorerui
           imagePullPolicy: Always
