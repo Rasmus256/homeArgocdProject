@@ -10,3 +10,6 @@ baseurl: ddoexplorer.hosrasmus.hopto.org
 image:
   repository: rasmus256docker/ddoexplorer-api
   tag: 20230623-070651
+ui-image:
+  repository: rasmus256docker/ddoexplorer-ui
+  tag: 20230810-061929
