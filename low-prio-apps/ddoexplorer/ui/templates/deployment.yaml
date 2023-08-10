@@ -55,15 +55,7 @@ spec:
         io.kompose.service: ddoexploreruitwo
     spec:
       containers:
-        - securityContext:
-            allowPrivilegeEscalation: false
-            runAsNonRoot: true
-            runAsUser: 99999
-            readOnlyRootFilesystem: true
-            capabilities:
-              drop:
-                - ALL
-          image: "{{$.Values.image.repository }}:{{$.Values.image.tag | toString }}"
+        - image: "{{$.Values.image.repository }}:{{$.Values.image.tag | toString }}"
           name: ddoexploreruitwo
           imagePullPolicy: Always
           ports:
