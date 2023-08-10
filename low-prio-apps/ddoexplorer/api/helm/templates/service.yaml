@@ -28,6 +28,37 @@ spec:
       targetPort: 80
   selector:
     io.kompose.service: ddoexplorertwo
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: ddoexplorer
+  labels:
+    io.kompose.service: ddoexplorerui
+  name: ddoexplorerui
+spec:
+  ports:
+    - name: "ddoexplorerui"
+      port: 80
+      targetPort: 80
+  selector:
+    io.kompose.service: ddoexplorerui
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: ddoexplorer
+  labels:
+    io.kompose.service: ddoexploreruitwo
+  name: ddoexploreruitwo
+spec:
+  ports:
+    - name: "ddoexplorerui"
+      port: 80
+      targetPort: 80
+  selector:
+    io.kompose.service: ddoexploreruitwo
 
 ---
 apiVersion: traefik.containo.us/v1alpha1
@@ -48,6 +79,14 @@ spec:
           port: 80
           weight: {{ .Values.canaryweight }}
         - name: ddoexplorertwo
+          port: 80
+    - match: Host(`{{ .Values.baseurl}}`)
+      kind: Rule
+      services:
+        - name: ddoexplorerui
+          port: 80
+          weight: {{ .Values.canaryweight }}
+        - name: ddoexploreruitwo
           port: 80
   tls:
     secretName: ddoexplorercert-wild-4-tls
