@@ -13,8 +13,8 @@ spec:
       kind: Rule
       services:
         - name: gateway
+          namespace: openfaas
           port: 8080
-          weight: 1
   tls:
     secretName: openfaascert-2-2tls
     options:
