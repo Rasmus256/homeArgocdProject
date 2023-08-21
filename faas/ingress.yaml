@@ -1,50 +1,25 @@
-apiVersion: networking.k8s.io/v1
-kind: Ingress
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
 metadata:
   name: openfaas-ingress
   namespace: openfaas
-  annotations:
-    acme.cert-manager.io/http01-ingress-class: traefik
-    cert-manager.io/cluster-issuer: letsencrypt-prod
+
 spec:
-  rules:
-  - host: "openfaas.hosrasmus.hopto.org"
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: gateway
-            port: 
-              name: "http"
+  entryPoints:
+    - web
+    - websecure
+  routes:
+    - match: Host(`openfaas.hosrasmus.hopto.org`)
+      kind: Rule
+      services:
+        - name: gateway
+          port: "http"
+          weight: 1
   tls:
-  - secretName: openfaascert-tls
-    hosts:
-      - "openfaas.hosrasmus.hopto.org"
-
----
-
-apiVersion: cert-manager.io/v1
-kind: Certificate
-metadata:
-  name: openfaas-cert
-  namespace: openfaas
-spec:
-  # Secret names are always required.
-  secretName: openfaascert-tls
-  duration: 2160h0m0s
-  renewBefore: 360h0m0s # 15d
-  usages:
-    - server auth
-    - client auth
-  # At least one of a DNS Name, URI, or IP address is required.
-  dnsNames:
-    - openfaas.hosrasmus.hopto.org
-  # Issuer references are always required.
-  issuerRef:
-    name: letsencrypt-prod
-    # We can reference ClusterIssuers by changing the kind here.
-    # The default value is Issuer (i.e. a locally namespaced Issuer)
-    kind: ClusterIssuer
-
+    secretName: openfaascert-2-2tls
+    options:
+      name: opt
+      namespace: openfaas
+    certResolver: letsencrypt-prod
+    domains:
+    - main: openfaas.hosrasmus.hopto.org
