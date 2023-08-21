@@ -45,7 +45,7 @@ spec:
     http:
       paths:
       - path: /dates
-        pathType: Exact
+        pathType: Prefix
         backend:
           service:
             name: cakeotron-dateservice
