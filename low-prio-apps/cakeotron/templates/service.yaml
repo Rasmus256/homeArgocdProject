@@ -25,7 +25,7 @@ spec:
   ports:
     - name: "cake"
       port: 80
-      targetPort: 80
+      targetPort: 8080
   selector:
     io.kompose.service: cakeotron-dateservice
 
