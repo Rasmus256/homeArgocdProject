@@ -36,6 +36,7 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 80
+            - containerPort: 8080
             - containerPort: 443
           resources:
             requests:
@@ -47,7 +48,7 @@ spec:
           livenessProbe:
             httpGet:
               path: /cake
-              port: 80
+              port: 8080
             initialDelaySeconds: 0
             periodSeconds: 600
             timeoutSeconds: 5
@@ -56,7 +57,7 @@ spec:
           startupProbe:
             httpGet:
               path: /cake
-              port: 80
+              port: 8080
             timeoutSeconds: 5
             failureThreshold: 30
             periodSeconds: 10
