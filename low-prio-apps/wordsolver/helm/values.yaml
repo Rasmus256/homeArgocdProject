@@ -12,10 +12,10 @@ parallelism: 1
 processorScale: 9
 producerImage:
   repository: rasmus256docker/wordsolver-producer
-  tag: 138
+  tag: 141
 processorImage:
   repository: rasmus256docker/wordsolver-processor
-  tag: 138
+  tag: 141
 resultprinterImage:
   repository: rasmus256docker/wordsolver-resultprinter
-  tag: 138
+  tag: 141
