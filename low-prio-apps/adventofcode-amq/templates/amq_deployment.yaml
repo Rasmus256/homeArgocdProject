@@ -13,6 +13,9 @@ spec:
   - name: "stomp"
     port: 61613
     protocols: stomp
+  - name: "openwire"
+    port: 61617
+    protocols: openwire
 ---
 apiVersion: broker.amq.io/v1alpha1
 kind: ActiveMQArtemisSecurity
