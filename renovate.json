@@ -2,7 +2,7 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:base"
-  ]
+  ],
   "ignorePaths": ["**/low-prio-apps/adventofcode-2022/**"],
   "packageRules": [
     {
