@@ -89,7 +89,7 @@ spec:
         - name: ddoexploreruitwo
           port: 80
   tls:
-    secretName: ddoexplorercert-wild-4-tls
+    secretName: ddoexplorercert-wild-5-tls
     options:
       name: opt
       namespace: ddoexplorer
