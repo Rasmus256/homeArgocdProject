@@ -3,14 +3,14 @@
   "extends": [
     "config:base"
   ],
-  "ignorePaths": ["low-prio-apps/adventofcode-2022/**"],
   "packageRules": [
     {
+      "matchPackageNames": ["*"],
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "automerge": true
     },
     {
-      "matchPaths": ["hass/*"],
+      "matchPackageNames": ["homeassistant/home-assistant"],
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "automerge": false,
       "ignoreTests": true
