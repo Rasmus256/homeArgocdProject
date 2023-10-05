@@ -15,7 +15,7 @@ data:
       trusted_proxies:
         - 127.0.0.1
         - ::1
-        - 10.42.0.174
+        - 10.42.0.0/24
     # Text to speech
     zone:
       # This will override the default home zone
