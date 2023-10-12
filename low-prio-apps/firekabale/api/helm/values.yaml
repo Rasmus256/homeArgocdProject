@@ -1,0 +1,13 @@
+kubernetes:
+  host: https://kubernetes.default
+namespace: firekabale
+pullPolicy: IfNotPresent
+title: firekabale
+canaryweight: 0
+baseurl: firekabale.hosrasmus.hopto.org
+uiimage:
+  repository: rasmus256docker/firekabale-ui
+  tag: 231012.0610
+uicanaryimage:
+  repository: rasmus256docker/firekabale-ui
+  tag: 231012.0610
