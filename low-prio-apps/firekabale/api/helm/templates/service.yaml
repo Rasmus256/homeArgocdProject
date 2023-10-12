@@ -14,69 +14,27 @@ spec:
     io.kompose.service: firekabaleui
 
 ---
-apiVersion: v1
-kind: Service
+apiVersion: networking.k8s.io/v1
+kind: Ingress
 metadata:
+  name: firekabale-ingress
   namespace: firekabale
-  labels:
-    io.kompose.service: firekabaleuitwo
-  name: firekabaleuitwo
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    acme.cert-manager.io/http01-edit-in-place: "true"
 spec:
-  ports:
-    - name: "firekabaleui"
-      port: 80
-      targetPort: 80
-  selector:
-    io.kompose.service: firekabaleuitwo
-
----
-apiVersion: traefik.containo.us/v1alpha1
-kind: IngressRoute
-metadata:
-  name: firekabale
-  namespace: firekabale
-
-spec:
-  entryPoints:
-    - web
-    - websecure
-  routes:
-    - match: Host(`{{ .Values.baseurl}}`)
-      kind: Rule
-      services:
-        - name: firekabaleui
-          port: 80
-          weight: {{ .Values.canaryweight }}
-        - name: firekabaleuitwo
-          port: 80
+  rules:
+  - host: {{ .Values.baseurl}}
+    http:
+      paths:
+      - path: /
+        pathType: Exact
+        backend:
+          service:
+            name: firekabaleui
+            port: 
+              name: "firekabaleui"
   tls:
-    secretName: firekabalecert-wild-5-tls
-    options:
-      name: opt
-      namespace: firekabale
-    certResolver: letsencrypt-prod
-    domains:
-    - main: {{ .Values.baseurl}}
----
-apiVersion: cert-manager.io/v1
-kind: Certificate
-metadata:
-  name: firekabale-cert
-  namespace: firekabale
-spec:
-  # Secret names are always required.
-  secretName: firekabalecert-wild-5-tls
-  duration: 2160h0m0s
-  renewBefore: 360h0m0s # 15d
-  usages:
-    - server auth
-    - client auth
-  # At least one of a DNS Name, URI, or IP address is required.
-  dnsNames:
-    - {{ .Values.baseurl}}
-  # Issuer references are always required.
-  issuerRef:
-    name: letsencrypt-prod
-    # We can reference ClusterIssuers by changing the kind here.
-    # The default value is Issuer (i.e. a locally namespaced Issuer)
-    kind: ClusterIssuer
+  - secretName: firekabalecert-wild-4-tls
+    hosts:
+      - {{ .Values.baseurl}}
