@@ -78,29 +78,6 @@ spec:
   - secretName: valheimhttp-tls
     hosts:
       - valheimsupervisor.hosrasmus.hopto.org
-
----
-apiVersion: cert-manager.io/v1
-kind: Certificate
-metadata:
-  name: valheimhttp-cert
-spec:
-  # Secret names are always required.
-  secretName: valheimhttp-tls
-  duration: 2160h0m0s # 90d
-  renewBefore: 360h0m0s # 15d
-  usages:
-    - server auth
-    - client auth
-  # At least one of a DNS Name, URI, or IP address is required.
-  dnsNames:
-    - valheimsupervisor.hosrasmus.hopto.org
-  # Issuer references are always required.
-  issuerRef:
-    name: letsencrypt-prod
-    # We can reference ClusterIssuers by changing the kind here.
-    # The default value is Issuer (i.e. a locally namespaced Issuer)
-    kind: ClusterIssuer
 ---
 
 apiVersion: v1
