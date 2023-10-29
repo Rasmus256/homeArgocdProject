@@ -106,6 +106,10 @@ data:
     script: !include scripts.yaml
     scene: !include scenes.yaml
     shell_command: !include shell_commands.yaml
+    ihc:
+      - url: 'http://192.168.87.87'
+        username: rasmus
+        password: !secret ihc_password
     camera:
       - platform: xiaomi_cloud_map_extractor
         host: "192.168.87.180"
