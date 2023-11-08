@@ -19,12 +19,6 @@ spec:
     spec:
       nodeSelector:
         pi: "false"
-      requests:
-        memory: "500Mi"
-        cpu: "250m"
-      limits:
-        memory: "1Gi"
-        cpu: "1"
       containers:
         - env:
             - name: TZ 
