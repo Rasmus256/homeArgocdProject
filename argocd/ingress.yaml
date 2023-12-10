@@ -6,7 +6,6 @@ metadata:
 
 spec:
   entryPoints:
-    - web
     - websecure
   routes:
     - match: Host(`argocd.hosrasmus.hopto.org`)
