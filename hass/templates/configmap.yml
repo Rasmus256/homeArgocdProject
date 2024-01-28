@@ -78,6 +78,7 @@ data:
       - platform: rest
         resource: http://192.168.87.129:5000/api/progress?filename=howl.mp4
         value_template: "{{ value_json.currentFrame }}"
+        unit_of_measurement: "Frames"
     binary_sensor:
       - platform: ping
         host: 192.168.87.183
