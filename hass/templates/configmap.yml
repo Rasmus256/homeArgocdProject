@@ -80,6 +80,10 @@ data:
         value_template: "{{ value_json.currentFrame }}"
         unit_of_measurement: "Frames"
         scan_interval: 120
+      - platform: rest
+        resource: http://192.168.87.129:5000/api/nowPlaying
+        value_template: "{{ value_json.msg }}"
+        scan_interval: 600
     binary_sensor:
       - platform: ping
         host: 192.168.87.183
