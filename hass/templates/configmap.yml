@@ -76,7 +76,8 @@ data:
         max_age:
             days: 30
       - platform: rest
-        resource_template: http://192.168.87.129:5000/api/progress?filename={{ states('sensor.nowplaying') }}        value_template: "{{ value_json.currentFrame }}"
+        resource_template: http://192.168.87.129:5000/api/progress?filename={{ states('sensor.nowplaying') }}
+        value_template: "{{ value_json.currentFrame }}"
         unit_of_measurement: "Frames"
         scan_interval: 120
       - platform: rest
