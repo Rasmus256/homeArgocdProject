@@ -75,7 +75,8 @@ data:
         state_characteristic: mean
         max_age:
             days: 30
-
+      - platform: rest
+        resource: http://192.168.87.129:5000/api/progress?filename=howl.mp4
     binary_sensor:
       - platform: ping
         host: 192.168.87.183
