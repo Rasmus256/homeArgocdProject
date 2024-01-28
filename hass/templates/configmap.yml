@@ -88,9 +88,9 @@ data:
         scan_interval: 600
       - platform: rest
         name: Total Frames
-        resource_template: http://192.168.87.129:5000/api/totalframes?filename={{ states('sensor.now_playing') }}
+        resource_template: http://192.168.87.129:5000/api/progress?filename={{ states('sensor.now_playing') }}
         value_template: "{{ value_json.totalframes }}"
-        scan_interval: 600
+        scan_interval: 120
     binary_sensor:
       - platform: ping
         host: 192.168.87.183
