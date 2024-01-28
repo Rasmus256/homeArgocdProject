@@ -76,12 +76,15 @@ data:
         max_age:
             days: 30
       - platform: rest
-        resource_template: http://192.168.87.129:5000/api/progress?filename={{ states('sensor.nowplaying') }}
+        entity_id: sensor.frame_counter
+        name: Frame Counter
+        resource_template: http://192.168.87.129:5000/api/progress?filename={{ states('sensor.now_playing') }}
         value_template: "{{ value_json.currentFrame }}"
         unit_of_measurement: "Frames"
         scan_interval: 120
       - platform: rest
-        unique_id: nowplaying
+        entity_id: sensor.now_playing
+        name: Now Playing
         resource: http://192.168.87.129:5000/api/nowPlaying
         value_template: "{{ value_json.msg }}"
         scan_interval: 600
