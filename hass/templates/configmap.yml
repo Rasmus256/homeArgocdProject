@@ -88,7 +88,7 @@ data:
         scan_interval: 600
       - platform: rest
         name: Total Frames
-        resource: http://192.168.87.129:5000/api/totalframes
+        resource_template: http://192.168.87.129:5000/api/totalframes?filename={{ states('sensor.now_playing') }}
         value_template: "{{ value_json.totalframes }}"
         scan_interval: 600
     binary_sensor:
