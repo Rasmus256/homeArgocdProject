@@ -15,7 +15,7 @@ canaryimage:
   tag: "240206-0932"
 uiimage:
   repository: rasmus256docker/ddoexplorer-ui
-  tag: "240219.1629@sha256:e9ec3a5656de201ab3cec27bd61cc315ca114c90f7f8eba4d640860dc83e501f"
+  tag: "240225.0340@sha256:20373e78d02bd349ad1b30038466f9a223dfcc15634eac2935f065580d3cebd7"
 uicanaryimage:
   repository: rasmus256docker/ddoexplorer-ui
-  tag: "240219.1629"
+  tag: "240225.0340"
