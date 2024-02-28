@@ -128,7 +128,7 @@ data:
         password: !secret ihc_password
     camera:
       - platform: xiaomi_cloud_map_extractor
-        host: "192.168.87.180"
+        host: "192.168.87.135"
         token: !secret robot_token
         username: "Rasmus256@gmail.com"
         password: !secret robot_password
