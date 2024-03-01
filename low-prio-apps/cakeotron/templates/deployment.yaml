@@ -44,7 +44,7 @@ spec:
               cpu: "30m"
             limits:
               memory: "64Mi"
-              cpu: "50m"
+              cpu: "150m"
           livenessProbe:
             httpGet:
               path: /cake
