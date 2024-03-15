@@ -9,7 +9,7 @@ metadata:
     io.kompose.service: valheim
   name: valheim
 spec:
-  replicas: 1
+  replicas: 0
   revisionHistoryLimit: 2
   selector:
     matchLabels:
