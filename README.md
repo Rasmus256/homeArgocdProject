@@ -5,4 +5,5 @@ The configured RenovateBot helps ensure that configurations are updated when new
 
 Secrets are manually setup via kubectl - and not via these files ;)
 
+
 [![Docker Image CI](https://github.com/Rasmus256/DDOExplorer/actions/workflows/docker-image.yml/badge.svg?branch=main)](https://github.com/Rasmus256/DDOExplorer/actions/workflows/docker-image.yml)
