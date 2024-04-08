@@ -180,7 +180,7 @@ images:
       tag: 2.1.349
   - image:
       repository: rasmus256docker/advent_of_code_day22_part2
-      tag: 2.1.344
+      tag: 2.1.349
 - title: day23
   parts:
   - image:
