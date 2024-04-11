@@ -6,5 +6,5 @@ title: actualbudget
 canaryweight: 0
 baseurl: spotify.hosrasmus.hopto.org
 image:
-  repository: docker.io/stefanmic/spotifyrandomalbum
+  repository: docker.io/stefanmich/spotifyrandomalbum
   tag: "latest"
