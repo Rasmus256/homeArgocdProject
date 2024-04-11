@@ -4,7 +4,7 @@ namespace: actualbudget
 pullPolicy: IfNotPresent
 title: actualbudget
 canaryweight: 0
-baseurl: actualbudget.hosrasmus.hopto.org
+baseurl: budget.hosrasmus.hopto.org
 image:
   repository: docker.io/actualbudget/actual-server
   tag: "24.4.0-alpine"
