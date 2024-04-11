@@ -9,7 +9,7 @@ spec:
   ports:
     - name: "actualbudgetui"
       port: 80
-      targetPort: 80
+      targetPort: 5006
   selector:
     io.kompose.service: actualbudgetui
 

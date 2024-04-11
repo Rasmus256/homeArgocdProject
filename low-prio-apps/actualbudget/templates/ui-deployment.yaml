@@ -23,13 +23,13 @@ spec:
           name: actualbudgetui
           imagePullPolicy: Always
           ports:
-            - containerPort: 80
+            - containerPort: 5006
           resources:
             requests:
               memory: "8Mi"
               cpu: "30m"
             limits:
-              memory: "64Mi"
-              cpu: "50m"
+              memory: "256Mi"
+              cpu: "500m"
       restartPolicy: Always
 status: {}
