@@ -1,0 +1,10 @@
+kubernetes:
+  host: https://kubernetes.default
+namespace: actualbudget
+pullPolicy: IfNotPresent
+title: actualbudget
+canaryweight: 0
+baseurl: actualbudget.hosrasmus.hopto.org
+image:
+  repository: docker.io/actualbudget/actual-server
+  tag: "24.2.0-alpine"
