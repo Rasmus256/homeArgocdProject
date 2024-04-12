@@ -92,31 +92,6 @@ data:
         resource_template: http://192.168.87.129:5000/api/progress?filename={{ states('sensor.now_playing') }}
         value_template: "{{ value_json.totalframes }}"
         scan_interval: 120
-    binary_sensor:
-      - platform: ping
-        host: 192.168.87.183
-        name: debian
-        scan_interval: 30
-      - platform: ping
-        host: 192.168.87.113
-        name: nakedpc
-        scan_interval: 30
-      - platform: ping
-        host: 192.168.87.139
-        name: closetpi
-        scan_interval: 30
-      - platform: ping
-        host: 192.168.87.7
-        name: closetpi_2
-        scan_interval: 30
-      - platform: ping
-        host: 192.168.87.111
-        name: raspberrypi
-        scan_interval: 30
-      - platform: ping
-        host: 192.168.87.14
-        name: grampapc
-        scan_interval: 30
 
     group: !include groups.yaml
     automation: !include automations.yaml
