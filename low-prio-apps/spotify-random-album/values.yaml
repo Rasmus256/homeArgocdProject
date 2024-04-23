@@ -7,4 +7,4 @@ canaryweight: 0
 baseurl: spotify.hosrasmus.hopto.org
 image:
   repository: docker.io/stefanmich/spotifyrandomalbum
-  tag: "2"
+  tag: "3"
