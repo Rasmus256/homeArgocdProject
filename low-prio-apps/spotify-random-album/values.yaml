@@ -7,7 +7,7 @@ canaryweight: 0
 baseurl: spotify.hosrasmus.hopto.org
 image:
   repository: docker.io/stefanmich/spotifyrandomalbum
-  tag: "3"
+  tag: "6"
 spotipyconfig:
   clientid: "clientid"
   clientsecret: "clientsecret"
