@@ -21,6 +21,8 @@ spec:
       containers:
         - 
           env:
+            - name: ALLOWED_HOSTS
+              value: "{{$.Values.allowedhosts}}"
             - name: SPOTIPY_CLIENT_ID
               value: "{{$.Values.spotipyconfig.clientid}}"
             - name: SPOTIPY_CLIENT_SECRET
