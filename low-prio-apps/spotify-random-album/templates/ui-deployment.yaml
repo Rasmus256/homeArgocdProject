@@ -19,7 +19,15 @@ spec:
         io.kompose.service: spotifyrandomui
     spec:
       containers:
-        - image: "{{$.Values.image.repository }}:{{$.Values.image.tag | toString }}"
+        - 
+          env:
+            - name: SPOTIPY_CLIENT_ID
+              value: "{{$.Values.spotipyconfig.clientid}}"
+            - name: SPOTIPY_CLIENT_SECRET
+              value: "{{$.Values.spotipyconfig.clientsecret}}"
+            - name: SPOTIPY_REDIRECT_URI
+              value: "{{$.Values.spotipyconfig.redirecturi}}"
+          image: "{{$.Values.image.repository }}:{{$.Values.image.tag | toString }}"
           name: spotifyrandomui
           imagePullPolicy: Always
           ports:
