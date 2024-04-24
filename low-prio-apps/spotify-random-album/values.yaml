@@ -8,3 +8,7 @@ baseurl: spotify.hosrasmus.hopto.org
 image:
   repository: docker.io/stefanmich/spotifyrandomalbum
   tag: "3"
+spotipyconfig:
+  clientid: "clientid"
+  clientsecret: "clientsecret"
+  redirecturi: "redirecturi"
