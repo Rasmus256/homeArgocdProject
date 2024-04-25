@@ -12,4 +12,5 @@ spotipyconfig:
   clientid: "clientid"
   clientsecret: "clientsecret"
   redirecturi: "redirecturi"
-  allowedhosts: ""
+djangoconfig:
+  allowedhosts: "spotify.hosrasmus.hopto.org"
