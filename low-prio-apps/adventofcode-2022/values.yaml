@@ -68,7 +68,7 @@ images:
       tag: 2.1.355
   - image:
       repository: rasmus256docker/advent_of_code_day8_part2
-      tag: 2.1.344
+      tag: 2.1.355
 - title: day9
   parts:
   - image:
