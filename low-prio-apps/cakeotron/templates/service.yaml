@@ -67,6 +67,6 @@ spec:
               name: "cake"
 
   tls:
-  - secretName: cakecert-wild-4-tls
+  - secretName: cakecert-wild-5-tls
     hosts:
       - {{ .Values.baseurl}}
