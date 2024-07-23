@@ -1,0 +1,206 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: servicemeshtest-a
+  namespace: servicemeshtest
+  labels:
+    io.kompose.service: servicemeshtest
+spec:
+  revisionHistoryLimit: 1
+  replicas: 2
+  minReadySeconds: 2
+  selector:
+    matchLabels:
+      io.kompose.service: servicemeshtest
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        io.kompose.service: servicemeshtest
+    spec:
+      containers:
+        - securityContext:
+            allowPrivilegeEscalation: false
+            runAsNonRoot: true
+            runAsUser: 99999
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop:
+                - ALL
+          image: "{{$.Values.image-a.repository }}:{{$.Values.image-a.tag | toString }}"
+          name: servicemeshtest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+            - containerPort: 8080
+            - containerPort: 443
+          resources:
+            requests:
+              memory: "8Mi"
+              cpu: "30m"
+            limits:
+              memory: "64Mi"
+              cpu: "150m"
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 8080
+            initialDelaySeconds: 0
+            periodSeconds: 600
+            timeoutSeconds: 5
+            failureThreshold: 1
+
+          startupProbe:
+            httpGet:
+              path: /healthz
+              port: 8080
+            timeoutSeconds: 5
+            failureThreshold: 30
+            periodSeconds: 10
+          volumeMounts:
+            - mountPath:  /tmp
+              name: tmpfs-1
+      volumes:
+        - name: tmpfs-1
+          emptyDir: {}
+      restartPolicy: Always
+status: {}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: servicemeshtest-b
+  namespace: servicemeshtest
+  labels:
+    io.kompose.service: servicemeshtest
+spec:
+  revisionHistoryLimit: 1
+  replicas: 2
+  minReadySeconds: 2
+  selector:
+    matchLabels:
+      io.kompose.service: servicemeshtest
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        io.kompose.service: servicemeshtest
+    spec:
+      containers:
+        - securityContext:
+            allowPrivilegeEscalation: false
+            runAsNonRoot: true
+            runAsUser: 99999
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop:
+                - ALL
+          image: "{{$.Values.image-b.repository }}:{{$.Values.image-b.tag | toString }}"
+          name: servicemeshtest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+            - containerPort: 8080
+            - containerPort: 443
+          resources:
+            requests:
+              memory: "8Mi"
+              cpu: "30m"
+            limits:
+              memory: "64Mi"
+              cpu: "150m"
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 8080
+            initialDelaySeconds: 0
+            periodSeconds: 600
+            timeoutSeconds: 5
+            failureThreshold: 1
+
+          startupProbe:
+            httpGet:
+              path: /healthz
+              port: 8080
+            timeoutSeconds: 5
+            failureThreshold: 30
+            periodSeconds: 10
+          volumeMounts:
+            - mountPath:  /tmp
+              name: tmpfs-1
+      volumes:
+        - name: tmpfs-1
+          emptyDir: {}
+      restartPolicy: Always
+status: {}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: servicemeshtest-c
+  namespace: servicemeshtest
+  labels:
+    io.kompose.service: servicemeshtest
+spec:
+  revisionHistoryLimit: 1
+  replicas: 2
+  minReadySeconds: 2
+  selector:
+    matchLabels:
+      io.kompose.service: servicemeshtest
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        io.kompose.service: servicemeshtest
+    spec:
+      containers:
+        - securityContext:
+            allowPrivilegeEscalation: false
+            runAsNonRoot: true
+            runAsUser: 99999
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop:
+                - ALL
+          image: "{{$.Values.image-c.repository }}:{{$.Values.image-c.tag | toString }}"
+          name: servicemeshtest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+            - containerPort: 8080
+            - containerPort: 443
+          resources:
+            requests:
+              memory: "8Mi"
+              cpu: "30m"
+            limits:
+              memory: "64Mi"
+              cpu: "150m"
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 8080
+            initialDelaySeconds: 0
+            periodSeconds: 600
+            timeoutSeconds: 5
+            failureThreshold: 1
+
+          startupProbe:
+            httpGet:
+              path: /healthz
+              port: 8080
+            timeoutSeconds: 5
+            failureThreshold: 30
+            periodSeconds: 10
+          volumeMounts:
+            - mountPath:  /tmp
+              name: tmpfs-1
+      volumes:
+        - name: tmpfs-1
+          emptyDir: {}
+      restartPolicy: Always
+status: {}

@@ -1,0 +1,88 @@
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: servicemeshtest
+  labels:
+    io.kompose.service: servicemeshtest
+  name: servicemeshtest-a
+spec:
+  ports:
+    - name: "a"
+      port: 80
+      targetPort: 80
+  selector:
+    io.kompose.service: servicemeshtest
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: servicemeshtest
+  labels:
+    io.kompose.service: servicemeshtest
+  name: servicemeshtest-b
+spec:
+  ports:
+    - name: "b"
+      port: 80
+      targetPort: 80
+  selector:
+    io.kompose.service: servicemeshtest
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: servicemeshtest
+  labels:
+    io.kompose.service: servicemeshtest
+  name: servicemeshtest-c
+spec:
+  ports:
+    - name: "c"
+      port: 80
+      targetPort: 80
+  selector:
+    io.kompose.service: servicemeshtest
+
+---
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: servicemeshingress
+  namespace: servicemeshtest
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    acme.cert-manager.io/http01-edit-in-place: "true"
+spec:
+  rules:
+  - host: {{ .Values.baseurl}}
+    http:
+      paths:
+      - path: /a
+        pathType: Exact
+        backend:
+          service:
+            name: servicemeshtest-a
+            port: 
+              name: "a"
+      - path: /b
+        pathType: Exact
+        backend:
+          service:
+            name: servicemeshtest-b
+            port: 
+              name: "b"
+      - path: /c
+        pathType: Exact
+        backend:
+          service:
+            name: servicemeshtest-c
+            port: 
+              name: "c"
+
+  tls:
+  - secretName: servicemeshtestcert-wild-5-tls
+    hosts:
+      - {{ .Values.baseurl}}
