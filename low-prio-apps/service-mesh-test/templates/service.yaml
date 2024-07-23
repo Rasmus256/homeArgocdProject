@@ -60,21 +60,21 @@ spec:
     http:
       paths:
       - path: /a
-        pathType: Exact
+        pathType: Prefix
         backend:
           service:
             name: servicemeshtest-a
             port: 
               name: "a"
       - path: /b
-        pathType: Exact
+        pathType: Prefix
         backend:
           service:
             name: servicemeshtest-b
             port: 
               name: "b"
       - path: /c
-        pathType: Exact
+        pathType: Prefix
         backend:
           service:
             name: servicemeshtest-c
