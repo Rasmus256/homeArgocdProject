@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: servicemeshtest
+  namespace: argocd
+  labels:
+    "category": "{{$.Values.spec.labels.category}}"
+spec:
+  destination:
+    namespace: servicemeshtest
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: low-prio-apps/service-mesh-test
+    repoURL: 'git@github.com:Rasmus256/homeArgocdProject.git'
+    targetRevision: HEAD
+    helm:
+      valueFiles:
+      - values.yaml
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
