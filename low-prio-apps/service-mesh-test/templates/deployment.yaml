@@ -33,7 +33,6 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 80
-            - containerPort: 8080
             - containerPort: 443
           resources:
             requests:
@@ -45,7 +44,7 @@ spec:
           livenessProbe:
             httpGet:
               path: /healthz
-              port: 8080
+              port: 80
             initialDelaySeconds: 0
             periodSeconds: 600
             timeoutSeconds: 5
@@ -54,7 +53,7 @@ spec:
           startupProbe:
             httpGet:
               path: /healthz
-              port: 8080
+              port: 80
             timeoutSeconds: 5
             failureThreshold: 30
             periodSeconds: 10
@@ -102,7 +101,6 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 80
-            - containerPort: 8080
             - containerPort: 443
           resources:
             requests:
@@ -114,7 +112,7 @@ spec:
           livenessProbe:
             httpGet:
               path: /healthz
-              port: 8080
+              port: 80
             initialDelaySeconds: 0
             periodSeconds: 600
             timeoutSeconds: 5
@@ -123,7 +121,7 @@ spec:
           startupProbe:
             httpGet:
               path: /healthz
-              port: 8080
+              port: 80
             timeoutSeconds: 5
             failureThreshold: 30
             periodSeconds: 10
@@ -171,7 +169,6 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 80
-            - containerPort: 8080
             - containerPort: 443
           resources:
             requests:
@@ -183,7 +180,7 @@ spec:
           livenessProbe:
             httpGet:
               path: /healthz
-              port: 8080
+              port: 80
             initialDelaySeconds: 0
             periodSeconds: 600
             timeoutSeconds: 5
@@ -192,7 +189,7 @@ spec:
           startupProbe:
             httpGet:
               path: /healthz
-              port: 8080
+              port: 80
             timeoutSeconds: 5
             failureThreshold: 30
             periodSeconds: 10
