@@ -28,7 +28,7 @@ spec:
             capabilities:
               drop:
                 - ALL
-          image: "{{$.Values.image-a.repository }}:{{$.Values.image-a.tag | toString }}"
+          image: "{{$.Values.imagea.repository }}:{{$.Values.imagea.tag | toString }}"
           name: servicemeshtest
           imagePullPolicy: Always
           ports:
@@ -97,7 +97,7 @@ spec:
             capabilities:
               drop:
                 - ALL
-          image: "{{$.Values.image-b.repository }}:{{$.Values.image-b.tag | toString }}"
+          image: "{{$.Values.imageb.repository }}:{{$.Values.imageb.tag | toString }}"
           name: servicemeshtest
           imagePullPolicy: Always
           ports:
@@ -166,7 +166,7 @@ spec:
             capabilities:
               drop:
                 - ALL
-          image: "{{$.Values.image-c.repository }}:{{$.Values.image-c.tag | toString }}"
+          image: "{{$.Values.imagec.repository }}:{{$.Values.imagec.tag | toString }}"
           name: servicemeshtest
           imagePullPolicy: Always
           ports:

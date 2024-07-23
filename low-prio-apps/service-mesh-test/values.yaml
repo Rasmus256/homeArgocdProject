@@ -1,10 +1,10 @@
 baseurl: servicemesttest.hosrasmus.hopto.org
-image-a:
+imagea:
   repository: rasmus256docker/servicemesh-test-a
   tag: 178
-image-b:
+imageb:
   repository: rasmus256docker/servicemesh-test-b
   tag: 178
-image-c:
+imagec:
   repository: rasmus256docker/servicemesh-test-c
   tag: 178
