@@ -1,8 +1,8 @@
 kubernetes:
   host: https://kubernetes.default
-namespace: actualbudget
+namespace: spotifyrandomalbum
 pullPolicy: IfNotPresent
-title: actualbudget
+title: spotifyrandomalbum
 canaryweight: 0
 baseurl: spotify.hosrasmus.hopto.org
 image:
