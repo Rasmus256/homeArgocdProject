@@ -3,7 +3,7 @@ kubernetes:
 namespace: spotifyrandomalbum
 pullPolicy: IfNotPresent
 title: spotifyrandomalbum
-canaryweight: 0
+replicas: 0
 baseurl: spotify.hosrasmus.hopto.org
 image:
   repository: docker.io/stefanmich/spotifyrandomalbum
