@@ -7,7 +7,7 @@ metadata:
     io.kompose.service: servicemeshtest
 spec:
   revisionHistoryLimit: 1
-  replicas: 2
+  replicas: {{$.Values.replicas}}
   minReadySeconds: 2
   selector:
     matchLabels:
@@ -75,7 +75,7 @@ metadata:
     io.kompose.service: servicemeshtest
 spec:
   revisionHistoryLimit: 1
-  replicas: 2
+  replicas: {{$.Values.replicas}}
   minReadySeconds: 2
   selector:
     matchLabels:
@@ -143,7 +143,7 @@ metadata:
     io.kompose.service: servicemeshtest
 spec:
   revisionHistoryLimit: 1
-  replicas: 2
+  replicas: {{$.Values.replicas}}
   minReadySeconds: 2
   selector:
     matchLabels:
