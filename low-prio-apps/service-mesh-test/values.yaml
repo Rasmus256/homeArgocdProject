@@ -8,3 +8,4 @@ imageb:
 imagec:
   repository: rasmus256docker/servicemesh-test-c
   tag: 178
+replicas: 5
