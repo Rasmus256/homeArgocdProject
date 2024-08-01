@@ -29,6 +29,8 @@ spec:
               value: "{{$.Values.spotipyconfig.redirecturi}}"
             - name: DJANGO_ALLOWED_HOSTS
               value: "{{$.Values.djangoconfig.allowedhosts}}"
+            - name: DJANGO_CSRF_TRUSTED_ORIGINS
+              value: "{{$.Values.djangoconfig.trustedorigins}}"
           image: "{{$.Values.image.repository }}:{{$.Values.image.tag | toString }}"
           name: spotifyrandomui
           imagePullPolicy: Always
