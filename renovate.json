@@ -11,7 +11,7 @@
     },
     {
       "matchPackageNames": ["homeassistant/home-assistant"],
-      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "matchUpdateTypes": ["major", "minor"],
       "automerge": false,
       "ignoreTests": true
     },
