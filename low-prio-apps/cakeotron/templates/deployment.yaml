@@ -136,3 +136,25 @@ spec:
           emptyDir: {}
       restartPolicy: Always
 status: {}
+---
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: callout
+spec:
+  schedule: "*/1 * * * *"
+  concurrencyPolicy: Forbid
+  successfulJobsHistoryLimit: 1
+  failedJobsHistoryLimit: 1
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: callout
+            image: buildpack-deps:curl
+            args:
+            - /bin/sh
+            - -ec
+            - curl http://cakeotron
+          restartPolicy: Never
