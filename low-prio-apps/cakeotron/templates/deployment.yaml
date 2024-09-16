@@ -143,7 +143,7 @@ metadata:
   name: callout
   namespace: cake
 spec:
-  schedule: "*/1 * * * *"
+  schedule: "0 */1 * * *"
   concurrencyPolicy: Forbid
   successfulJobsHistoryLimit: 1
   failedJobsHistoryLimit: 1
