@@ -141,6 +141,7 @@ apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
   name: callout
+  namespace: cake
 spec:
   schedule: "*/1 * * * *"
   concurrencyPolicy: Forbid
