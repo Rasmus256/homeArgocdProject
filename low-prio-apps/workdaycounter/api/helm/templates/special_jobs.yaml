@@ -19,7 +19,10 @@ spec:
         io.kompose.service: workdaycounter
     spec:
       containers:
-        - securityContext:
+        - env:
+          - name: PRICE_CLASS
+            value: "DK1"
+          securityContext:
             allowPrivilegeEscalation: false
             runAsNonRoot: true
             runAsUser: 99999
