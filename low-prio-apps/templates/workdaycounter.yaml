@@ -1,13 +1,13 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: workdaycounter-api
+  name: optimalPowerCalculator-api
   namespace: argocd
   labels:
     "category": "{{$.Values.spec.labels.category}}"
 spec:
   destination:
-    namespace: workdaycounter
+    namespace: optimalpowercalculator
     server: 'https://kubernetes.default.svc'
   source:
     path: low-prio-apps/workdaycounter/api/helm
