@@ -17,7 +17,7 @@ spec:
   tls:
     secretName: argocdingress2secretname
     options:
-      name: opt
+      name: opt2
       namespace: argocd
     certResolver: letsencrypt-prod
     domains:
