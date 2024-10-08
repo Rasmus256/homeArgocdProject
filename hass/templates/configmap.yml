@@ -99,7 +99,7 @@ data:
       - platform: rest
         name: Most Optimal Washing Machine Setting
         resource_template: https://optimalpowertimecalculator.hosrasmus.hopto.org/api/next-optimal-hour?numHoursToForecast=1h6m
-        value_template: "{{ value_json.price.fromTs }}"
+        value_template: "{{ value_json.price.toTs }}"
         json_attributes_path: "$.price"
         json_attributes:
           - "price"
