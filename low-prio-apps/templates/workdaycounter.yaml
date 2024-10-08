@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: optimalPowerCalculator-api
+  name: optimal-power-calculator-api
   namespace: argocd
   labels:
     "category": "{{$.Values.spec.labels.category}}"
