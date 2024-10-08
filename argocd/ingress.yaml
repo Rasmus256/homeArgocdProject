@@ -1,24 +1,23 @@
-apiVersion: traefik.containo.us/v1alpha1
-kind: IngressRoute
+apiVersion: networking.k8s.io/v1
+kind: Ingress
 metadata:
   name: argpcdingress
   namespace: argocd
-
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
 spec:
-  entryPoints:
-    - web
-    - websecure
-  routes:
-    - match: Host(`argocd.hosrasmus.hopto.org`)
-      kind: Rule
-      services:
-        - name: argocd-server
-          port: "http"
+  rules:
+  - host: argocd.hosrasmus.hopto.org
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: argocd-server
+            port: 
+              name: "http"
   tls:
-    secretName: argocdingress2secretname
-    options:
-      name: opt2
-      namespace: argocd
-    certResolver: letsencrypt-prod
-    domains:
-    - main: argocd.hosrasmus.hopto.org
+  - secretName: argocdcert-tls-cert
+    hosts:
+      - argocd.hosrasmus.hopto.org
