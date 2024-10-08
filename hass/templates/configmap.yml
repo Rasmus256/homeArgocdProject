@@ -92,7 +92,7 @@ data:
         json_attributes_path: "$.price"
         json_attributes:
           - "price"
-          - "suboptimalPrice"
+          - "suboptimalPriceMultiplier"
           - "fromTs"
           - "toTs"
         scan_interval: 120
@@ -103,7 +103,7 @@ data:
         json_attributes_path: "$.price"
         json_attributes:
           - "price"
-          - "suboptimalPrice"
+          - "suboptimalPriceMultiplier"
           - "fromTs"
           - "toTs"
         scan_interval: 120
