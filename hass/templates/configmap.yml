@@ -89,6 +89,12 @@ data:
         name: Most Optimal Dishwasher Setting
         resource_template: https://optimalpowertimecalculator.hosrasmus.hopto.org/api/next-optimal-hour?numHoursToForecast=2h45m
         value_template: "{{ value_json.price.fromTs }}"
+        json_attributes_path: "$.price"
+        json_attributes:
+          - "price"
+          - "suboptimalPrice"
+          - "fromTs"
+          - "toTs"
         scan_interval: 120
       - platform: rest
         name: Most Optimal Washing Machine Setting
@@ -97,6 +103,7 @@ data:
         json_attributes_path: "$.price"
         json_attributes:
           - "price"
+          - "suboptimalPrice"
           - "fromTs"
           - "toTs"
         scan_interval: 120
