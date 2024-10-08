@@ -15,7 +15,7 @@ spec:
         - name: argocd-server
           port: "http"
   tls:
-    secretName: argocdingresssecretname
+    secretName: argocdingress2secretname
     options:
       name: opt
       namespace: argocd
