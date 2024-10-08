@@ -96,11 +96,9 @@ data:
         value_template: "{{ value_json.price.fromTs }}"
         json_attributes_path: "$.price"
         json_attributes:
-        - "price"
-        - "fromTs"
-        - "toTs"
-    json_attributes:
-      - "common_name"
+          - "price"
+          - "fromTs"
+          - "toTs"
         scan_interval: 120
     group: !include groups.yaml
     automation: !include automations.yaml
