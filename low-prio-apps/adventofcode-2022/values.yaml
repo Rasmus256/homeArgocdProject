@@ -113,7 +113,7 @@ images:
   parts:
   - image:
       repository: rasmus256docker/advent_of_code_day14_part1
-      tag: 2.1.367
+      tag: 2.1.369
   - image:
       repository: rasmus256docker/advent_of_code_day14_part2
       tag: 2.1.367
