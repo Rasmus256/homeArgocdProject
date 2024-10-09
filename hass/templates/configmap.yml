@@ -87,7 +87,7 @@ data:
         scan_interval: 120
       - platform: rest
         name: Most Optimal Dishwasher Setting
-        resource_template: https://optimalpowertimecalculator.hosrasmus.hopto.org/api/next-optimal-hour?numHoursToForecast=2h45m
+        resource_template: https://optimalpowertimecalculator.hosrasmus.hopto.org/api/next-optimal-hour?numHoursToForecast=2h35m
         value_template: "{{ value_json.price.fromTs }}"
         json_attributes_path: "$.price"
         json_attributes:
@@ -109,7 +109,7 @@ data:
         scan_interval: 120
       - platform: rest
         name: How Much More expensive is the Dishwasher Now?
-        resource_template: https://optimalpowertimecalculator.hosrasmus.hopto.org/api/next-optimal-hour?numHoursToForecast=2h45m
+        resource_template: https://optimalpowertimecalculator.hosrasmus.hopto.org/api/next-optimal-hour?numHoursToForecast=2h35m
         value_template: "{{ value_json.price.suboptimalPriceMultiplier }}"
         scan_interval: 120
       - platform: rest
