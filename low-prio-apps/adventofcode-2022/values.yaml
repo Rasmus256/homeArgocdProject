@@ -20,7 +20,7 @@ images:
       tag: 2.1.369
   - image:
       repository: rasmus256docker/advent_of_code_day2_part2
-      tag: 2.1.367
+      tag: 2.1.369
 - title: day3
   parts:
   - image:
