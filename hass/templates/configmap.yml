@@ -71,18 +71,18 @@ data:
             days: 30
       - platform: rest
         name: Frame Counter
-        resource_template: http://192.168.87.129:5000/api/progress?filename={{ states('sensor.now_playing') }}
+        resource_template: http://192.168.87.108:5000/api/progress?filename={{ states('sensor.now_playing') }}
         value_template: "{{ value_json.currentFrame }}"
         unit_of_measurement: "Frames"
         scan_interval: 120
       - platform: rest
         name: Now Playing
-        resource: http://192.168.87.129:5000/api/nowPlaying
+        resource: http://192.168.87.108:5000/api/nowPlaying
         value_template: "{{ value_json.msg }}"
         scan_interval: 600
       - platform: rest
         name: Total Frames
-        resource_template: http://192.168.87.129:5000/api/progress?filename={{ states('sensor.now_playing') }}
+        resource_template: http://192.168.87.108:5000/api/progress?filename={{ states('sensor.now_playing') }}
         value_template: "{{ value_json.totalframes }}"
         scan_interval: 120
       - platform: rest
