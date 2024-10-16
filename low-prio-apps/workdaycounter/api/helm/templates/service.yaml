@@ -7,7 +7,7 @@ metadata:
   name: optimalpowercaldulator
 spec:
   ports:
-    - name: "optimalpowercaldulator"
+    - name: "http"
       port: 80
       targetPort: 80
   selector:
@@ -33,7 +33,7 @@ spec:
           service:
             name: optimalpowercaldulator
             port: 
-              name: "optimalpowercaldulator"
+              name: "http"
   tls:
   - secretName: optimalpowercaldulatorcert-wild-tls
     hosts:
