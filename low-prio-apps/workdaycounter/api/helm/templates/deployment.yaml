@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: workdaycounter
-  namespace: workdaycounter
+  name: optimalpowercaldulator
+  namespace: optimalpowercaldulator
   labels:
-    io.kompose.service: workdaycounter
+    io.kompose.service: optimalpowercaldulator
 spec:
   revisionHistoryLimit: 1
   replicas: 1
   selector:
     matchLabels:
-      io.kompose.service: workdaycounter
+      io.kompose.service: optimalpowercaldulator
   strategy:
     type: RollingUpdate
   template:
     metadata:
       labels:
-        io.kompose.service: workdaycounter
+        io.kompose.service: optimalpowercaldulator
     spec:
       containers:
         - env:
@@ -31,7 +31,7 @@ spec:
               drop:
                 - ALL
           image: "{{$.Values.image.repository }}:{{$.Values.image.tag | toString }}"
-          name: workdaycounter
+          name: optimalpowercaldulator
           imagePullPolicy: Always
           ports:
             - containerPort: 80
@@ -56,13 +56,13 @@ status: {}
 apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
-  name: workdaycounterscaler
-  namespace: workdaycounter
+  name: optimalpowercaldulatorscaler
+  namespace: optimalpowercaldulator
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: workdaycounter
+    name: optimalpowercaldulator
   minReplicas: 1
-  maxReplicas: 2
-  targetCPUUtilizationPercentage: 70
+  maxReplicas: 5
+  targetCPUUtilizationPercentage: 30
