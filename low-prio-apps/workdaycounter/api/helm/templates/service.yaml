@@ -1,25 +1,25 @@
 apiVersion: v1
 kind: Service
 metadata:
-  namespace: workdaycounter
+  namespace: optimalpowercaldulator
   labels:
-    io.kompose.service: workdaycounter
-  name: workdaycounter
+    io.kompose.service: optimalpowercaldulator
+  name: optimalpowercaldulator
 spec:
   ports:
-    - name: "workdaycounter"
+    - name: "optimalpowercaldulator"
       port: 80
       targetPort: 80
   selector:
-    io.kompose.service: workdaycounter
+    io.kompose.service: optimalpowercaldulator
 
 ---
 
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: workdaycounter-ingress
-  namespace: workdaycounter
+  name: optimalpowercaldulator-ingress
+  namespace: optimalpowercaldulator
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
 spec:
@@ -31,10 +31,10 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: workdaycounter
+            name: optimalpowercaldulator
             port: 
-              name: "workdaycounter"
+              name: "optimalpowercaldulator"
   tls:
-  - secretName: workdaycountercert-wild-tls
+  - secretName: optimalpowercaldulatorcert-wild-tls
     hosts:
       - {{ .Values.baseurl}}
