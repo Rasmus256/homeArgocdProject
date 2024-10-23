@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: actualbudget
+  name: adguard
   namespace: argocd
   labels:
     "category": "{{$.Values.spec.labels.category}}"
