@@ -1,0 +1,3 @@
+kubernetes:
+  host: https://kubernetes.default
+namespace: adguard
