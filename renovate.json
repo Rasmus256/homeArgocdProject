@@ -1,23 +1,37 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:base"
+    "config:recommended"
   ],
   "packageRules": [
     {
-      "matchPackagePatterns": [".*"],
       "automerge": true,
-      "ignoreTests": true
+      "ignoreTests": true,
+      "matchPackageNames": [
+        "/.*/"
+      ]
     },
     {
-      "matchPackageNames": ["homeassistant/home-assistant"],
-      "matchUpdateTypes": ["major", "minor"],
+      "matchPackageNames": [
+        "homeassistant/home-assistant"
+      ],
+      "matchUpdateTypes": [
+        "major",
+        "minor"
+      ],
       "automerge": false,
       "ignoreTests": true
     },
     {
-      "matchPackageNames": ["docker.io/actualbudget/actual-server"],
-      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "matchPackageNames": [
+        "docker.io/actualbudget/actual-server"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch",
+        "pin",
+        "digest"
+      ],
       "automerge": false,
       "ignoreTests": true
     }
