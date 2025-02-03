@@ -4,4 +4,4 @@ spec:
   labels:
     category: low-prio
 cakeotron:
-  baseurl_uber: cake.hosrasmus.hopto.org
+  baseurl_uber: cake.hosrasmus.hopto.org 
