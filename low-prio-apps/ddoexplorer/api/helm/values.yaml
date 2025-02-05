@@ -9,10 +9,10 @@ canaryweight: 0
 baseurl: ddoexplorer.hosrasmus.hopto.org
 image:
   repository: rasmus256docker/ddoexplorer-api
-  tag: "250205-1203"
+  tag: "250205-1230"
 canaryimage:
   repository: rasmus256docker/ddoexplorer-api
-  tag: "250205-1203"
+  tag: "250205-1230"
 uiimage:
   repository: rasmus256docker/ddoexplorer-ui
   tag: "250205.1203@sha256:30b39cdba8d0197d4fa4e24888dbc212528c71ae0333752f26dbbd056e93e344"
