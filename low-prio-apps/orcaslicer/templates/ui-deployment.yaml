@@ -30,8 +30,10 @@ spec:
             requests:
               memory: "256Mi"
               cpu: "250m"
+              ephemeral-storage: 2Gi 
             limits:
               memory: "2Gi"
               cpu: "500m"
+              ephemeral-storage: 2Gi
       restartPolicy: Always
 status: {}
