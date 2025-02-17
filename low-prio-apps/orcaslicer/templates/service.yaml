@@ -1,0 +1,40 @@
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: {{$.Values.namespace}}
+  labels:
+    io.kompose.service: orcaslicer
+  name: orcaslicer
+spec:
+  ports:
+    - name: "orcaslicer"
+      port: 80
+      targetPort: 8000
+  selector:
+    io.kompose.service: orcaslicer
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: orcaslicer-ingress
+  namespace: {{$.Values.namespace}}
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    acme.cert-manager.io/http01-edit-in-place: "true"
+spec:
+  rules:
+  - host: {{ .Values.baseurl}}
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: orcaslicer
+            port: 
+              name: "orcaslicer"
+  tls:
+  - secretName: orcaslicer-wild-tls
+    hosts:
+      - {{ .Values.baseurl}}
