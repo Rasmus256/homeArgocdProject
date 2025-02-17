@@ -1,0 +1,10 @@
+kubernetes:
+  host: https://kubernetes.default
+namespace: orcaslicer
+pullPolicy: IfNotPresent
+title: orcaslicer
+replicas: 0
+baseurl: orcaslicer.hosrasmus.hopto.org
+image:
+  repository: lscr.io/linuxserver/orcaslicer
+  tag: "latest"
