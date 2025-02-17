@@ -4,6 +4,7 @@ metadata:
   labels:
     io.kompose.service: hass
   name: hass
+  namespace: default
 spec:
   replicas: 1
   revisionHistoryLimit: 2
