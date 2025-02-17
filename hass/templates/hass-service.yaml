@@ -4,6 +4,7 @@ metadata:
   labels:
     io.kompose.service: hass
   name: hass
+  namespace: default
 spec:
   ports:
     - name: "8123"
@@ -18,6 +19,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: hass-ingress
+  namespace: default
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
 spec:
