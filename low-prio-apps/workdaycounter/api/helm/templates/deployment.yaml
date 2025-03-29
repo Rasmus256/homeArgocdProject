@@ -25,8 +25,8 @@ spec:
     spec:
       containers:
         - env:
-          - name: PRICE_CLASS
-            value: "DK1"
+          - name: GLN_NUMBER
+            value: "5790000392261"
           securityContext:
             allowPrivilegeEscalation: false
             runAsNonRoot: true
