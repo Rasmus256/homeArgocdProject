@@ -7,7 +7,7 @@ canaryweight: 0
 baseurl: firekabale.hosrasmus.hopto.org
 uiimage:
   repository: rasmus256docker/firekabale-ui
-  tag: "250303.0758"
+  tag: "250505.1055"
 uicanaryimage:
   repository: rasmus256docker/firekabale-ui
-  tag: "250303.0758"
+  tag: "250505.1055"
