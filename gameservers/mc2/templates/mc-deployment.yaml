@@ -28,7 +28,7 @@ spec:
             - name: EULA
               value: "true"
             - name: OPS
-              value: "2535420898507728,2535445156419995"
+              value: "2535420898507728,2535445156419995,2535429344290853"
             - name: TYPE
               value: "PAPER"
             - name: MEMORY
