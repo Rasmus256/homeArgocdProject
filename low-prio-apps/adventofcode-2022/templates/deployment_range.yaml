@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: List
 items:
-{{- range $i, $repo := .Values.repositories }}
+{{- range $i, $e := .Values.repositories }}
 - apiVersion: batch/v1
   kind: Job
   metadata:
@@ -13,9 +13,8 @@ items:
       heritage: {{ $.Release.Service | quote }}
       version: {{ $.Chart.Version }}
     {{- $postfix := print $.Values.completions "-" $.Values.parallelism }}
-    {{- $postfix = print $postfix "-" .Values.image.tag }}
     {{- $postfix := $postfix | adler32sum }}
-    {{- $str := print $repo "-" $postfix}}
+    {{- $str := print .title "-" $postfix}}
     name: {{ $str  }}
     namespace: adventofcode
   spec:
@@ -26,9 +25,9 @@ items:
       spec:
       spec:
         containers:
-        - image: "{{$repo }}:{{.Values.image.tag | toString }}"
+        - image: "{{$e}}:{{$.Values.image.tag | toString }}"
           imagePullPolicy: {{ $.Values.pullPolicy }}
-          name: {{ $repo | toString | replace "/" "-" | replace "_" "-"}}-{{ .Values.image.tag | toString | replace "." "-" }}
+          name: {{ $e | toString | replace "/" "-" | replace "_" "-"}}-{{ $.Values.image.tag | toString | replace "." "-" }}
           env:
             - name: "USERNAME"
               valueFrom:
@@ -40,7 +39,6 @@ items:
                 secretKeyRef:
                   name: amqpassword
                   key: password
-        {{- end }}
         restartPolicy: Never
 
 {{- end }}    
