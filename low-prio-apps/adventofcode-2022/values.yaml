@@ -4,6 +4,10 @@ namespace: default
 pullPolicy: IfNotPresent
 completions: 1
 parallelism: 1
+image:
+  repository: rasmus256docker/advent_of_code_day1_part1
+  tag: 2.1.379
+imageTitles:
 images:
 - title: day1
   parts:
