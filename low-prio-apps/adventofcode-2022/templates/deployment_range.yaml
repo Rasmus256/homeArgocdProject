@@ -42,6 +42,7 @@ items:
                   key: password
         restartPolicy: Never
 {{- end }}    
+{{- end }}    
 ---
 apiVersion: v1
 kind: List
