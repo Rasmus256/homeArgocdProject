@@ -14,7 +14,6 @@ items:
       version: {{ $.Chart.Version }}
     {{- $postfix := print $.Values.completions "-" $.Values.parallelism }}
     {{- $postfix = print $postfix "-" .Values.image.tag }}
-    {{- end }}
     {{- $postfix := $postfix | adler32sum }}
     {{- $str := print $repo "-" $postfix}}
     name: {{ $str  }}
