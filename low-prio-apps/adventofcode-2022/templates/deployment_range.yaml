@@ -3,7 +3,7 @@ apiVersion: v1
 kind: List
 items:
 {{- range $i, $day := .Values.repositories.days }}
-{{- range $i, $part := .Values.repositories.parts }}
+{{- range $i, $part := $.Values.repositories.parts }}
 - apiVersion: batch/v1
   kind: Job
   metadata:
