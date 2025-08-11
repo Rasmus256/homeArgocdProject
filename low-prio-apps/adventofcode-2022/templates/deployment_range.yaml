@@ -56,11 +56,11 @@ items:
 - apiVersion: broker.amq.io/v1beta1
   kind: ActiveMQArtemisAddress
   metadata:
-    name: {{$part |replace "_" "-" |replace "." "-"}}
+    name: {{$addName |replace "_" "-" |replace "." "-"}}
     namespace: adventofcode
   spec:
-    addressName: {{$part}}
-    queueName: {{$part}}
+    addressName: {{$addName}}
+    queueName: {{$addName}}
     routingType: multicast
     removeFromBrokerOnDelete: true
   {{- end }}    
