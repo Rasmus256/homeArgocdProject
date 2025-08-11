@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: List
 items:
-{{- range $repo := .Values.repositories }}
+{{- range $i, $repo := .Values.repositories }}
 - apiVersion: batch/v1
   kind: Job
   metadata:
