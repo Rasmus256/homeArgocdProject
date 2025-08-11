@@ -47,20 +47,20 @@ items:
 apiVersion: v1
 kind: List
 items:
-{{- range .Values.images }}
-  {{- $title := .title }}
-  {{- range $i, $e := .parts }}
-  {{- $partName := add1 $i}}
+
+{{- range $i, $day := .Values.repositories.days }}
+{{- range $i, $part := $.Values.repositories.parts }}
+  {{- $title := $day }}
   #adventofcode.day6.part1
-  {{ $addName := print "adventofcode." $title ".part" $partName }}
+  {{ $addName := print "adventofcode." $title ".part" $part }}
 - apiVersion: broker.amq.io/v1beta1
   kind: ActiveMQArtemisAddress
   metadata:
-    name: {{$addName |replace "_" "-" |replace "." "-"}}
+    name: {{$part |replace "_" "-" |replace "." "-"}}
     namespace: adventofcode
   spec:
-    addressName: {{$addName}}
-    queueName: {{$addName}}
+    addressName: {{$part}}
+    queueName: {{$part}}
     routingType: multicast
     removeFromBrokerOnDelete: true
   {{- end }}    
