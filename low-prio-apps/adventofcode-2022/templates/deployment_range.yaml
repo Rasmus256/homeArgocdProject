@@ -14,7 +14,7 @@ items:
       version: {{ $.Chart.Version }}
     {{- $postfix := print $.Values.completions "-" $.Values.parallelism }}
     {{- $postfix := $postfix | adler32sum }}
-    {{- $str := print .e "-" $postfix}}
+    {{- $str := print $e "-" $postfix}}
     name: {{ $str  }}
     namespace: adventofcode
   spec:
