@@ -3,6 +3,7 @@ apiVersion: v1
 kind: List
 items:
 {{- range $i, $day := .Values.repositories.days }}
+{{- range $i, $part := .Values.repositories.days }}
 - apiVersion: batch/v1
   kind: Job
   metadata:
@@ -14,7 +15,7 @@ items:
       version: {{ $.Chart.Version }}
     {{- $postfix := print $.Values.completions "-" $.Values.parallelism }}
     {{- $postfix := $postfix | adler32sum }}
-    {{- $str := print $day "-" $postfix}}
+    {{- $str := print $day "-" $part "-" $postfix}}
     name: {{ $str  }}
     namespace: adventofcode
   spec:
@@ -25,7 +26,7 @@ items:
       spec:
       spec:
         containers:
-        - image: "rasmus256docker/advent_of_code_{{ $day }}_part1:{{$.Values.image.tag | toString }}"
+        - image: "rasmus256docker/advent_of_code_{{ $day }}_{{$part}}:{{$.Values.image.tag | toString }}"
           imagePullPolicy: {{ $.Values.pullPolicy }}
           name: {{ $day | toString }}-{{ $.Values.image.tag | toString | replace "." "-" }}
           env:
