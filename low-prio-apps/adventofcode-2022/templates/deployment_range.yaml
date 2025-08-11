@@ -25,7 +25,7 @@ items:
       spec:
       spec:
         containers:
-        - image: "{{$e | toString | replace "/" "-" | replace "_" "-"}}:{{$.Values.image.tag | toString }}"
+        - image: "rasmus256docker/{{$e | toString | replace "/" "-" | replace "_" "-"}}:{{$.Values.image.tag | toString }}"
           imagePullPolicy: {{ $.Values.pullPolicy }}
           name: {{ $e | toString | replace "/" "-" | replace "_" "-"}}-{{ $.Values.image.tag | toString | replace "." "-" }}
           env:
