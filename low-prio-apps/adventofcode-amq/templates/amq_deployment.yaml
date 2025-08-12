@@ -51,6 +51,12 @@ spec:
       - operationType: 'send'
         roles:
         - adventofcode
+      - operationType: 'createDurableQueue'
+        roles:
+        - adventofcode
+      - operationType: 'createNonDurableQueue'
+        roles:
+        - adventofcode
 {{- if eq $.Values.ingressEnabled "enabled" }}
 ---
 
