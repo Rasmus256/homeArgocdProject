@@ -57,6 +57,9 @@ spec:
       - operationType: 'createNonDurableQueue'
         roles:
         - adventofcode
+      - operationType: 'createAddress'
+        roles:
+        - adventofcode
 {{- if eq $.Values.ingressEnabled "enabled" }}
 ---
 
