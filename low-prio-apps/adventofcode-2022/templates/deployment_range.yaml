@@ -50,9 +50,8 @@ items:
 
 {{- range $i, $day := .Values.repositories.days }}
 {{- range $i, $part := $.Values.repositories.parts }}
-  {{- $title := $day }}
   #adventofcode.day6.part1
-  {{ $addName := print "adventofcode." $title "." $part }}
+  {{ $addName := print "adventofcode." $day "." $part }}
 - apiVersion: broker.amq.io/v1beta1
   kind: ActiveMQArtemisAddress
   metadata:
