@@ -1,4 +1,4 @@
-apiVersion: broker.amq.io/v1beta1
+edapiVersion: broker.amq.io/v1beta1
 kind: ActiveMQArtemis
 metadata:
   name: amq
@@ -51,7 +51,7 @@ spec:
       - operationType: 'send'
         roles:
         - adventofcode
-{{- if eq $.Values.ingressEnabled "true" }}
+{{- if eq $.Values.ingressEnabled "enabled" }}
 ---
 
 apiVersion: networking.k8s.io/v1
