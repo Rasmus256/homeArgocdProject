@@ -23,18 +23,6 @@ metadata:
   name: adventofcode-amq-security-userroles
   namespace: adventofcode
 spec:
-   loginModules:
-     propertiesLoginModules:
-       - name: "prop-module"
-         users:
-            - name: "sam"
-              password: 
-               valueFrom:
-                 secretKeyRef:
-                   name: amqpassword
-                   key: password
-              roles:
-               - "advemtofcode"
    securityDomains:
      brokerDomain:
        name: "activemq"
