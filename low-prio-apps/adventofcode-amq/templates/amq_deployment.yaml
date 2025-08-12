@@ -16,19 +16,7 @@ spec:
   - name: "openwire"
     port: 61617
     protocols: openwire
----
-apiVersion: broker.amq.io/v1alpha1
-kind: ActiveMQArtemisSecurity
-metadata:
-  name: adventofcode-amq-security-userroles
-  namespace: adventofcode
-spec:
-   securityDomains:
-     brokerDomain:
-       name: "activemq"
-       loginModules:
-         - name: "prop-module"
-           flag: "sufficient"
+
 ---
 apiVersion: broker.amq.io/v1alpha1
 kind: ActiveMQArtemisSecurity
