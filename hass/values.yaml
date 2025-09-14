@@ -4,4 +4,4 @@ namespace: hass
 pullPolicy: IfNotPresent
 image:
     repository: homeassistant/home-assistant
-    tag: 2025.9.2
+    tag: 2025.9.3
