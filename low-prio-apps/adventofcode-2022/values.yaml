@@ -6,7 +6,7 @@ completions: 1
 parallelism: 1
 image:
   repository: rasmus256docker/advent_of_code_day1_part1
-  tag: 2.1.381
+  tag: 2.1.383
 repositories:
   days:
     - day1
