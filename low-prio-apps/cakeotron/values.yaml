@@ -1,7 +1,7 @@
 baseurl: cake.hosrasmus.hopto.org
 image:
   repository: rasmus256docker/cakeotron
-  tag: 254@sha256:18bc0309edb572b0e859f12e68f25c9609d109d2dd2e97c0d399023e3471f662
+  tag: 255@sha256:e06e909dfb8edce2288c83684034e460c5d7495b671d213fb886443876ec8e54
 dateserviceImage:
   repository: rasmus256docker/cakeotron-dateservice
   tag: 254@sha256:186316edfb3e4d17ef58ec032f5d8e70d99ab565e6ad35d98235d0daf3f129ae
