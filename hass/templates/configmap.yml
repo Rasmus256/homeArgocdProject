@@ -124,6 +124,10 @@ data:
     script: !include scripts.yaml
     scene: !include scenes.yaml
     shell_command: !include shell_commands.yaml
+    ihc:
+      - url: 'http://192.168.87.87'
+        username: hatest
+        password: Test12345
     switch:
       - platform: wake_on_lan
         name: RemotePC
