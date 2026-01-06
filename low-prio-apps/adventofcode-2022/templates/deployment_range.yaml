@@ -28,7 +28,7 @@ items:
         containers:
         - image: "rasmus256docker/advent_of_code_2022_{{ $day }}_{{$part}}:{{$.Values.image.tag | toString }}"
           imagePullPolicy: {{ $.Values.pullPolicy }}
-          name: {{ $day | toString }}-{{ $.Values.image.tag | toString | replace "." "-" }}
+          name: 2022-{{ $day | toString }}-{{ $.Values.image.tag | toString | replace "." "-" }}
           env:
             - name: "USERNAME"
               valueFrom:
