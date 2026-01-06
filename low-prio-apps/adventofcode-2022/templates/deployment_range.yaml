@@ -13,7 +13,7 @@ items:
       release: {{ $.Release.Name | quote }}
       heritage: {{ $.Release.Service | quote }}
       version: {{ $.Chart.Version }}
-    {{- $postfix := print $.Values.completions "-" $.Values.parallelism }}
+    {{- $postfix := print "2022-"$.Values.completions "-" $.Values.parallelism }}
     {{- $postfix := $postfix | adler32sum }}
     {{- $str := print $day "-" $part "-" $postfix}}
     name: {{ $str  }}
