@@ -6,4 +6,4 @@ title: optimalpowertimecalculator
 baseurl: optimalpowertimecalculator.hosrasmus.hopto.org
 image:
   repository: rasmus256docker/optimalpowertimecalculator
-  tag: 20251122-151420
+  tag: 20260113-113238@sha256:b61ef80df2bb2b985550d3f41482df9c4cf03733b06015a622d1f93d42d1bbfb
