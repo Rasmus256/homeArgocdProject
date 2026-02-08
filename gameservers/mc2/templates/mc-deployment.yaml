@@ -38,7 +38,7 @@ spec:
             - name: "GAMEMODE"
               value: "creative" 
             - name: "ALLOW_LIST_USERS"
-              value: "ShellyTuna8375,FavouredBell851,DressZeus594856,HerMajestyofDK,Syncredia"
+              value: "ShellyTuna8375,FavouredBell851,DressZeus594856,HerMajestyofDK,Syncredia,BattledLeaf27726"
             - name: "ALLOW_CHEATS"
               value: "true"
           image: "{{$.Values.image.repository }}:{{$.Values.image.tag | toString }}"
