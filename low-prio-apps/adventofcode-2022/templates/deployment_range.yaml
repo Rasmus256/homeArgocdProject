@@ -13,7 +13,7 @@ items:
       release: {{ $.Release.Name | quote }}
       heritage: {{ $.Release.Service | quote }}
       version: {{ $.Chart.Version }}
-    {{- $postfix := print "2022-" $.Values.completions "-" $.Values.parallelism }}
+    {{- $postfix := print "aoc-2022-" $.Values.completions "-" $.Values.parallelism }}
     {{- $postfix := $postfix | adler32sum }}
     {{- $str := print $day "-" $part "-" $postfix}}
     name: {{ $str  }}
@@ -28,7 +28,7 @@ items:
         containers:
         - image: "rasmus256docker/advent_of_code_2022_{{ $day }}_{{$part}}:{{$.Values.image.tag | toString }}"
           imagePullPolicy: {{ $.Values.pullPolicy }}
-          name: 2022-{{ $day | toString }}-{{ $.Values.image.tag | toString | replace "." "-" }}
+          name: aoc-2022-{{ $day | toString }}-{{ $.Values.image.tag | toString | replace "." "-" }}
           env:
             - name: "USERNAME"
               valueFrom:
