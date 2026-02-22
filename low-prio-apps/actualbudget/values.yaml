@@ -7,4 +7,4 @@ canaryweight: 0
 baseurl: budget.hosrasmus.hopto.org
 image:
   repository: docker.io/actualbudget/actual-server
-  tag: "26.1.0-alpine"
+  tag: "26.2.1-alpine"
