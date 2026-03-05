@@ -1,7 +1,8 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:recommended"
+    "config:recommended",
+    "group:allNonMajor"
   ],
   "packageRules": [
     {
@@ -18,19 +19,6 @@
       "matchUpdateTypes": [
         "major",
         "minor"
-      ],
-      "automerge": false,
-      "ignoreTests": true
-    },
-    {
-      "matchPackageNames": [
-        "docker.io/actualbudget/actual-server"
-      ],
-      "matchUpdateTypes": [
-        "minor",
-        "patch",
-        "pin",
-        "digest"
       ],
       "automerge": false,
       "ignoreTests": true
