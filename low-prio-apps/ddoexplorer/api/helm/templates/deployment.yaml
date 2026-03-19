@@ -6,6 +6,7 @@ metadata:
   labels:
     io.kompose.service: ddoexplorer
 spec:
+  replicas: 0
   revisionHistoryLimit: 1
   selector:
     matchLabels:
@@ -65,6 +66,7 @@ metadata:
   labels:
     io.kompose.service: ddoexplorertwo
 spec:
+  replicas: 0
   revisionHistoryLimit: 1
   selector:
     matchLabels:
@@ -113,33 +115,3 @@ spec:
             timeoutSeconds: 1
       restartPolicy: Always
 status: {}
-
----
-apiVersion: autoscaling/v1
-kind: HorizontalPodAutoscaler
-metadata:
-  name: ddoexplorerscaler
-  namespace: ddoexplorer
-spec:
-  scaleTargetRef:
-    apiVersion: apps/v1
-    kind: Deployment
-    name: ddoexplorer
-  minReplicas: 1
-  maxReplicas: 4
-  targetCPUUtilizationPercentage: 70
-
----
-apiVersion: autoscaling/v1
-kind: HorizontalPodAutoscaler
-metadata:
-  name: ddoexplorerscalertwo
-  namespace: ddoexplorer
-spec:
-  scaleTargetRef:
-    apiVersion: apps/v1
-    kind: Deployment
-    name: ddoexplorertwo
-  minReplicas: 1
-  maxReplicas: 4
-  targetCPUUtilizationPercentage: 70
