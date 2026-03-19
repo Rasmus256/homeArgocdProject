@@ -2,7 +2,7 @@ kubernetes:
   host: https://kubernetes.default
 namespace: default
 pullPolicy: IfNotPresent
-completions: 1
+completions: 0
 parallelism: 1
 image:
   repository: rasmus256docker/advent_of_code_day1_part1
