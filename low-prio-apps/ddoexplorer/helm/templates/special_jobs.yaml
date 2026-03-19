@@ -20,7 +20,7 @@ items:
     {{- end }}
     name: {{ $str }}
   spec:
-    completions: 1
+    completions: 0
     backoffLimit: 2
     template:
       spec:
