@@ -65,7 +65,6 @@ data:
               {% set ns.usages = ns.usages + [float(states('sensor.eloverblik_energy_'+hourstr+'_'+nexthourstr),0)] %}
             {% endfor %}
             {{ns.usages}}
-    sensor:
       - name: "Eloverblik Total for Dashboard"
         unique_id: eloverblik_total_fixed
         device_class: energy
@@ -74,6 +73,7 @@ data:
         state: >
           {% set val = states('sensor.eloverblik_energy_total') %}
           {{ val | float(0) if is_number(val) else 0 }}
+    sensor:
       - platform: rest
         name: Frame Counter
         resource_template: http://pictureframe.local:5000/api/progress?filename={{ states('sensor.now_playing') }}
