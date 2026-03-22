@@ -28,8 +28,6 @@ spec:
               value: Europe/Copenhagen
           image: {{.Values.image.repository}}:{{.Values.image.tag}}
           name: hass
-          ports:
-            - containerPort: 8123
           resources:
             requests:
               memory: "500Mi"
