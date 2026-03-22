@@ -69,10 +69,13 @@ data:
       - platform: statistics
         entity_id: sensor.eloverblik_energy_total
         name: Eloverblik Monthly Statistics
-        sampling_size: 50
-        state_characteristic: mean
+        sampling_size: 1  # We only care about the most recent value
+        state_characteristic: last_absolute  # This captures the most recent state
         max_age:
-            days: 30
+          days: 30
+        device_class: energy
+        state_class: total_increasing  # 'total_increasing' is best for Eloverblik
+        unit_of_measurement: "kWh"
       - platform: rest
         name: Frame Counter
         resource_template: http://pictureframe.local:5000/api/progress?filename={{ states('sensor.now_playing') }}
