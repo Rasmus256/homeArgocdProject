@@ -18,6 +18,8 @@ spec:
       labels:
         io.kompose.service: hass
     spec:
+      hostNetwork: true
+      dnsPolicy: ClusterFirstWithHostNet
       nodeSelector:
         pi: "false"
       containers:
