@@ -27,6 +27,26 @@ data:
       - platform: google_translate
     template:
     - sensor:
+      - name: "Estimated EV Charging Yesterday"
+        unique_id: estimated_ev_yesterday
+        unit_of_measurement: "kWh"
+        device_class: energy
+        state_class: total_increasing
+        icon: mdi:car-electric
+        state: >
+          {# We look at the 24 hourly sensors provided by Eloverblik #}
+          {% set ns = namespace(ev_total=0) %}
+          {% for i in range(0, 24) %}
+            {% set hour_sensor = 'sensor.eloverblik_energy_' ~ i ~ '_' ~ (i+1) %}
+            {% set usage = states(hour_sensor) | float(0) %}
+            {# If an hour uses > 3kWh, it's almost certainly the EV charging (3kW / 1hr = 3kWh) #}
+            {# Adjust '3' if you have a heat pump that pulls a lot of power #}
+            {% if usage > 3 %}
+              {% set ns.ev_total = ns.ev_total + usage %}
+            {% endif %}
+          {% endfor %}
+          {{ ns.ev_total | round(2) }}
+    - sensor:
       - name: "Electricity Cost"
         unique_id: electricity_cost
         device_class: monetary
