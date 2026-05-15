@@ -195,7 +195,7 @@ metadata:
   name: callout
   namespace: cake
 spec:
-  schedule: "0 */1 * * *"
+  schedule: "0 */5 * * *"
   concurrencyPolicy: Forbid
   successfulJobsHistoryLimit: 1
   failedJobsHistoryLimit: 1
@@ -209,5 +209,5 @@ spec:
             args:
             - /bin/sh
             - -ec
-            - curl http://cakeotron
+            - curl http://cakeotron/api
           restartPolicy: Never
