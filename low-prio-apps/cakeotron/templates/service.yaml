@@ -12,6 +12,21 @@ spec:
       targetPort: 8080
   selector:
     io.kompose.service: cakeotron
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: cake
+  labels:
+    io.kompose.service: cakeotron
+  name: cakeotron-ui
+spec:
+  ports:
+    - name: "cake"
+      port: 80
+      targetPort: 80
+  selector:
+    io.kompose.service: cakeotron
 
 ---
 apiVersion: v1
@@ -56,6 +71,13 @@ spec:
         backend:
           service:
             name: cakeotron
+            port: 
+              name: "cake"
+      - path: /
+        pathType: Exact
+        backend:
+          service:
+            name: cakeotron-ui
             port: 
               name: "cake"
       - path: /api/criteria
