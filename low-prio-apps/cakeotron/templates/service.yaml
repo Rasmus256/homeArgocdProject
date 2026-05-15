@@ -44,21 +44,21 @@ spec:
   - host: {{ .Values.baseurl}}
     http:
       paths:
-      - path: /dates
+      - path: /api/dates
         pathType: Prefix
         backend:
           service:
             name: cakeotron-dateservice
             port: 
               name: "cake"
-      - path: /
+      - path: /api
         pathType: Exact
         backend:
           service:
             name: cakeotron
             port: 
               name: "cake"
-      - path: /criteria
+      - path: /api/criteria
         pathType: Exact
         backend:
           service:
