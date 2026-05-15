@@ -67,14 +67,14 @@ spec:
             port: 
               name: "cake"
       - path: /api
-        pathType: Exact
+        pathType: Prefix
         backend:
           service:
             name: cakeotron
             port: 
               name: "cake"
       - path: /api/criteria
-        pathType: Exact
+        pathType: Prefix
         backend:
           service:
             name: cakeotron
