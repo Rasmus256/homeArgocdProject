@@ -42,7 +42,7 @@ spec:
               memory: "64Mi"
               cpu: "50m"
           volumeMounts:
-            - mountPath:  /vaf
+            - mountPath:  /tmp
               name: tmpfs-1
       volumes:
         - name: tmpfs-1
