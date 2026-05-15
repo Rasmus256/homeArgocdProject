@@ -26,7 +26,7 @@ spec:
       port: 80
       targetPort: 80
   selector:
-    io.kompose.service: cakeotron
+    io.kompose.service: cakeotron-ui
 
 ---
 apiVersion: v1
