@@ -5,3 +5,6 @@ image:
 dateserviceImage:
   repository: rasmus256docker/cakeotron-dateservice
   tag: 320@sha256:2e16def10b2866f9efe3ac5b69b7395297c46089a3d0b534c61856320541cad4
+ui-image:
+  repository: rasmus256docker/cakeotron-ui
+  tag: 323
