@@ -18,7 +18,7 @@ kind: Service
 metadata:
   namespace: cake
   labels:
-    io.kompose.service: cakeotron
+    io.kompose.service: cakeotron-ui
   name: cakeotron-ui
 spec:
   ports:
