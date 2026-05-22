@@ -7,4 +7,4 @@ dateserviceImage:
   tag: 338
 uiImage:
   repository: rasmus256docker/cakeotron-ui
-  tag: 337
+  tag: 338
