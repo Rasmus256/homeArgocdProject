@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: 'https://github.com/Rasmus256/homeArgocdProject.git'
     targetRevision: HEAD
-    path: apps/ollama # Tilpas sti
+    path: low-prio-apps/ollama # Tilpas sti
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: ai

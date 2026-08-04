@@ -1,0 +1,5 @@
+kubernetes:
+  host: https://kubernetes.default
+namespace: ollama
+pullPolicy: IfNotPresent
+title: ollama
