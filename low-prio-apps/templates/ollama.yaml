@@ -11,7 +11,7 @@ spec:
     path: low-prio-apps/ollama # Tilpas sti
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: ai
+    namespace: ollama
   syncPolicy:
     automated:
       prune: true
