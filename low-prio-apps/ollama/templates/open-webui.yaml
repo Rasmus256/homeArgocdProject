@@ -1,0 +1,69 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: open-webui-pvc
+  namespace: ollama
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: local-path
+  resources:
+    requests:
+      storage: 2Gi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: open-webui
+  namespace: ollama
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: open-webui
+  template:
+    metadata:
+      labels:
+        app: open-webui
+    spec:
+      containers:
+      - name: open-webui
+        image: ghcr.io/open-webui/open-webui:main
+        ports:
+        - containerPort: 8080
+          name: http
+        env:
+        # Peger på din Ollama ClusterIP-service i samme namespace
+        - name: OLLAMA_BASE_URL
+          value: "http://ollama.ollama.svc.cluster.local:11434"
+        # Slår automatisk model-pulling fra i WebUI (du styrer det via CLI/ArgoCD)
+        - name: ENABLE_MODEL_FILTER
+          value: "false"
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "256Mi"
+          limits:
+            cpu: "1"
+            memory: "1Gi"
+        volumeMounts:
+        - name: webui-storage
+          mountPath: /app/backend/data
+      volumes:
+      - name: webui-storage
+        persistentVolumeClaim:
+          claimName: open-webui-pvc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: open-webui
+  namespace: ollama
+spec:
+  type: ClusterIP
+  ports:
+  - port: 8080
+    targetPort: 8080
+    name: http
+  selector:
+    app: open-webui
