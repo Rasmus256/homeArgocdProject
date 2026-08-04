@@ -47,7 +47,7 @@ spec:
             cpu: "2"
           limits:
             memory: "10Gi"
-            cpu: "3"            # Fin grænse til din i5-8265U (efterlader tråde til OS)
+            cpu: "3500m"            # Fin grænse til din i5-8265U (efterlader tråde til OS)
         volumeMounts:
         - name: ollama-storage
           mountPath: /root/.ollama
