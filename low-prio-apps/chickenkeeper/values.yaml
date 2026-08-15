@@ -6,3 +6,11 @@ image:
 uiImage:
   repository: rasmus256docker/chickenkeeper-frontend
   tag: 2
+postgres:
+  image:
+    repository: postgres
+    tag: 15-alpine
+  user: chickenkeeper
+  password: password
+  database: chickenkeeper
+  port: 5432
