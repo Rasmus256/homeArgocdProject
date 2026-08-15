@@ -45,10 +45,18 @@ spec:
               name: tmpfs-1
             - mountPath: /var/cache/nginx
               name: nginx-cache
+            - mountPath: /run
+              name: run-dir
+            - mountPath: /var/log/nginx
+              name: nginx-logs
       volumes:
         - name: tmpfs-1
           emptyDir: {}
         - name: nginx-cache
+          emptyDir: {}
+        - name: run-dir
+          emptyDir: {}
+        - name: nginx-logs
           emptyDir: {}
       restartPolicy: Always
 status: {}
