@@ -1,0 +1,8 @@
+baseurl: chicken.hosrasmus.hopto.org
+namespace: chicken
+image:
+  repository: rasmus256docker/chickenkeeper-backend
+  tag: 1
+uiImage:
+  repository: rasmus256docker/chickenkeeper-frontend
+  tag: 1

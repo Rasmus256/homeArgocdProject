@@ -1,0 +1,4 @@
+apiVersion: v2
+name: ChickenKeeper
+description: ChickenKeeper application (backend + frontend)
+version: 0.1.0
