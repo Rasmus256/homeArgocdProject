@@ -5,4 +5,4 @@ image:
   tag: 2
 uiImage:
   repository: rasmus256docker/chickenkeeper-frontend
-  tag: 1
+  tag: 2
