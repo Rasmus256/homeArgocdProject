@@ -5,7 +5,7 @@ image:
   tag: 5
 uiImage:
   repository: rasmus256docker/chickenkeeper-frontend
-  tag: 2
+  tag: 5
 postgres:
   image:
     repository: postgres
