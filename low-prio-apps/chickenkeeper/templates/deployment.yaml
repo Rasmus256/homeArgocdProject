@@ -58,7 +58,7 @@ metadata:
     app.kubernetes.io/name: chickenkeeper-backend
 spec:
   revisionHistoryLimit: 1
-  replicas: 0
+  replicas: 1
   minReadySeconds: 2
   selector:
     matchLabels:
