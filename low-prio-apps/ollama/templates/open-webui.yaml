@@ -39,6 +39,9 @@ spec:
           value: "false"
         - name: AIOHTTP_CLIENT_TIMEOUT
           value: "1800"
+          # Keep connection alive while model is processing
+        - name: ENABLE_RESPONSE_OFFLOADING
+          value: "false"
         resources:
           requests:
             cpu: "100m"
