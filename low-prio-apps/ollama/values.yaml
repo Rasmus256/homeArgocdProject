@@ -1,3 +1,4 @@
+baseurl: ollama.hosrasmus.hopto.org
 kubernetes:
   host: https://kubernetes.default
 namespace: ollama
