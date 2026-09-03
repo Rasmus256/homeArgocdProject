@@ -23,7 +23,7 @@ metadata:
   name: ollama
   namespace: ollama
 spec:
-  replicas: 0
+  replicas: 1
   selector:
     matchLabels:
       app: ollama
@@ -41,6 +41,11 @@ spec:
         ports:
         - containerPort: 11434
           name: http
+        env:
+        - name: OLLAMA_HOST
+          value: "0.0.0.0:11434"
+        - name: OLLAMA_ORIGINS
+          value: "*"
         resources:
           requests:
             memory: "4Gi"
