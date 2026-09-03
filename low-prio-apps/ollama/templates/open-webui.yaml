@@ -37,8 +37,8 @@ spec:
           value: "http://ollama.ollama.svc.cluster.local:11434"
         - name: ENABLE_PERSISTENT_CONFIG
           value: "false"
-        - name: ENABLE_MODEL_FILTER
-          value: "false"
+        - name: AIOHTTP_CLIENT_TIMEOUT
+          value: "1800"
         resources:
           requests:
             cpu: "100m"
