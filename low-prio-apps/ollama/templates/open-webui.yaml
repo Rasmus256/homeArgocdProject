@@ -81,6 +81,11 @@ metadata:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
     acme.cert-manager.io/http01-edit-in-place: "true"
+    # Disable buffering in Traefik to allow SSE streams to pass through instantly
+    traefik.ingress.kubernetes.io/buffering: |
+      maxResponseBodyBytes: 0
+      maxRequestBodyBytes: 0
+      memResponseBodyBytes: 0
 spec:
   rules:
   - host: {{ .Values.baseurl }}
