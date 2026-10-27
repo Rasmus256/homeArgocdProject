@@ -7,7 +7,7 @@ replicas: 0
 baseurl: spotify.hosrasmus.hopto.org
 image:
   repository: docker.io/stefanmich/spotifyrandomalbum
-  tag: "40@sha256:99f144c2f779f2d7147352e4f6de9f230b3139d1ff2a25f9bb428abae026125e"
+  tag: "45@sha256:2e6a64239432a368310920a5546185f5cf427eb65b69e54de81306929e014d46"
 spotipyconfig:
   clientid: "clientid"
   clientsecret: "clientsecret"
