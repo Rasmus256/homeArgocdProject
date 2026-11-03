@@ -7,7 +7,7 @@ metadata:
   name: mcbedrock
 spec:
   ports:
-    - name: "udp-19132"
+    - name: "tcp-19132"
       port: 19132
       targetPort: 19132
       protocol: TCP
@@ -75,28 +75,6 @@ spec:
       port: 19155
       targetPort: 19155
       protocol: UDP
-
-
   type: LoadBalancer
   selector:
     io.kompose.service: mcbedrock
-    
----
-
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: mc2-ingress
-  namespace: minecraft
-spec:
-  rules:
-  - host: mc.hosrasmus.hopto.org
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: mcbedrock
-            port: 
-              name: "udp-19132"
