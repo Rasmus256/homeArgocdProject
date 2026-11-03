@@ -10,7 +10,7 @@ spec:
     - name: "udp-19132"
       port: 19132
       targetPort: 19132
-      protocol: UDP
+      protocol: TCP
     - name: "udp-19140"
       port: 19140
       targetPort: 19140
