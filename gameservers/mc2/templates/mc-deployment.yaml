@@ -43,6 +43,8 @@ spec:
               value: "true"
             - name: "SERVER_UDP_PORTS"
               value: "19140-19155"
+            - name: "TRANSPORT"
+              value: "nethernet"
           image: "{{$.Values.image.repository }}:{{$.Values.image.tag | toString }}"
           name: mcbedrock
           ports:
