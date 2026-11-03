@@ -41,12 +41,44 @@ spec:
               value: "ShellyTuna8375,FavouredBell851,DressZeus594856,HerMajestyofDK,Syncredia,BattedLeaf27726,StruckLeaf2160,RiskyLily5155,Julio24683494"
             - name: "ALLOW_CHEATS"
               value: "true"
-            - name: "TRANSPORT"
-              value: "raknet"
+            - name: "SERVER_UDP_PORTS"
+              value: "19140-19155"
           image: "{{$.Values.image.repository }}:{{$.Values.image.tag | toString }}"
           name: mcbedrock
           ports:
             - containerPort: 19132
+              protocol: UDP
+            - containerPort: 19140
+              protocol: UDP
+            - containerPort: 19141
+              protocol: UDP
+            - containerPort: 19142
+              protocol: UDP
+            - containerPort: 19143
+              protocol: UDP
+            - containerPort: 19144
+              protocol: UDP
+            - containerPort: 19145
+              protocol: UDP
+            - containerPort: 19146
+              protocol: UDP
+            - containerPort: 19147
+              protocol: UDP
+            - containerPort: 19148
+              protocol: UDP
+            - containerPort: 19149
+              protocol: UDP
+            - containerPort: 19150
+              protocol: UDP
+            - containerPort: 19151
+              protocol: UDP
+            - containerPort: 19152
+              protocol: UDP
+            - containerPort: 19153
+              protocol: UDP
+            - containerPort: 19154
+              protocol: UDP
+            - containerPort: 19155
               protocol: UDP
           resources:
             requests:
