@@ -41,6 +41,8 @@ spec:
               value: "ShellyTuna8375,FavouredBell851,DressZeus594856,HerMajestyofDK,Syncredia,BattedLeaf27726,StruckLeaf2160,RiskyLily5155,Julio24683494"
             - name: "ALLOW_CHEATS"
               value: "true"
+            - name: "TRANSPORT"
+              value: "raknet"
           image: "{{$.Values.image.repository }}:{{$.Values.image.tag | toString }}"
           name: mcbedrock
           ports:
