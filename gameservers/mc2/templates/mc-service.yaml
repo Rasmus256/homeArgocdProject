@@ -11,7 +11,9 @@ spec:
       port: 19132
       targetPort: 19132
       protocol: TCP
-{{- range $port := untilStep (int .Values.udpPortRange.start) (add1 (int .Values.udpPortRange.end)) 1 }}
+{{- $start := int .Values.udpPortRange.start }}
+{{- $end := int .Values.udpPortRange.end }}
+{{- range $port := untilStep $start (add1 $end) 1 }}
     - name: "udp-{{ $port }}"
       port: {{ $port }}
       targetPort: {{ $port }}
