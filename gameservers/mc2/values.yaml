@@ -1,3 +1,7 @@
 image:
   repository: itzg/minecraft-bedrock-server
   tag: 2026.10.3
+
+udpPortRange:
+  start: 19140
+  end: 19155

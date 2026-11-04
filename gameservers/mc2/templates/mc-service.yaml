@@ -11,70 +11,12 @@ spec:
       port: 19132
       targetPort: 19132
       protocol: TCP
-    - name: "udp-19140"
-      port: 19140
-      targetPort: 19140
+{{- range $port := untilStep (int .Values.udpPortRange.start) (add1 (int .Values.udpPortRange.end)) 1 }}
+    - name: "udp-{{ $port }}"
+      port: {{ $port }}
+      targetPort: {{ $port }}
       protocol: UDP
-    - name: "udp-19141"
-      port: 19141
-      targetPort: 19141
-      protocol: UDP
-    - name: "udp-19142"
-      port: 19142
-      targetPort: 19142
-      protocol: UDP
-    - name: "udp-19143"
-      port: 19143
-      targetPort: 19143
-      protocol: UDP
-    - name: "udp-19144"
-      port: 19144
-      targetPort: 19144
-      protocol: UDP
-    - name: "udp-19145"
-      port: 19145
-      targetPort: 19145
-      protocol: UDP
-    - name: "udp-19146"
-      port: 19146
-      targetPort: 19146
-      protocol: UDP
-    - name: "udp-19147"
-      port: 19147
-      targetPort: 19147
-      protocol: UDP
-    - name: "udp-19148"
-      port: 19148
-      targetPort: 19148
-      protocol: UDP
-    - name: "udp-19149"
-      port: 19149
-      targetPort: 19149
-      protocol: UDP
-    - name: "udp-19150"
-      port: 19150
-      targetPort: 19150
-      protocol: UDP
-    - name: "udp-19151"
-      port: 19151
-      targetPort: 19151
-      protocol: UDP
-    - name: "udp-19152"
-      port: 19152
-      targetPort: 19152
-      protocol: UDP
-    - name: "udp-19153"
-      port: 19153
-      targetPort: 19153
-      protocol: UDP
-    - name: "udp-19154"
-      port: 19154
-      targetPort: 19154
-      protocol: UDP
-    - name: "udp-19155"
-      port: 19155
-      targetPort: 19155
-      protocol: UDP
+{{- end }}
   type: LoadBalancer
   selector:
     io.kompose.service: mcbedrock
