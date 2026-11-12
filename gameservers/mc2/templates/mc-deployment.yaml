@@ -33,6 +33,8 @@ spec:
               value: "PAPER"
             - name: MEMORY
               value: "1G"
+            - name: SERVER_NAME
+              value "Dedercated Server"
             - name: SERVER_PORT
               value: "19132"
             - name: "GAMEMODE"
