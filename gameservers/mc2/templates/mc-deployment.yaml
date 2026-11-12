@@ -28,7 +28,7 @@ spec:
             - name: EULA
               value: "true"
             - name: OPS
-              value: "{{ join "," .Values.minecraft.ops }}"
+              value: "{{ join "," .Values.ops }}"
             - name: TYPE
               value: "BEDROCK"
             - name: MEMORY
@@ -40,7 +40,7 @@ spec:
             - name: "GAMEMODE"
               value: "creative" 
             - name: "ALLOW_LIST_USERS"
-              value: "{{ join "," .Values.minecraft.allowlistUsers }}"
+              value: "{{ join "," .Values.allowlistUsers }}"
             - name: "ALLOW_CHEATS"
               value: "true"
             - name: "SERVER_UDP_PORTS"
