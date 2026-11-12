@@ -28,7 +28,9 @@ spec:
             - name: EULA
               value: "true"
             - name: OPS
-              value: "2535420898507728,2535445156419995,2535429344290853"
+              value: "{{ join "," .Values.minecraft.ops }}"
+            - name: TYPE
+              value: "BEDROCK"
             - name: MEMORY
               value: "1G"
             - name: SERVER_NAME
@@ -38,52 +40,27 @@ spec:
             - name: "GAMEMODE"
               value: "creative" 
             - name: "ALLOW_LIST_USERS"
-              value: "ShellyTuna8375,FavouredBell851,DressZeus594856,HerMajestyofDK,Syncredia,BattedLeaf27726,StruckLeaf2160,RiskyLily5155,Julio24683494"
+              value: "{{ join "," .Values.minecraft.allowlistUsers }}"
             - name: "ALLOW_CHEATS"
               value: "true"
             - name: "SERVER_UDP_PORTS"
-              value: "<public_ip>:19140-19155:19140-19155"
+              value: "<public_ip>:{{ .Values.udpPortRange.start }}-{{ .Values.udpPortRange.end }}:{{ .Values.udpPortRange.start }}-{{ .Values.udpPortRange.end }}"
             - name: "TRANSPORT"
               value: "nethernet"
             - name: "ENABLE_LAN_VISIBILITY"
               value: "true"
-          image: "{{$.Values.image.repository }}:{{$.Values.image.tag | toString }}"
+          image: "{{ $.Values.image.repository }}:{{ $.Values.image.tag | toString }}"
           name: mcbedrock
           ports:
             - containerPort: 19132
               protocol: UDP
-            - containerPort: 19140
+{{- $start := atoi (printf "%v" .Values.udpPortRange.start) }}
+{{- $end := atoi (printf "%v" .Values.udpPortRange.end) }}
+{{- $exclusiveEnd := atoi (printf "%d" (add1 $end)) }}
+{{- range $port := untilStep $start $exclusiveEnd 1 }}
+            - containerPort: {{ $port }}
               protocol: UDP
-            - containerPort: 19141
-              protocol: UDP
-            - containerPort: 19142
-              protocol: UDP
-            - containerPort: 19143
-              protocol: UDP
-            - containerPort: 19144
-              protocol: UDP
-            - containerPort: 19145
-              protocol: UDP
-            - containerPort: 19146
-              protocol: UDP
-            - containerPort: 19147
-              protocol: UDP
-            - containerPort: 19148
-              protocol: UDP
-            - containerPort: 19149
-              protocol: UDP
-            - containerPort: 19150
-              protocol: UDP
-            - containerPort: 19151
-              protocol: UDP
-            - containerPort: 19152
-              protocol: UDP
-            - containerPort: 19153
-              protocol: UDP
-            - containerPort: 19154
-              protocol: UDP
-            - containerPort: 19155
-              protocol: UDP
+{{- end }}
             - containerPort: 7551
               protocol: UDP
           resources:
