@@ -11,6 +11,10 @@ spec:
       port: 19132
       targetPort: 19132
       protocol: TCP
+    - name: "tudp-7551"
+      port: 7551
+      targetPort: 7551
+      protocol: UDP
 {{- $start := atoi (printf "%v" .Values.udpPortRange.start) }}
 {{- $end := atoi (printf "%v" .Values.udpPortRange.end) }}
 {{- $exclusiveEnd := atoi (printf "%d" (add1 $end)) }}
