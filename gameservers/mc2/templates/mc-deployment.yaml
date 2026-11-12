@@ -47,6 +47,8 @@ spec:
               value: "<public_ip>:19140-19155:19140-19155"
             - name: "TRANSPORT"
               value: "nethernet"
+            - name: "ENABLE_LAN_VISIBILITY"
+              value: "true"
           image: "{{$.Values.image.repository }}:{{$.Values.image.tag | toString }}"
           name: mcbedrock
           ports:
