@@ -44,7 +44,7 @@ spec:
             - name: "ALLOW_CHEATS"
               value: "true"
             - name: "SERVER_UDP_PORTS"
-              value: "19140-19155"
+              value: "<public_ip>:19140-19155:19140-19155"
             - name: "TRANSPORT"
               value: "nethernet"
           image: "{{$.Values.image.repository }}:{{$.Values.image.tag | toString }}"
