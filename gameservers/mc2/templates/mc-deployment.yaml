@@ -1,6 +1,5 @@
-eapiVersion: apps/v1
-kind: Deployment
-metadata:
+apiVersion: apps/v1
+kind: Deploymentmetadata:
   annotations:
     kompose.cmd: C:\Users\rasmu\cluster\kompose-windows-amd64.exe convert
     kompose.version: 1.23.0 (bc7d9f4f)
