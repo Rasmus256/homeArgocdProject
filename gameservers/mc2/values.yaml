@@ -5,3 +5,19 @@ image:
 udpPortRange:
   start: 19140
   end: 19155
+  
+ops:
+  - "2535420898507728"
+  - "2535445156419995"
+  - "2535429344290853"
+  
+allowlistUsers:
+  - "ShellyTuna8375"
+  - "FavouredBell851"
+  - "DressZeus594856"
+  - "HerMajestyofDK"
+  - "Syncredia"
+  - "BattedLeaf27726"
+  - "StruckLeaf2160"
+  - "RiskyLily5155"
+  - "Julio24683494"
