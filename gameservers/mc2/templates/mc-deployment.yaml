@@ -1,4 +1,4 @@
-apiVersion: apps/v1
+eapiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
@@ -85,6 +85,8 @@ spec:
             - containerPort: 19154
               protocol: UDP
             - containerPort: 19155
+              protocol: UDP
+            - containerPort: 7551
               protocol: UDP
           resources:
             requests:
