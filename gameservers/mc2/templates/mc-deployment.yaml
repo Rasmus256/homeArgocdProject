@@ -34,7 +34,7 @@ spec:
             - name: MEMORY
               value: "1G"
             - name: SERVER_NAME
-              value: "Dedercated Server"
+              value: "Gry og Albertes Hjemme-Server"
             - name: SERVER_PORT
               value: "19132"
             - name: "GAMEMODE"
