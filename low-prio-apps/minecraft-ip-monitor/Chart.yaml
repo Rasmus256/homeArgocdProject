@@ -1,0 +1,4 @@
+apiVersion: v2
+name: minecraft-ip-monitor
+description: Public IP change monitor for Minecraft exposure
+version: 1.0.0
