@@ -1,0 +1,10 @@
+image:
+  repository: ghcr.io/rasmus256/homeargocdproject-ip-monitor
+  tag: latest
+  pullPolicy: Always
+
+namespace: minecraft-ip-monitor
+port: 8080
+checkIntervalSeconds: 300
+persistence:
+  size: 64Mi
