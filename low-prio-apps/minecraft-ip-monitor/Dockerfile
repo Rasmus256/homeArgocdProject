@@ -1,4 +1,4 @@
-FROM python:3.13-alpine
+FROM python:3.15-alpine
 
 RUN apk add --no-cache ca-certificates
 ENV PYTHONUNBUFFERED=1 PYTHONDONTWRITEBYTECODE=1
