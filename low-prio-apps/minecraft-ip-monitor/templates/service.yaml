@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: minecraft-ip-monitor
+  namespace: {{ .Values.namespace }}
+  labels:
+    app.kubernetes.io/name: minecraft-ip-monitor
+spec:
+  type: ClusterIP
+  selector:
+    app.kubernetes.io/name: minecraft-ip-monitor
+  ports:
+    - name: http
+      port: {{ .Values.port }}
+      targetPort: http
+      protocol: TCP
