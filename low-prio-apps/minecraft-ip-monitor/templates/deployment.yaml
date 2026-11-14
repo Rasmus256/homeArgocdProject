@@ -38,9 +38,11 @@ spec:
             failureThreshold: 12
           livenessProbe:
             httpGet:
-              path: /livez
+              path: /healthz
               port: http
             periodSeconds: 30
+            timeoutSeconds: 15
+            failureThreshold: 2
           readinessProbe:
             httpGet:
               path: /healthz
