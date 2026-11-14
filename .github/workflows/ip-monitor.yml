@@ -1,0 +1,37 @@
+name: Build and publish Minecraft IP monitor
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - low-prio-apps/minecraft-ip-monitor/**
+      - .github/workflows/ip-monitor.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and publish image
+        uses: docker/build-push-action@v6
+        with:
+          context: low-prio-apps/minecraft-ip-monitor
+          push: true
+          tags: |
+            ghcr.io/rasmus256/homeargocdproject-ip-monitor:latest
+            ghcr.io/rasmus256/homeargocdproject-ip-monitor:${{ github.sha }}
