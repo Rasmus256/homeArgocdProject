@@ -1,0 +1,73 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: minecraft-ip-monitor
+  namespace: {{ .Values.namespace }}
+  labels:
+    app.kubernetes.io/name: minecraft-ip-monitor
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: minecraft-ip-monitor
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: minecraft-ip-monitor
+    spec:
+      securityContext:
+        fsGroup: 10001
+      containers:
+        - name: minecraft-ip-monitor
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: CHECK_INTERVAL_SECONDS
+              value: {{ .Values.checkIntervalSeconds | quote }}
+            - name: BASELINE_FILE
+              value: /data/baseline-ip
+          ports:
+            - name: http
+              containerPort: {{ .Values.port }}
+              protocol: TCP
+          startupProbe:
+            httpGet:
+              path: /livez
+              port: http
+            periodSeconds: 5
+            failureThreshold: 12
+          livenessProbe:
+            httpGet:
+              path: /livez
+              port: http
+            periodSeconds: 30
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: http
+            periodSeconds: 30
+            timeoutSeconds: 15
+            failureThreshold: 2
+          securityContext:
+            runAsNonRoot: true
+            runAsUser: 10001
+            runAsGroup: 10001
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop:
+                - ALL
+          volumeMounts:
+            - name: ip-state
+              mountPath: /data
+          resources:
+            requests:
+              cpu: 10m
+              memory: 32Mi
+            limits:
+              cpu: 100m
+              memory: 64Mi
+      volumes:
+        - name: ip-state
+          persistentVolumeClaim:
+            claimName: minecraft-ip-monitor-state
