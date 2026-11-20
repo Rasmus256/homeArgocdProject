@@ -9,7 +9,7 @@ uiImage:
 postgres:
   image:
     repository: postgres
-    tag: 18-alpine
+    tag: 19-alpine
   user: chickenkeeper
   password: password
   database: chickenkeeper
